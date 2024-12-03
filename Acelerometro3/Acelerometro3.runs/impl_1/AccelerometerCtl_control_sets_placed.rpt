@@ -1,0 +1,101 @@
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2024.1 (win64) Build 5076996 Wed May 22 18:37:14 MDT 2024
+| Date         : Tue Dec  3 12:59:44 2024
+| Host         : DESKTOP-TUDSMRQ running 64-bit major release  (build 9200)
+| Command      : report_control_sets -verbose -file AccelerometerCtl_control_sets_placed.rpt
+| Design       : AccelerometerCtl
+| Device       : xc7a100t
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Control Set Information
+
+Table of Contents
+-----------------
+1. Summary
+2. Histogram
+3. Flip-Flop Distribution
+4. Detailed Control Set Information
+
+1. Summary
+----------
+
++----------------------------------------------------------+-------+
+|                          Status                          | Count |
++----------------------------------------------------------+-------+
+| Total control sets                                       |    23 |
+|    Minimum number of control sets                        |    23 |
+|    Addition due to synthesis replication                 |     0 |
+|    Addition due to physical synthesis replication        |     0 |
+| Unused register locations in slices containing registers |    74 |
++----------------------------------------------------------+-------+
+* Control sets can be merged at opt_design using control_set_merge or merge_equivalent_drivers
+** Run report_qor_suggestions for automated merging and remapping suggestions
+
+
+2. Histogram
+------------
+
++--------------------+-------+
+|       Fanout       | Count |
++--------------------+-------+
+| Total control sets |    23 |
+| >= 0 to < 4        |     0 |
+| >= 4 to < 6        |     4 |
+| >= 6 to < 8        |     3 |
+| >= 8 to < 10       |     5 |
+| >= 10 to < 12      |     3 |
+| >= 12 to < 14      |     1 |
+| >= 14 to < 16      |     0 |
+| >= 16              |     7 |
++--------------------+-------+
+* Control sets can be remapped at either synth_design or opt_design
+
+
+3. Flip-Flop Distribution
+-------------------------
+
++--------------+-----------------------+------------------------+-----------------+--------------+
+| Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
++--------------+-----------------------+------------------------+-----------------+--------------+
+| No           | No                    | No                     |             229 |           66 |
+| No           | No                    | Yes                    |               0 |            0 |
+| No           | Yes                   | No                     |              75 |           25 |
+| Yes          | No                    | No                     |             122 |           32 |
+| Yes          | No                    | Yes                    |               0 |            0 |
+| Yes          | Yes                   | No                     |             188 |           51 |
++--------------+-----------------------+------------------------+-----------------+--------------+
+
+
+4. Detailed Control Set Information
+-----------------------------------
+
++-------------------+-----------------------------------------------------------------------------------------------------+-----------------------------------------+------------------+----------------+--------------+
+|    Clock Signal   |                                            Enable Signal                                            |             Set/Reset Signal            | Slice Load Count | Bel Load Count | Bels / Slice |
++-------------------+-----------------------------------------------------------------------------------------------------+-----------------------------------------+------------------+----------------+--------------+
+|  SYSCLK_IBUF_BUFG | ADXL_Control/Cmd_Reg[0]_0                                                                           | ADXL_Control/Cmd_Reg[0][6]_i_1_n_0      |                1 |              4 |         4.00 |
+|  SYSCLK_IBUF_BUFG | ADXL_Control/FSM_sequential_StC_Adxl_Ctrl[3]_i_1_n_0                                                | RESET_INT_reg_n_0                       |                2 |              4 |         2.00 |
+|  SYSCLK_IBUF_BUFG | ADXL_Control/sel                                                                                    | ADXL_Control/Reset_Cnt_Num_Reads        |                1 |              4 |         4.00 |
+|  SYSCLK_IBUF_BUFG | ADXL_Control/Cmd_Reg[1][6]_i_2_n_0                                                                  | ADXL_Control/Cmd_Reg[1]0_in[7]          |                2 |              5 |         2.50 |
+|  SYSCLK_IBUF_BUFG |                                                                                                     | ADXL_Control/SPI_Interface/SCLK_2X_DIV0 |                2 |              6 |         3.00 |
+|  SYSCLK_IBUF_BUFG | ADXL_Control/Cmd_Reg[2]_1                                                                           | ADXL_Control/Cmd_Reg[2][7]              |                2 |              6 |         3.00 |
+|  SYSCLK_IBUF_BUFG | ADXL_Control/Shift_Cmd_Reg                                                                          | RESET_INT_reg_n_0                       |                2 |              7 |         3.50 |
+|  SYSCLK_IBUF_BUFG | ADXL_Control/SPI_Interface/DONE_1_i_1_n_0                                                           |                                         |                1 |              8 |         8.00 |
+|  SYSCLK_IBUF_BUFG | ADXL_Control/SPI_Interface/SHIFT_TICK_IN                                                            |                                         |                1 |              8 |         8.00 |
+|  SYSCLK_IBUF_BUFG | ADXL_Control/SPI_Interface/MOSI_REG[7]_i_1_n_0                                                      |                                         |                2 |              8 |         4.00 |
+|  SYSCLK_IBUF_BUFG |                                                                                                     | Accel_Calculation/ACCEL_X_CLIP[8]       |                3 |              9 |         3.00 |
+|  SYSCLK_IBUF_BUFG |                                                                                                     | Accel_Calculation/ACCEL_Y_CLIP[8]       |                3 |              9 |         3.00 |
+|  SYSCLK_IBUF_BUFG |                                                                                                     | ADXL_Control/Cnt_SS_Inactive0           |                3 |             10 |         3.33 |
+|  SYSCLK_IBUF_BUFG |                                                                                                     | RESET_INT_reg_n_0                       |                6 |             10 |         1.67 |
+|  SYSCLK_IBUF_BUFG |                                                                                                     | RESET_IBUF                              |                3 |             11 |         3.67 |
+|  SYSCLK_IBUF_BUFG | Accel_Calculation/Magnitude_Calculation/U0/i_synth/i_synth/gen_sqrt.square_root/gen_rdy_int/rdy_int |                                         |                4 |             12 |         3.00 |
+|  SYSCLK_IBUF_BUFG |                                                                                                     | ADXL_Control/Sample_Rate_Div[0]_i_1_n_0 |                5 |             20 |         4.00 |
+|  SYSCLK_IBUF_BUFG | ADXL_Control/Data_Ready                                                                             | RESET_INT_reg_n_0                       |                4 |             22 |         5.50 |
+|  SYSCLK_IBUF_BUFG | Accel_Calculation/Data_Ready_0                                                                      |                                         |                6 |             22 |         3.67 |
+|  SYSCLK_IBUF_BUFG | ADXL_Control/Q[0]                                                                                   | RESET_INT_reg_n_0                       |               12 |             36 |         3.00 |
+|  SYSCLK_IBUF_BUFG | ADXL_Control/SPI_Interface/Shift_Data_Reg                                                           |                                         |               18 |             64 |         3.56 |
+|  SYSCLK_IBUF_BUFG | ADXL_Control/sel                                                                                    | ADXL_Control/ACCEL_X_SUM0               |               25 |            100 |         4.00 |
+|  SYSCLK_IBUF_BUFG |                                                                                                     |                                         |               66 |            245 |         3.71 |
++-------------------+-----------------------------------------------------------------------------------------------------+-----------------------------------------+------------------+----------------+--------------+
+
+

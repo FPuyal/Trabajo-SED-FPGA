@@ -1,0 +1,42 @@
+vhdl xbip_utils_v3_0_13  \
+"../../ipstatic/hdl/xbip_utils_v3_0_vh_rfs.vhd" \
+
+vhdl c_reg_fd_v12_0_9  \
+"../../ipstatic/hdl/c_reg_fd_v12_0_vh_rfs.vhd" \
+
+vhdl xbip_dsp48_wrapper_v3_0_6  \
+"../../ipstatic/hdl/xbip_dsp48_wrapper_v3_0_vh_rfs.vhd" \
+
+vhdl xbip_pipe_v3_0_9  \
+"../../ipstatic/hdl/xbip_pipe_v3_0_vh_rfs.vhd" \
+
+vhdl xbip_dsp48_addsub_v3_0_9  \
+"../../ipstatic/hdl/xbip_dsp48_addsub_v3_0_vh_rfs.vhd" \
+
+vhdl xbip_addsub_v3_0_9  \
+"../../ipstatic/hdl/xbip_addsub_v3_0_vh_rfs.vhd" \
+
+vhdl c_addsub_v12_0_18  \
+"../../ipstatic/hdl/c_addsub_v12_0_vh_rfs.vhd" \
+
+vhdl xbip_bram18k_v3_0_9  \
+"../../ipstatic/hdl/xbip_bram18k_v3_0_vh_rfs.vhd" \
+
+vhdl mult_gen_v12_0_21  \
+"../../ipstatic/hdl/mult_gen_v12_0_vh_rfs.vhd" \
+
+vhdl axi_utils_v2_0_9  \
+"../../ipstatic/hdl/axi_utils_v2_0_vh_rfs.vhd" \
+
+vhdl cordic_v6_0_22  \
+"../../ipstatic/hdl/cordic_v6_0_vh_rfs.vhd" \
+
+vhdl xil_defaultlib  \
+"../../../Acelerometro3.gen/sources_1/ip/square_root/sim/square_root.vhd" \
+"../../../../../../Downloads/Nexys-4-DDR-OOB-2016.4-2/Nexys-4-DDR-OOB/src/hdl/ADXL362Ctrl.vhd" \
+"../../../../../../Downloads/Nexys-4-DDR-OOB-2016.4-2/Nexys-4-DDR-OOB/src/hdl/AccelArithmetics.vhd" \
+"../../../../../../Downloads/Nexys-4-DDR-OOB-2016.4-2/Nexys-4-DDR-OOB/src/hdl/SPI_If.vhd" \
+"../../../../../../Downloads/Nexys-4-DDR-OOB-2016.4-2/Nexys-4-DDR-OOB/src/hdl/AccelerometerCtl.vhd" \
+
+# Do not sort compile order
+nosort
