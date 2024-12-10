@@ -1,0 +1,8 @@
+# compile vhdl design source files
+vhdl xil_defaultlib  \
+"../../../../Trabajo-FPGA.gen/sources_1/ip/cordic_0/sim/cordic_0.vhd" \
+"../../../../Trabajo-FPGA.srcs/sources_1/new/AngleCalculator.vhd" \
+"../../../../Trabajo-FPGA.srcs/sim_1/new/Tb_AngleCalculator.vhd" \
+
+# Do not sort compile order
+nosort
