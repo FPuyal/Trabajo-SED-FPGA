@@ -106,22 +106,7 @@ begin
                     next_state <= READ_LOW_BYTE_X;
                 end if;
 
-            when READ_LOW_BYTE_X =>
-                if done_signal = '1' then
-                    accel_x_reg(7 downto 0) <= data_received;  -- Guarda la parte baja del valor de X
-                    start_signal <= '1';  -- Iniciar la próxima lectura para la parte alta
-                    next_state <= READ_HIGH_BYTE_X;
-                end if;
-
-            when READ_HIGH_BYTE_X =>
-                if done_signal = '1' then
-                    accel_x_reg(11 downto 8) <= data_received(3 downto 0);  -- Guarda la parte alta del valor de X
-                    -- Iniciar el proceso para leer el eje Y
-                    data_to_send <= X"0B"; -- Comando de lectura
-                    start_signal <= '1';
-                    next_state <= SEND_READ_CMD_Y;
-                end if;
-
+           
             when SEND_READ_CMD_Y =>
                 if done_signal = '1' then
                     -- Enviar dirección del registro del eje Y

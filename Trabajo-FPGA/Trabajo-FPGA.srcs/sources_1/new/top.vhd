@@ -19,6 +19,9 @@ architecture Behavioral of top is
     signal ACCEL_Y: std_logic_vector(11 downto 0);
     signal ACCEL_Z: std_logic_vector(11 downto 0);
     
+    -- Para controlar los leds
+    signal accel_x_real: real;
+    signal accel_x_extended: std_logic_vector (15 downto 0); 
     
     component AccelerometerXYZReader is
         Port (
@@ -49,6 +52,13 @@ begin
         MISO       => MISO,          -- Conexión del MISO del acelerómetro       
         SS         => SS,            -- Conexión del SS (Slave Select) del acelerómetro
         Data_Ready => Data_Ready     -- Salida para indicar que los datos están listos
-    );    
-    
+    );
+        
+    LEDS_Control: process(SYSCLK)
+    begin        
+        if rising_edge(SYSCLK) then
+            if Data_Ready = '1' then                
+            end if;
+        end if;
+    end process;
 end architecture;
