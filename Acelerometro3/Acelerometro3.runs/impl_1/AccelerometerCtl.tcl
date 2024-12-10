@@ -1,5 +1,5 @@
 namespace eval ::optrace {
-  variable script "C:/Users/carlo/Documents/Lab - SED/Acelerometro3/Acelerometro3.runs/impl_1/AccelerometerCtl.tcl"
+  variable script "C:/Users/carlo/Desktop/Trabajo-SED-FPGA/Acelerometro3/Acelerometro3.runs/impl_1/AccelerometerCtl.tcl"
   variable category "vivado_impl"
 }
 
@@ -97,9 +97,6 @@ proc step_failed { step } {
 OPTRACE "impl_1" END { }
 }
 
-set_msg_config -id {Common 17-41} -limit 10000000
-set_msg_config -id {Synth 8-256} -limit 10000
-set_msg_config -id {Synth 8-638} -limit 10000
 
 OPTRACE "impl_1" START { ROLLUP_1 }
 OPTRACE "Phase: Init Design" START { ROLLUP_AUTO }
@@ -107,10 +104,7 @@ start_step init_design
 set ACTIVE_STEP init_design
 set rc [catch {
   create_msg_db init_design.pb
-  set_param tcl.statsThreshold 360
   set_param chipscope.maxJobs 4
-  set_param checkpoint.writeSynthRtdsInDcp 1
-  set_param synth.incrementalSynthesisCache C:/Users/carlo/AppData/Roaming/Xilinx/Vivado/.Xil/Vivado-4088-DESKTOP-TUDSMRQ/incrSyn
   set_param runs.launchOptions { -jobs 8  }
 OPTRACE "create in-memory project" START { }
   create_project -in_memory -part xc7a100tcsg324-1
@@ -119,14 +113,13 @@ OPTRACE "create in-memory project" START { }
   set_param project.singleFileAddWarning.threshold 0
 OPTRACE "create in-memory project" END { }
 OPTRACE "set parameters" START { }
-  set_property webtalk.parent_dir {C:/Users/carlo/Documents/Lab - SED/Acelerometro3/Acelerometro3.cache/wt} [current_project]
-  set_property parent.project_path {C:/Users/carlo/Documents/Lab - SED/Acelerometro3/Acelerometro3.xpr} [current_project]
-  set_property ip_output_repo {{C:/Users/carlo/Documents/Lab - SED/Acelerometro3/Acelerometro3.cache/ip}} [current_project]
+  set_property webtalk.parent_dir C:/Users/carlo/Desktop/Trabajo-SED-FPGA/Acelerometro3/Acelerometro3.cache/wt [current_project]
+  set_property parent.project_path C:/Users/carlo/Desktop/Trabajo-SED-FPGA/Acelerometro3/Acelerometro3.xpr [current_project]
+  set_property ip_output_repo C:/Users/carlo/Desktop/Trabajo-SED-FPGA/Acelerometro3/Acelerometro3.cache/ip [current_project]
   set_property ip_cache_permissions {read write} [current_project]
 OPTRACE "set parameters" END { }
 OPTRACE "add files" START { }
-  add_files -quiet {{C:/Users/carlo/Documents/Lab - SED/Acelerometro3/Acelerometro3.runs/synth_1/AccelerometerCtl.dcp}}
-  read_ip -quiet {{c:/Users/carlo/Documents/Lab - SED/Acelerometro3/Acelerometro3.srcs/sources_1/ip/square_root/square_root.xci}}
+  add_files -quiet C:/Users/carlo/Desktop/Trabajo-SED-FPGA/Acelerometro3/Acelerometro3.runs/synth_1/AccelerometerCtl.dcp
 OPTRACE "read constraints: implementation" START { }
   read_xdc C:/Users/carlo/Downloads/Nexys-4-DDR-OOB-2016.4-2/Nexys-4-DDR-OOB/src/constraints/Nexys4DDR_C.xdc
 OPTRACE "read constraints: implementation" END { }

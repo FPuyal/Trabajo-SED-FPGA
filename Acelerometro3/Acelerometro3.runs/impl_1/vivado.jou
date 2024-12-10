@@ -3,12 +3,12 @@
 # SW Build 5076996 on Wed May 22 18:37:14 MDT 2024
 # IP Build 5075265 on Wed May 22 21:45:21 MDT 2024
 # SharedData Build 5076995 on Wed May 22 18:29:18 MDT 2024
-# Start of session at: Tue Dec  3 12:59:06 2024
-# Process ID: 13760
-# Current directory: C:/Users/carlo/Documents/Lab - SED/Acelerometro3/Acelerometro3.runs/impl_1
+# Start of session at: Wed Dec  4 20:13:56 2024
+# Process ID: 9872
+# Current directory: C:/Users/carlo/Desktop/Trabajo-SED-FPGA/Acelerometro3/Acelerometro3.runs/impl_1
 # Command line: vivado.exe -log AccelerometerCtl.vdi -applog -product Vivado -messageDb vivado.pb -mode batch -source AccelerometerCtl.tcl -notrace
-# Log file: C:/Users/carlo/Documents/Lab - SED/Acelerometro3/Acelerometro3.runs/impl_1/AccelerometerCtl.vdi
-# Journal file: C:/Users/carlo/Documents/Lab - SED/Acelerometro3/Acelerometro3.runs/impl_1\vivado.jou
+# Log file: C:/Users/carlo/Desktop/Trabajo-SED-FPGA/Acelerometro3/Acelerometro3.runs/impl_1/AccelerometerCtl.vdi
+# Journal file: C:/Users/carlo/Desktop/Trabajo-SED-FPGA/Acelerometro3/Acelerometro3.runs/impl_1\vivado.jou
 # Running On        :DESKTOP-TUDSMRQ
 # Platform          :Windows Server 2016 or Windows 10
 # Operating System  :22631
@@ -17,8 +17,8 @@
 # CPU Physical cores:8
 # CPU Logical cores :16
 # Host memory       :7883 MB
-# Swap memory       :6710 MB
-# Total Virtual     :14594 MB
-# Available Virtual :4037 MB
+# Swap memory       :7247 MB
+# Total Virtual     :15130 MB
+# Available Virtual :5552 MB
 #-----------------------------------------------------------
 source AccelerometerCtl.tcl -notrace

@@ -25,7 +25,7 @@ else
 fi
 export LD_LIBRARY_PATH
 
-HD_PWD='C:/Users/carlo/Documents/Lab - SED/Acelerometro3/Acelerometro3.runs/synth_1'
+HD_PWD='C:/Users/carlo/Desktop/Trabajo-SED-FPGA/Acelerometro3/Acelerometro3.runs/synth_1'
 cd "$HD_PWD"
 
 HD_LOG=runme.log
