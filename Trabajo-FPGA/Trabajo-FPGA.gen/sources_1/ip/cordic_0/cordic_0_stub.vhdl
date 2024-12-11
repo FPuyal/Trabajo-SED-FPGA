@@ -2,7 +2,7 @@
 -- Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2024.1 (win64) Build 5076996 Wed May 22 18:37:14 MDT 2024
--- Date        : Tue Dec 10 12:51:43 2024
+-- Date        : Wed Dec 11 11:24:30 2024
 -- Host        : DESKTOP-TUDSMRQ running 64-bit major release  (build 9200)
 -- Command     : write_vhdl -force -mode synth_stub
 --               c:/Users/carlo/Desktop/Trabajo-SED-FPGA/Trabajo-FPGA/Trabajo-FPGA.gen/sources_1/ip/cordic_0/cordic_0_stub.vhdl

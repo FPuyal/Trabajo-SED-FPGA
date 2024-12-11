@@ -3,8 +3,8 @@
 # SW Build 5076996 on Wed May 22 18:37:14 MDT 2024
 # IP Build 5075265 on Wed May 22 21:45:21 MDT 2024
 # SharedData Build 5076995 on Wed May 22 18:29:18 MDT 2024
-# Start of session at: Tue Dec 10 12:50:26 2024
-# Process ID: 20216
+# Start of session at: Wed Dec 11 11:23:04 2024
+# Process ID: 14728
 # Current directory: C:/Users/carlo/Desktop/Trabajo-SED-FPGA/Trabajo-FPGA/Trabajo-FPGA.runs/cordic_0_synth_1
 # Command line: vivado.exe -log cordic_0.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source cordic_0.tcl
 # Log file: C:/Users/carlo/Desktop/Trabajo-SED-FPGA/Trabajo-FPGA/Trabajo-FPGA.runs/cordic_0_synth_1/cordic_0.vds
@@ -19,6 +19,6 @@
 # Host memory       :7883 MB
 # Swap memory       :7247 MB
 # Total Virtual     :15130 MB
-# Available Virtual :3851 MB
+# Available Virtual :4328 MB
 #-----------------------------------------------------------
 source cordic_0.tcl -notrace

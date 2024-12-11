@@ -53,18 +53,18 @@ begin
     stim_proc: process
     begin
         -- Caso 1: X = 0, Y = 1 (ángulo = 90° o π/2 en radianes)
-        X <= "0000000000000000"; -- 0
-        Y <= "0000000000000001"; -- 1
+        X <= "0100000000000000"; -- 2
+        Y <= "0100000000000000"; -- 2
         wait for 200 ns;
 
         -- Caso 2: X = 1, Y = 1 (ángulo = 45° o π/4 en radianes)
-        X <= "0000000000000001"; -- 1
-        Y <= "0000000000000001"; -- 1
+        X <= "0000000000000000"; -- 1
+        Y <= "0111111111111111"; -- 1
         wait for 200 ns;
 
         -- Caso 3: X = 10, Y = 5 (ángulo cercano a arctan(0.5))
-        X <= "0000000000001010"; -- 10
-        Y <= "0000000000000101"; -- 5
+        X <= "0111111111111111"; -- 10
+        Y <= "0000000000000000"; -- 5
         wait for 200 ns;
 
         -- Caso 4: X = -1, Y = 1 (ángulo en el segundo cuadrante, cercano a 135° o 3π/4 en radianes)

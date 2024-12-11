@@ -149,7 +149,7 @@ BEGIN
       C_PHASE_FORMAT => 0,
       C_PIPELINE_MODE => 0,
       C_PRECISION => 0,
-      C_ROUND_MODE => 0,
+      C_ROUND_MODE => 3,
       C_SCALE_COMP => 0,
       C_THROTTLE_SCHEME => 3,
       C_TLAST_RESOLUTION => 0,
