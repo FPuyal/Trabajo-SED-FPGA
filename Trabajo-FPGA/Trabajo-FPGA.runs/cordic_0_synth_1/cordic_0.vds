@@ -1,28 +1,27 @@
 #-----------------------------------------------------------
-# Vivado v2024.1 (64-bit)
-# SW Build 5076996 on Wed May 22 18:37:14 MDT 2024
-# IP Build 5075265 on Wed May 22 21:45:21 MDT 2024
-# SharedData Build 5076995 on Wed May 22 18:29:18 MDT 2024
-# Start of session at: Wed Dec 11 11:23:04 2024
-# Process ID: 14728
-# Current directory: C:/Users/carlo/Desktop/Trabajo-SED-FPGA/Trabajo-FPGA/Trabajo-FPGA.runs/cordic_0_synth_1
-# Command line: vivado.exe -log cordic_0.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source cordic_0.tcl
-# Log file: C:/Users/carlo/Desktop/Trabajo-SED-FPGA/Trabajo-FPGA/Trabajo-FPGA.runs/cordic_0_synth_1/cordic_0.vds
-# Journal file: C:/Users/carlo/Desktop/Trabajo-SED-FPGA/Trabajo-FPGA/Trabajo-FPGA.runs/cordic_0_synth_1\vivado.jou
-# Running On        :DESKTOP-TUDSMRQ
-# Platform          :Windows Server 2016 or Windows 10
-# Operating System  :22631
-# Processor Detail  :AMD Ryzen 7 5700U with Radeon Graphics         
-# CPU Frequency     :1797 MHz
-# CPU Physical cores:8
-# CPU Logical cores :16
-# Host memory       :7883 MB
-# Swap memory       :7247 MB
-# Total Virtual     :15130 MB
-# Available Virtual :4328 MB
+# Vivado v2024.2 (64-bit)
+# SW Build 5239630 on Fri Nov 08 22:35:27 MST 2024
+# IP Build 5239520 on Sun Nov 10 16:12:51 MST 2024
+# SharedData Build 5239561 on Fri Nov 08 14:39:27 MST 2024
+# Start of session at: Wed Dec 11 18:32:09 2024
+# Process ID         : 97672
+# Current directory  : C:/Users/skstu/Documents/GitHub/Trabajo-SED-FPGA/Trabajo-FPGA/Trabajo-FPGA.runs/cordic_0_synth_1
+# Command line       : vivado.exe -log cordic_0.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source cordic_0.tcl
+# Log file           : C:/Users/skstu/Documents/GitHub/Trabajo-SED-FPGA/Trabajo-FPGA/Trabajo-FPGA.runs/cordic_0_synth_1/cordic_0.vds
+# Journal file       : C:/Users/skstu/Documents/GitHub/Trabajo-SED-FPGA/Trabajo-FPGA/Trabajo-FPGA.runs/cordic_0_synth_1\vivado.jou
+# Running On         : Saraa
+# Platform           : Windows Server 2016 or Windows 10
+# Operating System   : 22631
+# Processor Detail   : AMD Ryzen 7 7735HS with Radeon Graphics        
+# CPU Frequency      : 3194 MHz
+# CPU Physical cores : 8
+# CPU Logical cores  : 16
+# Host memory        : 16438 MB
+# Swap memory        : 12348 MB
+# Total Virtual      : 28786 MB
+# Available Virtual  : 8612 MB
 #-----------------------------------------------------------
 source cordic_0.tcl -notrace
-create_project: Time (s): cpu = 00:00:06 ; elapsed = 00:00:10 . Memory (MB): peak = 538.875 ; gain = 234.941
 INFO: [IP_Flow 19-6924] IPCACHE: Running cache check for IP inst: cordic_0
 Command: synth_design -top cordic_0 -part xc7a100tcsg324-1 -incremental_mode off -mode out_of_context
 Starting synth_design
@@ -31,11 +30,11 @@ INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a100
 INFO: [Designutils 20-5008] Incremental synthesis strategy off
 INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
 INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
-INFO: [Synth 8-7075] Helper process launched with PID 17864
+INFO: [Synth 8-7075] Helper process launched with PID 96480
 ---------------------------------------------------------------------------------
-Starting Synthesize : Time (s): cpu = 00:00:09 ; elapsed = 00:00:10 . Memory (MB): peak = 1007.668 ; gain = 450.230
+Starting Synthesize : Time (s): cpu = 00:00:08 ; elapsed = 00:00:12 . Memory (MB): peak = 780.801 ; gain = 474.191
 ---------------------------------------------------------------------------------
-INFO: [Synth 8-638] synthesizing module 'cordic_0' [c:/Users/carlo/Desktop/Trabajo-SED-FPGA/Trabajo-FPGA/Trabajo-FPGA.gen/sources_1/ip/cordic_0/synth/cordic_0.vhd:68]
+INFO: [Synth 8-638] synthesizing module 'cordic_0' [c:/Users/skstu/Documents/GitHub/Trabajo-SED-FPGA/Trabajo-FPGA/Trabajo-FPGA.gen/sources_1/ip/cordic_0/synth/cordic_0.vhd:68]
 	Parameter C_ARCHITECTURE bound to: 2 - type: integer 
 	Parameter C_CORDIC_FUNCTION bound to: 3 - type: integer 
 	Parameter C_COARSE_ROTATE bound to: 1 - type: integer 
@@ -66,40 +65,40 @@ INFO: [Synth 8-638] synthesizing module 'cordic_0' [c:/Users/carlo/Desktop/Traba
 	Parameter C_S_AXIS_CARTESIAN_TUSER_WIDTH bound to: 1 - type: integer 
 	Parameter C_M_AXIS_DOUT_TDATA_WIDTH bound to: 16 - type: integer 
 	Parameter C_M_AXIS_DOUT_TUSER_WIDTH bound to: 1 - type: integer 
-INFO: [Synth 8-3491] module 'cordic_v6_0_22' declared at 'c:/Users/carlo/Desktop/Trabajo-SED-FPGA/Trabajo-FPGA/Trabajo-FPGA.gen/sources_1/ip/cordic_0/hdl/cordic_v6_0_vh_rfs.vhd:10026' bound to instance 'U0' of component 'cordic_v6_0_22' [c:/Users/carlo/Desktop/Trabajo-SED-FPGA/Trabajo-FPGA/Trabajo-FPGA.gen/sources_1/ip/cordic_0/synth/cordic_0.vhd:141]
-INFO: [Synth 8-256] done synthesizing module 'cordic_0' (0#1) [c:/Users/carlo/Desktop/Trabajo-SED-FPGA/Trabajo-FPGA/Trabajo-FPGA.gen/sources_1/ip/cordic_0/synth/cordic_0.vhd:68]
+INFO: [Synth 8-3491] module 'cordic_v6_0_23' declared at 'c:/Users/skstu/Documents/GitHub/Trabajo-SED-FPGA/Trabajo-FPGA/Trabajo-FPGA.gen/sources_1/ip/cordic_0/hdl/cordic_v6_0_vh_rfs.vhd:10026' bound to instance 'U0' of component 'cordic_v6_0_23' [c:/Users/skstu/Documents/GitHub/Trabajo-SED-FPGA/Trabajo-FPGA/Trabajo-FPGA.gen/sources_1/ip/cordic_0/synth/cordic_0.vhd:144]
+INFO: [Synth 8-256] done synthesizing module 'cordic_0' (0#1) [c:/Users/skstu/Documents/GitHub/Trabajo-SED-FPGA/Trabajo-FPGA/Trabajo-FPGA.gen/sources_1/ip/cordic_0/synth/cordic_0.vhd:68]
 WARNING: [Synth 8-7129] Port WE in module delay_bit is either unconnected or has no load
 WARNING: [Synth 8-7129] Port CE in module delay_bit is either unconnected or has no load
 WARNING: [Synth 8-7129] Port SCLR in module delay_bit is either unconnected or has no load
 WARNING: [Synth 8-7129] Port CLK in module delay_bit is either unconnected or has no load
-WARNING: [Synth 8-7129] Port clk in module c_addsub_v12_0_18_lut6_legacy__parameterized5 is either unconnected or has no load
-WARNING: [Synth 8-7129] Port add in module c_addsub_v12_0_18_lut6_legacy__parameterized5 is either unconnected or has no load
-WARNING: [Synth 8-7129] Port ce in module c_addsub_v12_0_18_lut6_legacy__parameterized5 is either unconnected or has no load
-WARNING: [Synth 8-7129] Port bypass in module c_addsub_v12_0_18_lut6_legacy__parameterized5 is either unconnected or has no load
-WARNING: [Synth 8-7129] Port aclr in module c_addsub_v12_0_18_lut6_legacy__parameterized5 is either unconnected or has no load
-WARNING: [Synth 8-7129] Port aset in module c_addsub_v12_0_18_lut6_legacy__parameterized5 is either unconnected or has no load
-WARNING: [Synth 8-7129] Port ainit in module c_addsub_v12_0_18_lut6_legacy__parameterized5 is either unconnected or has no load
-WARNING: [Synth 8-7129] Port sclr in module c_addsub_v12_0_18_lut6_legacy__parameterized5 is either unconnected or has no load
-WARNING: [Synth 8-7129] Port sset in module c_addsub_v12_0_18_lut6_legacy__parameterized5 is either unconnected or has no load
-WARNING: [Synth 8-7129] Port sinit in module c_addsub_v12_0_18_lut6_legacy__parameterized5 is either unconnected or has no load
-WARNING: [Synth 8-7129] Port b_in in module c_addsub_v12_0_18_legacy__parameterized5 is either unconnected or has no load
-WARNING: [Synth 8-7129] Port a_signed in module c_addsub_v12_0_18_legacy__parameterized5 is either unconnected or has no load
-WARNING: [Synth 8-7129] Port b_signed in module c_addsub_v12_0_18_legacy__parameterized5 is either unconnected or has no load
-WARNING: [Synth 8-7129] Port clk in module c_addsub_v12_0_18_lut6_legacy__parameterized3 is either unconnected or has no load
-WARNING: [Synth 8-7129] Port c_in in module c_addsub_v12_0_18_lut6_legacy__parameterized3 is either unconnected or has no load
-WARNING: [Synth 8-7129] Port ce in module c_addsub_v12_0_18_lut6_legacy__parameterized3 is either unconnected or has no load
-WARNING: [Synth 8-7129] Port bypass in module c_addsub_v12_0_18_lut6_legacy__parameterized3 is either unconnected or has no load
-WARNING: [Synth 8-7129] Port aclr in module c_addsub_v12_0_18_lut6_legacy__parameterized3 is either unconnected or has no load
-WARNING: [Synth 8-7129] Port aset in module c_addsub_v12_0_18_lut6_legacy__parameterized3 is either unconnected or has no load
-WARNING: [Synth 8-7129] Port ainit in module c_addsub_v12_0_18_lut6_legacy__parameterized3 is either unconnected or has no load
-WARNING: [Synth 8-7129] Port sclr in module c_addsub_v12_0_18_lut6_legacy__parameterized3 is either unconnected or has no load
-WARNING: [Synth 8-7129] Port sset in module c_addsub_v12_0_18_lut6_legacy__parameterized3 is either unconnected or has no load
-WARNING: [Synth 8-7129] Port sinit in module c_addsub_v12_0_18_lut6_legacy__parameterized3 is either unconnected or has no load
-WARNING: [Synth 8-7129] Port c_in in module c_addsub_v12_0_18_legacy__parameterized3 is either unconnected or has no load
-WARNING: [Synth 8-7129] Port b_in in module c_addsub_v12_0_18_legacy__parameterized3 is either unconnected or has no load
-WARNING: [Synth 8-7129] Port a_signed in module c_addsub_v12_0_18_legacy__parameterized3 is either unconnected or has no load
-WARNING: [Synth 8-7129] Port b_signed in module c_addsub_v12_0_18_legacy__parameterized3 is either unconnected or has no load
-WARNING: [Synth 8-7129] Port C_IN in module c_addsub_v12_0_18_viv__parameterized3 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port clk in module c_addsub_v12_0_19_lut6_legacy__parameterized5 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port add in module c_addsub_v12_0_19_lut6_legacy__parameterized5 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port ce in module c_addsub_v12_0_19_lut6_legacy__parameterized5 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port bypass in module c_addsub_v12_0_19_lut6_legacy__parameterized5 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port aclr in module c_addsub_v12_0_19_lut6_legacy__parameterized5 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port aset in module c_addsub_v12_0_19_lut6_legacy__parameterized5 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port ainit in module c_addsub_v12_0_19_lut6_legacy__parameterized5 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port sclr in module c_addsub_v12_0_19_lut6_legacy__parameterized5 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port sset in module c_addsub_v12_0_19_lut6_legacy__parameterized5 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port sinit in module c_addsub_v12_0_19_lut6_legacy__parameterized5 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port b_in in module c_addsub_v12_0_19_legacy__parameterized5 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port a_signed in module c_addsub_v12_0_19_legacy__parameterized5 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port b_signed in module c_addsub_v12_0_19_legacy__parameterized5 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port clk in module c_addsub_v12_0_19_lut6_legacy__parameterized3 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port c_in in module c_addsub_v12_0_19_lut6_legacy__parameterized3 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port ce in module c_addsub_v12_0_19_lut6_legacy__parameterized3 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port bypass in module c_addsub_v12_0_19_lut6_legacy__parameterized3 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port aclr in module c_addsub_v12_0_19_lut6_legacy__parameterized3 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port aset in module c_addsub_v12_0_19_lut6_legacy__parameterized3 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port ainit in module c_addsub_v12_0_19_lut6_legacy__parameterized3 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port sclr in module c_addsub_v12_0_19_lut6_legacy__parameterized3 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port sset in module c_addsub_v12_0_19_lut6_legacy__parameterized3 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port sinit in module c_addsub_v12_0_19_lut6_legacy__parameterized3 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port c_in in module c_addsub_v12_0_19_legacy__parameterized3 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port b_in in module c_addsub_v12_0_19_legacy__parameterized3 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port a_signed in module c_addsub_v12_0_19_legacy__parameterized3 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port b_signed in module c_addsub_v12_0_19_legacy__parameterized3 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port C_IN in module c_addsub_v12_0_19_viv__parameterized3 is either unconnected or has no load
 WARNING: [Synth 8-7129] Port WE in module delay is either unconnected or has no load
 WARNING: [Synth 8-7129] Port CE in module delay is either unconnected or has no load
 WARNING: [Synth 8-7129] Port SCLR in module delay is either unconnected or has no load
@@ -155,36 +154,36 @@ WARNING: [Synth 8-7129] Port WE in module delay__parameterized2 is either unconn
 WARNING: [Synth 8-7129] Port CE in module delay__parameterized2 is either unconnected or has no load
 WARNING: [Synth 8-7129] Port SCLR in module delay__parameterized2 is either unconnected or has no load
 WARNING: [Synth 8-7129] Port CLK in module delay__parameterized2 is either unconnected or has no load
-WARNING: [Synth 8-7129] Port clk in module c_addsub_v12_0_18_lut6_legacy__parameterized1 is either unconnected or has no load
-WARNING: [Synth 8-7129] Port add in module c_addsub_v12_0_18_lut6_legacy__parameterized1 is either unconnected or has no load
-WARNING: [Synth 8-7129] Port c_in in module c_addsub_v12_0_18_lut6_legacy__parameterized1 is either unconnected or has no load
-WARNING: [Synth 8-7129] Port ce in module c_addsub_v12_0_18_lut6_legacy__parameterized1 is either unconnected or has no load
-WARNING: [Synth 8-7129] Port bypass in module c_addsub_v12_0_18_lut6_legacy__parameterized1 is either unconnected or has no load
-WARNING: [Synth 8-7129] Port aclr in module c_addsub_v12_0_18_lut6_legacy__parameterized1 is either unconnected or has no load
-WARNING: [Synth 8-7129] Port aset in module c_addsub_v12_0_18_lut6_legacy__parameterized1 is either unconnected or has no load
-WARNING: [Synth 8-7129] Port ainit in module c_addsub_v12_0_18_lut6_legacy__parameterized1 is either unconnected or has no load
-WARNING: [Synth 8-7129] Port sclr in module c_addsub_v12_0_18_lut6_legacy__parameterized1 is either unconnected or has no load
-WARNING: [Synth 8-7129] Port sset in module c_addsub_v12_0_18_lut6_legacy__parameterized1 is either unconnected or has no load
-WARNING: [Synth 8-7129] Port sinit in module c_addsub_v12_0_18_lut6_legacy__parameterized1 is either unconnected or has no load
-WARNING: [Synth 8-7129] Port c_in in module c_addsub_v12_0_18_legacy__parameterized1 is either unconnected or has no load
-WARNING: [Synth 8-7129] Port b_in in module c_addsub_v12_0_18_legacy__parameterized1 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port clk in module c_addsub_v12_0_19_lut6_legacy__parameterized1 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port add in module c_addsub_v12_0_19_lut6_legacy__parameterized1 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port c_in in module c_addsub_v12_0_19_lut6_legacy__parameterized1 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port ce in module c_addsub_v12_0_19_lut6_legacy__parameterized1 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port bypass in module c_addsub_v12_0_19_lut6_legacy__parameterized1 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port aclr in module c_addsub_v12_0_19_lut6_legacy__parameterized1 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port aset in module c_addsub_v12_0_19_lut6_legacy__parameterized1 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port ainit in module c_addsub_v12_0_19_lut6_legacy__parameterized1 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port sclr in module c_addsub_v12_0_19_lut6_legacy__parameterized1 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port sset in module c_addsub_v12_0_19_lut6_legacy__parameterized1 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port sinit in module c_addsub_v12_0_19_lut6_legacy__parameterized1 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port c_in in module c_addsub_v12_0_19_legacy__parameterized1 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port b_in in module c_addsub_v12_0_19_legacy__parameterized1 is either unconnected or has no load
 INFO: [Common 17-14] Message 'Synth 8-7129' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 ---------------------------------------------------------------------------------
-Finished Synthesize : Time (s): cpu = 00:00:33 ; elapsed = 00:00:36 . Memory (MB): peak = 1523.418 ; gain = 965.980
+Finished Synthesize : Time (s): cpu = 00:00:32 ; elapsed = 00:00:43 . Memory (MB): peak = 1293.047 ; gain = 986.438
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:34 ; elapsed = 00:00:36 . Memory (MB): peak = 1523.418 ; gain = 965.980
+Finished Constraint Validation : Time (s): cpu = 00:00:32 ; elapsed = 00:00:44 . Memory (MB): peak = 1293.047 ; gain = 986.438
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7a100tcsg324-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:34 ; elapsed = 00:00:36 . Memory (MB): peak = 1523.418 ; gain = 965.980
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:32 ; elapsed = 00:00:44 . Memory (MB): peak = 1293.047 ; gain = 986.438
 ---------------------------------------------------------------------------------
 INFO: [Device 21-403] Loading part xc7a100tcsg324-1
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:34 ; elapsed = 00:00:37 . Memory (MB): peak = 1523.418 ; gain = 965.980
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:33 ; elapsed = 00:00:45 . Memory (MB): peak = 1293.047 ; gain = 986.438
 ---------------------------------------------------------------------------------
 No constraint files found.
 ---------------------------------------------------------------------------------
@@ -196,7 +195,6 @@ Finished RTL Component Statistics
 ---------------------------------------------------------------------------------
 Start Part Resource Summary
 ---------------------------------------------------------------------------------
-INFO: [Device 21-9227] Part: xc7a100tcsg324-1 does not have CEAM library.
 Part Resources:
 DSPs: 240 (col length:80)
 BRAMs: 270 (col length: RAMB18 80 RAMB36 40)
@@ -209,20 +207,20 @@ Start Cross Boundary and Area Optimization
 ---------------------------------------------------------------------------------
 WARNING: [Synth 8-7080] Parallel synthesis criteria is not met
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:39 ; elapsed = 00:00:47 . Memory (MB): peak = 1523.418 ; gain = 965.980
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:37 ; elapsed = 00:00:53 . Memory (MB): peak = 1293.047 ; gain = 986.438
 ---------------------------------------------------------------------------------
 No constraint files found.
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:39 ; elapsed = 00:00:47 . Memory (MB): peak = 1523.418 ; gain = 965.980
+Finished Timing Optimization : Time (s): cpu = 00:00:37 ; elapsed = 00:00:53 . Memory (MB): peak = 1293.047 ; gain = 986.438
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:39 ; elapsed = 00:00:47 . Memory (MB): peak = 1523.418 ; gain = 965.980
+Finished Technology Mapping : Time (s): cpu = 00:00:38 ; elapsed = 00:00:53 . Memory (MB): peak = 1293.047 ; gain = 986.438
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start IO Insertion
@@ -240,37 +238,37 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:46 ; elapsed = 00:00:54 . Memory (MB): peak = 1523.418 ; gain = 965.980
+Finished IO Insertion : Time (s): cpu = 00:00:42 ; elapsed = 00:01:00 . Memory (MB): peak = 1301.910 ; gain = 995.301
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:46 ; elapsed = 00:00:54 . Memory (MB): peak = 1523.418 ; gain = 965.980
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:42 ; elapsed = 00:01:00 . Memory (MB): peak = 1301.910 ; gain = 995.301
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:46 ; elapsed = 00:00:54 . Memory (MB): peak = 1523.418 ; gain = 965.980
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:42 ; elapsed = 00:01:00 . Memory (MB): peak = 1301.910 ; gain = 995.301
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:46 ; elapsed = 00:00:54 . Memory (MB): peak = 1523.418 ; gain = 965.980
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:42 ; elapsed = 00:01:00 . Memory (MB): peak = 1301.910 ; gain = 995.301
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:46 ; elapsed = 00:00:54 . Memory (MB): peak = 1523.418 ; gain = 965.980
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:42 ; elapsed = 00:01:00 . Memory (MB): peak = 1301.910 ; gain = 995.301
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:46 ; elapsed = 00:00:54 . Memory (MB): peak = 1523.418 ; gain = 965.980
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:43 ; elapsed = 00:01:00 . Memory (MB): peak = 1301.910 ; gain = 995.301
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -294,34 +292,34 @@ Report Cell Usage:
 |6     |XORCY |   826|
 +------+------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:46 ; elapsed = 00:00:55 . Memory (MB): peak = 1523.418 ; gain = 965.980
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:43 ; elapsed = 00:01:00 . Memory (MB): peak = 1301.910 ; gain = 995.301
 ---------------------------------------------------------------------------------
 Synthesis finished with 0 errors, 0 critical warnings and 514 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:46 ; elapsed = 00:00:55 . Memory (MB): peak = 1523.418 ; gain = 965.980
-Synthesis Optimization Complete : Time (s): cpu = 00:00:46 ; elapsed = 00:00:55 . Memory (MB): peak = 1523.418 ; gain = 965.980
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:43 ; elapsed = 00:01:00 . Memory (MB): peak = 1301.910 ; gain = 995.301
+Synthesis Optimization Complete : Time (s): cpu = 00:00:43 ; elapsed = 00:01:00 . Memory (MB): peak = 1301.910 ; gain = 995.301
 INFO: [Project 1-571] Translating synthesized netlist
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.074 . Memory (MB): peak = 1523.418 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.145 . Memory (MB): peak = 1317.914 ; gain = 0.000
 INFO: [Netlist 29-17] Analyzing 1683 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.003 . Memory (MB): peak = 1523.418 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.002 . Memory (MB): peak = 1434.734 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
   A total of 227 instances were transformed.
   (MUXCY,XORCY) => CARRY4: 227 instances
 
-Synth Design complete | Checksum: 699bd431
+Synth Design complete | Checksum: 4ee6b1fc
 INFO: [Common 17-83] Releasing license: Synthesis
-19 Infos, 101 Warnings, 0 Critical Warnings and 0 Errors encountered.
+18 Infos, 101 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:49 ; elapsed = 00:00:59 . Memory (MB): peak = 1523.418 ; gain = 971.879
+synth_design: Time (s): cpu = 00:00:46 ; elapsed = 00:01:05 . Memory (MB): peak = 1434.734 ; gain = 1134.207
 INFO: [Timing 38-35] Done setting XDC timing constraints.
-Write ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.024 . Memory (MB): peak = 1767.480 ; gain = 8.953
-INFO: [Common 17-1381] The checkpoint 'C:/Users/carlo/Desktop/Trabajo-SED-FPGA/Trabajo-FPGA/Trabajo-FPGA.runs/cordic_0_synth_1/cordic_0.dcp' has been generated.
-write_checkpoint: Time (s): cpu = 00:00:08 ; elapsed = 00:00:10 . Memory (MB): peak = 1767.480 ; gain = 244.062
-INFO: [Coretcl 2-1648] Added synthesis output to IP cache for IP cordic_0, cache-ID = eb557425943a3432
+Write ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.009 . Memory (MB): peak = 1737.031 ; gain = 9.012
+INFO: [Common 17-1381] The checkpoint 'C:/Users/skstu/Documents/GitHub/Trabajo-SED-FPGA/Trabajo-FPGA/Trabajo-FPGA.runs/cordic_0_synth_1/cordic_0.dcp' has been generated.
+write_checkpoint: Time (s): cpu = 00:00:07 ; elapsed = 00:00:11 . Memory (MB): peak = 1737.031 ; gain = 302.297
+INFO: [Coretcl 2-1648] Added synthesis output to IP cache for IP cordic_0, cache-ID = d61d83a352aed01b
 INFO: [Coretcl 2-1174] Renamed 273 cell refs.
-Write ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.013 . Memory (MB): peak = 1769.582 ; gain = 2.102
-INFO: [Common 17-1381] The checkpoint 'C:/Users/carlo/Desktop/Trabajo-SED-FPGA/Trabajo-FPGA/Trabajo-FPGA.runs/cordic_0_synth_1/cordic_0.dcp' has been generated.
+Write ShapeDB Complete: Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.012 . Memory (MB): peak = 1739.164 ; gain = 2.133
+INFO: [Common 17-1381] The checkpoint 'C:/Users/skstu/Documents/GitHub/Trabajo-SED-FPGA/Trabajo-FPGA/Trabajo-FPGA.runs/cordic_0_synth_1/cordic_0.dcp' has been generated.
 INFO: [Vivado 12-24828] Executing command : report_utilization -file cordic_0_utilization_synth.rpt -pb cordic_0_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Wed Dec 11 11:24:32 2024...
+INFO: [Common 17-206] Exiting Vivado at Wed Dec 11 18:33:35 2024...

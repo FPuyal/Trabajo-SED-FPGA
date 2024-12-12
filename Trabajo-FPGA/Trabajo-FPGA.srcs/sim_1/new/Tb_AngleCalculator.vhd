@@ -52,34 +52,34 @@ begin
     -- Proceso para generar estímulos
     stim_proc: process
     begin
-        -- Caso 1: X = 0, Y = 1 (ángulo = 90° o π/2 en radianes)
-        X <= "0100000000000000"; -- 2
-        Y <= "0100000000000000"; -- 2
+        -- Caso 1: X = 0.5, Y = 0.5 (ángulo = 45° o π/4 en radianes)
+        X <= "0010000000000000"; -- 0.5 en formato Fix16_14
+        Y <= "0010000000000000"; -- 0.5 en formato Fix16_14
         wait for 200 ns;
 
-        -- Caso 2: X = 1, Y = 1 (ángulo = 45° o π/4 en radianes)
-        X <= "0000000000000000"; -- 1
-        Y <= "0111111111111111"; -- 1
+        -- Caso 2: X = -0.5, Y = 0.5 (ángulo en el segundo cuadrante, cercano a 135° o 3π/4 en radianes)
+        X <= "1110000000000000"; -- -0.5 en formato Fix16_14
+        Y <= "0010000000000000"; -- 0.5 en formato Fix16_14
         wait for 200 ns;
 
-        -- Caso 3: X = 10, Y = 5 (ángulo cercano a arctan(0.5))
-        X <= "0111111111111111"; -- 10
-        Y <= "0000000000000000"; -- 5
+        -- Caso 3: X = 0.5, Y = -0.5 (ángulo en el cuarto cuadrante, cercano a -45° o -π/4 en radianes)
+        X <= "0010000000000000"; -- 0.5 en formato Fix16_14
+        Y <= "1110000000000000"; -- -0.5 en formato Fix16_14
         wait for 200 ns;
 
-        -- Caso 4: X = -1, Y = 1 (ángulo en el segundo cuadrante, cercano a 135° o 3π/4 en radianes)
-        X <= "1111111111111111"; -- -1 (en complemento a dos)
-        Y <= "0000000000000001"; -- 1
+        -- Caso 4: X = -0.5, Y = -0.5 (ángulo en el tercer cuadrante, cercano a -135° o -3π/4 en radianes)
+        X <= "1110000000000000"; -- -0.5 en formato Fix16_14
+        Y <= "1110000000000000"; -- -0.5 en formato Fix16_14
         wait for 200 ns;
 
-        -- Caso 5: X = 32767, Y = 32767 (ángulo = 45° o π/4 en radianes)
-        X <= "0111111111111111"; -- 32767
-        Y <= "0111111111111111"; -- 32767
+        -- Caso 5: X = 1.0, Y = 0.0 (ángulo = 0° o 0 en radianes)
+        X <= "0100000000000000"; -- 1.0 en formato Fix16_14
+        Y <= "0000000000000000"; -- 0.0 en formato Fix16_14
         wait for 200 ns;
 
-        -- Caso 6: X = 1, Y = 0 (ángulo = 0° o 0 en radianes)
-        X <= "0000000000000001"; -- 1
-        Y <= "0000000000000000"; -- 0
+        -- Caso 6: X = 0.0, Y = 1.0 (ángulo = 90° o π/2 en radianes)
+        X <= "0000000000000000"; -- 0.0 en formato Fix16_14
+        Y <= "0100000000000000"; -- 1.0 en formato Fix16_14
         wait for 200 ns;
 
         -- Detener la simulación

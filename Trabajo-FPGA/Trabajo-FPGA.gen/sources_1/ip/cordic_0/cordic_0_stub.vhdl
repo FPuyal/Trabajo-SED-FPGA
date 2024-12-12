@@ -1,11 +1,11 @@
 -- Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
 -- Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
--- Tool Version: Vivado v.2024.1 (win64) Build 5076996 Wed May 22 18:37:14 MDT 2024
--- Date        : Wed Dec 11 11:24:30 2024
--- Host        : DESKTOP-TUDSMRQ running 64-bit major release  (build 9200)
+-- Tool Version: Vivado v.2024.2 (win64) Build 5239630 Fri Nov 08 22:35:27 MST 2024
+-- Date        : Wed Dec 11 18:33:33 2024
+-- Host        : Saraa running 64-bit major release  (build 9200)
 -- Command     : write_vhdl -force -mode synth_stub
---               c:/Users/carlo/Desktop/Trabajo-SED-FPGA/Trabajo-FPGA/Trabajo-FPGA.gen/sources_1/ip/cordic_0/cordic_0_stub.vhdl
+--               c:/Users/skstu/Documents/GitHub/Trabajo-SED-FPGA/Trabajo-FPGA/Trabajo-FPGA.gen/sources_1/ip/cordic_0/cordic_0_stub.vhdl
 -- Design      : cordic_0
 -- Purpose     : Stub declaration of top-level module interface
 -- Device      : xc7a100tcsg324-1
@@ -21,14 +21,31 @@ entity cordic_0 is
     m_axis_dout_tdata : out STD_LOGIC_VECTOR ( 15 downto 0 )
   );
 
+  attribute CHECK_LICENSE_TYPE : string;
+  attribute CHECK_LICENSE_TYPE of cordic_0 : entity is "cordic_0,cordic_v6_0_23,{}";
+  attribute core_generation_info : string;
+  attribute core_generation_info of cordic_0 : entity is "cordic_0,cordic_v6_0_23,{x_ipProduct=Vivado 2024.2,x_ipVendor=xilinx.com,x_ipLibrary=ip,x_ipName=cordic,x_ipVersion=6.0,x_ipCoreRevision=23,x_ipLanguage=VHDL,x_ipSimLanguage=VHDL,C_ARCHITECTURE=2,C_CORDIC_FUNCTION=3,C_COARSE_ROTATE=1,C_DATA_FORMAT=0,C_XDEVICEFAMILY=artix7,C_HAS_ACLKEN=0,C_HAS_ACLK=0,C_HAS_S_AXIS_CARTESIAN=1,C_HAS_S_AXIS_PHASE=0,C_HAS_ARESETN=0,C_INPUT_WIDTH=16,C_ITERATIONS=0,C_OUTPUT_WIDTH=16,C_PHASE_FORMAT=0,C_PIPELINE_MODE=0,C_PRECISION=0,C_ROUND_MODE=3,C_SCALE_COMP=0,C_THROTTLE_SCHEME=3,C_TLAST_RESOLUTION=0,C_HAS_S_AXIS_PHASE_TUSER=0,C_HAS_S_AXIS_PHASE_TLAST=0,C_S_AXIS_PHASE_TDATA_WIDTH=16,C_S_AXIS_PHASE_TUSER_WIDTH=1,C_HAS_S_AXIS_CARTESIAN_TUSER=0,C_HAS_S_AXIS_CARTESIAN_TLAST=0,C_S_AXIS_CARTESIAN_TDATA_WIDTH=32,C_S_AXIS_CARTESIAN_TUSER_WIDTH=1,C_M_AXIS_DOUT_TDATA_WIDTH=16,C_M_AXIS_DOUT_TUSER_WIDTH=1}";
+  attribute downgradeipidentifiedwarnings : string;
+  attribute downgradeipidentifiedwarnings of cordic_0 : entity is "yes";
 end cordic_0;
 
 architecture stub of cordic_0 is
-attribute syn_black_box : boolean;
-attribute black_box_pad_pin : string;
-attribute syn_black_box of stub : architecture is true;
-attribute black_box_pad_pin of stub : architecture is "s_axis_cartesian_tvalid,s_axis_cartesian_tdata[31:0],m_axis_dout_tvalid,m_axis_dout_tdata[15:0]";
-attribute x_core_info : string;
-attribute x_core_info of stub : architecture is "cordic_v6_0_22,Vivado 2024.1";
+  attribute syn_black_box : boolean;
+  attribute black_box_pad_pin : string;
+  attribute syn_black_box of stub : architecture is true;
+  attribute black_box_pad_pin of stub : architecture is "s_axis_cartesian_tvalid,s_axis_cartesian_tdata[31:0],m_axis_dout_tvalid,m_axis_dout_tdata[15:0]";
+  attribute x_interface_info : string;
+  attribute x_interface_info of s_axis_cartesian_tvalid : signal is "xilinx.com:interface:axis:1.0 S_AXIS_CARTESIAN TVALID";
+  attribute x_interface_mode : string;
+  attribute x_interface_mode of s_axis_cartesian_tvalid : signal is "slave S_AXIS_CARTESIAN";
+  attribute x_interface_parameter : string;
+  attribute x_interface_parameter of s_axis_cartesian_tvalid : signal is "XIL_INTERFACENAME S_AXIS_CARTESIAN, TDATA_NUM_BYTES 4, TDEST_WIDTH 0, TID_WIDTH 0, TUSER_WIDTH 0, HAS_TREADY 0, HAS_TSTRB 0, HAS_TKEEP 0, HAS_TLAST 0, FREQ_HZ 100000000, PHASE 0.0, LAYERED_METADATA undef, INSERT_VIP 0";
+  attribute x_interface_info of s_axis_cartesian_tdata : signal is "xilinx.com:interface:axis:1.0 S_AXIS_CARTESIAN TDATA";
+  attribute x_interface_info of m_axis_dout_tvalid : signal is "xilinx.com:interface:axis:1.0 M_AXIS_DOUT TVALID";
+  attribute x_interface_mode of m_axis_dout_tvalid : signal is "master M_AXIS_DOUT";
+  attribute x_interface_parameter of m_axis_dout_tvalid : signal is "XIL_INTERFACENAME M_AXIS_DOUT, TDATA_NUM_BYTES 2, TDEST_WIDTH 0, TID_WIDTH 0, TUSER_WIDTH 0, HAS_TREADY 0, HAS_TSTRB 0, HAS_TKEEP 0, HAS_TLAST 0, FREQ_HZ 100000000, PHASE 0.0, LAYERED_METADATA undef, INSERT_VIP 0";
+  attribute x_interface_info of m_axis_dout_tdata : signal is "xilinx.com:interface:axis:1.0 M_AXIS_DOUT TDATA";
+  attribute x_core_info : string;
+  attribute x_core_info of stub : architecture is "cordic_v6_0_23,Vivado 2024.2";
 begin
 end;

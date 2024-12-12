@@ -48,7 +48,7 @@ architecture Behavioral of AngleCalculator is
 begin
     -- Concatenar las entradas X y Y
     -- X ocupa los 16 bits más significativos, Y ocupa los 16 bits menos significativos
-    X_x <= X & Y;
+    X_x <= Y & X;
 
     -- Instanciar el módulo CORDIC
     cordic_inst : cordic_0
