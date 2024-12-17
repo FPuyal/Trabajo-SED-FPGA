@@ -15,13 +15,13 @@ end Top1;
 
 architecture Behavioral of Top1 is
 
-signal ANGULO : std_logic_vector(15 downto 16);
+signal ANGULO : std_logic_vector(15 downto 0);
 
 -- Signal for connecting AccelerometerCtl output to LEDs
 signal ACCEL_X : STD_LOGIC_VECTOR(11 downto 0);
 signal ACCEL_Z : std_logic_vector(11 downto 0);
-signal accel_x_aux : std_logic_vector (15 downto 0) := ACCEL_X(11) & ACCEL_X & ACCEL_X(11) & ACCEL_X(11) & ACCEL_X(11) & ACCEL_X(11);
-signal accel_z_aux : std_logic_vector (15 downto 0) := ACCEL_Z(11) & ACCEL_Z & ACCEL_Z(11) & ACCEL_Z(11) & ACCEL_Z(11) & ACCEL_Z(11);
+signal accel_x_aux : std_logic_vector (15 downto 0) := ACCEL_X(11) & ACCEL_X & ACCEL_X(11) & ACCEL_X(11) & ACCEL_X(11);
+signal accel_z_aux : std_logic_vector (15 downto 0) := ACCEL_Z(11) & ACCEL_Z & ACCEL_Z(11) & ACCEL_Z(11) & ACCEL_Z(11);
 
 -- Signal for inverted reset
 signal RESET_N : STD_LOGIC;
