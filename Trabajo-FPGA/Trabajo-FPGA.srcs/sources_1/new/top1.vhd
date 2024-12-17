@@ -15,6 +15,17 @@ end Top1;
 
 architecture Behavioral of Top1 is
 
+signal ANGULO : std_logic_vector(15 downto 16);
+
+-- Signal for connecting AccelerometerCtl output to LEDs
+signal ACCEL_X : STD_LOGIC_VECTOR(11 downto 0);
+signal ACCEL_Z : std_logic_vector(11 downto 0);
+signal accel_x_aux : std_logic_vector (15 downto 0) := ACCEL_X(11) & ACCEL_X & ACCEL_X(11) & ACCEL_X(11) & ACCEL_X(11) & ACCEL_X(11);
+signal accel_z_aux : std_logic_vector (15 downto 0) := ACCEL_Z(11) & ACCEL_Z & ACCEL_Z(11) & ACCEL_Z(11) & ACCEL_Z(11) & ACCEL_Z(11);
+
+-- Signal for inverted reset
+signal RESET_N : STD_LOGIC;
+
 -- Component declaration for AccelerometerCtl
 component AccelerometerCtl is
 generic 
@@ -39,11 +50,13 @@ port
 );
 end component;
 
--- Signal for connecting AccelerometerCtl output to LEDs
-signal ACCEL_X : STD_LOGIC_VECTOR(11 downto 0);
-
--- Signal for inverted reset
-signal RESET_N : STD_LOGIC;
+component AngleCalculator is
+port(
+    X: in STD_LOGIC_VECTOR (15 downto 0); -- Entrada X (16 bits)
+    Y: in STD_LOGIC_VECTOR (15 downto 0); -- Entrada Y (16 bits)
+    ANGULO: out STD_LOGIC_VECTOR (15 downto 0) -- Salida del ángulo (16 bits)    
+);
+end component;
 
 begin
 
@@ -67,8 +80,15 @@ port map(
     SS          => SS,
     ACCEL_X_OUT => ACCEL_X,
     ACCEL_Y_OUT => open,  -- Not used
-    ACCEL_Z_OUT => open,  -- Not used
+    ACCEL_Z_OUT => ACCEL_Z,
     ACCEL_TMP_OUT => open -- Not used
+);
+
+AngleCalc: AngleCalculator
+port map(
+    X      => accel_x_aux,  -- Conectar accel_x_aux a la entrada X
+    Y      => accel_z_aux,  -- Conectar accel_z_aux a la entrada Y
+    ANGULO => ANGULO        -- Salida ANGULO
 );
 
 -- Map ACCEL_X to LEDs
