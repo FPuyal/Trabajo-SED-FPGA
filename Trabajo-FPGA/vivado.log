@@ -3,10 +3,10 @@
 # SW Build 5239630 on Fri Nov 08 22:35:27 MST 2024
 # IP Build 5239520 on Sun Nov 10 16:12:51 MST 2024
 # SharedData Build 5239561 on Fri Nov 08 14:39:27 MST 2024
-# Start of session at: Wed Dec 11 18:28:35 2024
-# Process ID         : 96916
+# Start of session at: Fri Dec 13 19:22:56 2024
+# Process ID         : 164696
 # Current directory  : C:/Users/skstu/Documents/GitHub/Trabajo-SED-FPGA/Trabajo-FPGA
-# Command line       : vivado.exe -gui_launcher_event rodinguilauncherevent20712 C:\Users\skstu\Documents\GitHub\Trabajo-SED-FPGA\Trabajo-FPGA\Trabajo-FPGA.xpr
+# Command line       : vivado.exe -gui_launcher_event rodinguilauncherevent162516 C:\Users\skstu\Documents\GitHub\Trabajo-SED-FPGA\Trabajo-FPGA\Trabajo-FPGA.xpr
 # Log file           : C:/Users/skstu/Documents/GitHub/Trabajo-SED-FPGA/Trabajo-FPGA/vivado.log
 # Journal file       : C:/Users/skstu/Documents/GitHub/Trabajo-SED-FPGA/Trabajo-FPGA\vivado.jou
 # Running On         : Saraa
@@ -17,527 +17,54 @@
 # CPU Physical cores : 8
 # CPU Logical cores  : 16
 # Host memory        : 16438 MB
-# Swap memory        : 12348 MB
-# Total Virtual      : 28786 MB
-# Available Virtual  : 9859 MB
+# Swap memory        : 15618 MB
+# Total Virtual      : 32057 MB
+# Available Virtual  : 12961 MB
 #-----------------------------------------------------------
 start_gui
 open_project C:/Users/skstu/Documents/GitHub/Trabajo-SED-FPGA/Trabajo-FPGA/Trabajo-FPGA.xpr
-INFO: [Project 1-313] Project file moved from 'C:/Users/carlo/Desktop/Trabajo-SED-FPGA/Trabajo-FPGA' since last save.
 Scanning sources...
 Finished scanning sources
 INFO: [IP_Flow 19-234] Refreshing IP repositories
 INFO: [IP_Flow 19-1704] No user IP repositories specified
 INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2024.2/data/ip'.
-WARNING: [IP_Flow 19-2162] IP 'cordic_0' is locked:
-* IP definition 'CORDIC (6.0)' for IP 'cordic_0' (customized with software release 2024.1) has a different revision in the IP Catalog.
-INFO: [Project 1-230] Project 'Trabajo-FPGA.xpr' upgraded for this version of Vivado.
+open_project: Time (s): cpu = 00:00:02 ; elapsed = 00:00:06 . Memory (MB): peak = 1132.125 ; gain = 78.367
 update_compile_order -fileset sources_1
-report_ip_status -name ip_status 
-upgrade_ip -srcset cordic_0 -vlnv xilinx.com:ip:cordic:6.0 [get_ips  cordic_0] -log ip_upgrade.log
-Upgrading 'cordic_0'
-INFO: [Project 1-386] Moving file 'C:/Users/skstu/Documents/GitHub/Trabajo-SED-FPGA/Trabajo-FPGA/Trabajo-FPGA.srcs/sources_1/ip/cordic_0/cordic_0.xci' from fileset 'cordic_0' to fileset 'sources_1'.
-INFO: [IP_Flow 19-3422] Upgraded cordic_0 (CORDIC 6.0) from revision 22 to revision 23
-INFO: [IP_Flow 19-1686] Generating 'Instantiation Template' target for IP 'cordic_0'...
-INFO: [Coretcl 2-1525] Wrote upgrade log to 'C:/Users/skstu/Documents/GitHub/Trabajo-SED-FPGA/Trabajo-FPGA/ip_upgrade.log'.
-export_ip_user_files -of_objects [get_ips cordic_0] -no_script -sync -force -quiet
-update_compile_order -fileset sources_1
-report_ip_status -name ip_status 
-generate_target all [get_files  C:/Users/skstu/Documents/GitHub/Trabajo-SED-FPGA/Trabajo-FPGA/Trabajo-FPGA.srcs/sources_1/ip/cordic_0/cordic_0.xci]
-INFO: [IP_Flow 19-1686] Generating 'Synthesis' target for IP 'cordic_0'...
-INFO: [IP_Flow 19-1686] Generating 'Simulation' target for IP 'cordic_0'...
-INFO: [IP_Flow 19-1686] Generating 'C Simulation' target for IP 'cordic_0'...
-INFO: [IP_Flow 19-1686] Generating 'Test Bench' target for IP 'cordic_0'...
-INFO: [IP_Flow 19-1686] Generating 'Change Log' target for IP 'cordic_0'...
-catch { config_ip_cache -export [get_ips -all cordic_0] }
-INFO: [IP_Flow 19-6924] IPCACHE: Running cache check for IP inst: cordic_0
-export_ip_user_files -of_objects [get_files C:/Users/skstu/Documents/GitHub/Trabajo-SED-FPGA/Trabajo-FPGA/Trabajo-FPGA.srcs/sources_1/ip/cordic_0/cordic_0.xci] -no_script -sync -force -quiet
-create_ip_run [get_files -of_objects [get_fileset sources_1] C:/Users/skstu/Documents/GitHub/Trabajo-SED-FPGA/Trabajo-FPGA/Trabajo-FPGA.srcs/sources_1/ip/cordic_0/cordic_0.xci]
-launch_runs cordic_0_synth_1 -jobs 8
-INFO: [IP_Flow 19-6924] IPCACHE: Running cache check for IP inst: cordic_0
-[Wed Dec 11 18:32:02 2024] Launched cordic_0_synth_1...
-Run output will be captured here: C:/Users/skstu/Documents/GitHub/Trabajo-SED-FPGA/Trabajo-FPGA/Trabajo-FPGA.runs/cordic_0_synth_1/runme.log
-INFO: [Vivado 12-4357] Exporting simulation files for 'cordic_0'... please wait for 'cordic_0_synth_1' run to finish...
-wait_on_run cordic_0_synth_1
-[Wed Dec 11 18:32:02 2024] Waiting for cordic_0_synth_1 to finish...
-[Wed Dec 11 18:32:07 2024] Waiting for cordic_0_synth_1 to finish...
-[Wed Dec 11 18:32:12 2024] Waiting for cordic_0_synth_1 to finish...
-[Wed Dec 11 18:32:17 2024] Waiting for cordic_0_synth_1 to finish...
-[Wed Dec 11 18:32:27 2024] Waiting for cordic_0_synth_1 to finish...
-[Wed Dec 11 18:32:37 2024] Waiting for cordic_0_synth_1 to finish...
-[Wed Dec 11 18:32:47 2024] Waiting for cordic_0_synth_1 to finish...
-[Wed Dec 11 18:32:57 2024] Waiting for cordic_0_synth_1 to finish...
-[Wed Dec 11 18:33:17 2024] Waiting for cordic_0_synth_1 to finish...
-[Wed Dec 11 18:33:37 2024] Waiting for cordic_0_synth_1 to finish...
-
-*** Running vivado
-    with args -log cordic_0.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source cordic_0.tcl
-
-
-
-****** Vivado v2024.2 (64-bit)
-  **** SW Build 5239630 on Fri Nov 08 22:35:27 MST 2024
-  **** IP Build 5239520 on Sun Nov 10 16:12:51 MST 2024
-  **** SharedData Build 5239561 on Fri Nov 08 14:39:27 MST 2024
-  **** Start of session at: Wed Dec 11 18:32:09 2024
-    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
-    ** Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
-
-source cordic_0.tcl -notrace
-INFO: [IP_Flow 19-6924] IPCACHE: Running cache check for IP inst: cordic_0
-Command: synth_design -top cordic_0 -part xc7a100tcsg324-1 -incremental_mode off -mode out_of_context
-Starting synth_design
-Attempting to get a license for feature 'Synthesis' and/or device 'xc7a100t'
-INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a100t'
-INFO: [Designutils 20-5008] Incremental synthesis strategy off
-INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
-INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
-INFO: [Synth 8-7075] Helper process launched with PID 96480
----------------------------------------------------------------------------------
-Starting Synthesize : Time (s): cpu = 00:00:08 ; elapsed = 00:00:12 . Memory (MB): peak = 780.801 ; gain = 474.191
----------------------------------------------------------------------------------
-INFO: [Synth 8-638] synthesizing module 'cordic_0' [c:/Users/skstu/Documents/GitHub/Trabajo-SED-FPGA/Trabajo-FPGA/Trabajo-FPGA.gen/sources_1/ip/cordic_0/synth/cordic_0.vhd:68]
-	Parameter C_ARCHITECTURE bound to: 2 - type: integer 
-	Parameter C_CORDIC_FUNCTION bound to: 3 - type: integer 
-	Parameter C_COARSE_ROTATE bound to: 1 - type: integer 
-	Parameter C_DATA_FORMAT bound to: 0 - type: integer 
-	Parameter C_XDEVICEFAMILY bound to: artix7 - type: string 
-	Parameter C_HAS_ACLKEN bound to: 0 - type: integer 
-	Parameter C_HAS_ACLK bound to: 0 - type: integer 
-	Parameter C_HAS_S_AXIS_CARTESIAN bound to: 1 - type: integer 
-	Parameter C_HAS_S_AXIS_PHASE bound to: 0 - type: integer 
-	Parameter C_HAS_ARESETN bound to: 0 - type: integer 
-	Parameter C_INPUT_WIDTH bound to: 16 - type: integer 
-	Parameter C_ITERATIONS bound to: 0 - type: integer 
-	Parameter C_OUTPUT_WIDTH bound to: 16 - type: integer 
-	Parameter C_PHASE_FORMAT bound to: 0 - type: integer 
-	Parameter C_PIPELINE_MODE bound to: 0 - type: integer 
-	Parameter C_PRECISION bound to: 0 - type: integer 
-	Parameter C_ROUND_MODE bound to: 3 - type: integer 
-	Parameter C_SCALE_COMP bound to: 0 - type: integer 
-	Parameter C_THROTTLE_SCHEME bound to: 3 - type: integer 
-	Parameter C_TLAST_RESOLUTION bound to: 0 - type: integer 
-	Parameter C_HAS_S_AXIS_PHASE_TUSER bound to: 0 - type: integer 
-	Parameter C_HAS_S_AXIS_PHASE_TLAST bound to: 0 - type: integer 
-	Parameter C_S_AXIS_PHASE_TDATA_WIDTH bound to: 16 - type: integer 
-	Parameter C_S_AXIS_PHASE_TUSER_WIDTH bound to: 1 - type: integer 
-	Parameter C_HAS_S_AXIS_CARTESIAN_TUSER bound to: 0 - type: integer 
-	Parameter C_HAS_S_AXIS_CARTESIAN_TLAST bound to: 0 - type: integer 
-	Parameter C_S_AXIS_CARTESIAN_TDATA_WIDTH bound to: 32 - type: integer 
-	Parameter C_S_AXIS_CARTESIAN_TUSER_WIDTH bound to: 1 - type: integer 
-	Parameter C_M_AXIS_DOUT_TDATA_WIDTH bound to: 16 - type: integer 
-	Parameter C_M_AXIS_DOUT_TUSER_WIDTH bound to: 1 - type: integer 
-INFO: [Synth 8-3491] module 'cordic_v6_0_23' declared at 'c:/Users/skstu/Documents/GitHub/Trabajo-SED-FPGA/Trabajo-FPGA/Trabajo-FPGA.gen/sources_1/ip/cordic_0/hdl/cordic_v6_0_vh_rfs.vhd:10026' bound to instance 'U0' of component 'cordic_v6_0_23' [c:/Users/skstu/Documents/GitHub/Trabajo-SED-FPGA/Trabajo-FPGA/Trabajo-FPGA.gen/sources_1/ip/cordic_0/synth/cordic_0.vhd:144]
-INFO: [Synth 8-256] done synthesizing module 'cordic_0' (0#1) [c:/Users/skstu/Documents/GitHub/Trabajo-SED-FPGA/Trabajo-FPGA/Trabajo-FPGA.gen/sources_1/ip/cordic_0/synth/cordic_0.vhd:68]
-WARNING: [Synth 8-7129] Port WE in module delay_bit is either unconnected or has no load
-WARNING: [Synth 8-7129] Port CE in module delay_bit is either unconnected or has no load
-WARNING: [Synth 8-7129] Port SCLR in module delay_bit is either unconnected or has no load
-WARNING: [Synth 8-7129] Port CLK in module delay_bit is either unconnected or has no load
-WARNING: [Synth 8-7129] Port clk in module c_addsub_v12_0_19_lut6_legacy__parameterized5 is either unconnected or has no load
-WARNING: [Synth 8-7129] Port add in module c_addsub_v12_0_19_lut6_legacy__parameterized5 is either unconnected or has no load
-WARNING: [Synth 8-7129] Port ce in module c_addsub_v12_0_19_lut6_legacy__parameterized5 is either unconnected or has no load
-WARNING: [Synth 8-7129] Port bypass in module c_addsub_v12_0_19_lut6_legacy__parameterized5 is either unconnected or has no load
-WARNING: [Synth 8-7129] Port aclr in module c_addsub_v12_0_19_lut6_legacy__parameterized5 is either unconnected or has no load
-WARNING: [Synth 8-7129] Port aset in module c_addsub_v12_0_19_lut6_legacy__parameterized5 is either unconnected or has no load
-WARNING: [Synth 8-7129] Port ainit in module c_addsub_v12_0_19_lut6_legacy__parameterized5 is either unconnected or has no load
-WARNING: [Synth 8-7129] Port sclr in module c_addsub_v12_0_19_lut6_legacy__parameterized5 is either unconnected or has no load
-WARNING: [Synth 8-7129] Port sset in module c_addsub_v12_0_19_lut6_legacy__parameterized5 is either unconnected or has no load
-WARNING: [Synth 8-7129] Port sinit in module c_addsub_v12_0_19_lut6_legacy__parameterized5 is either unconnected or has no load
-WARNING: [Synth 8-7129] Port b_in in module c_addsub_v12_0_19_legacy__parameterized5 is either unconnected or has no load
-WARNING: [Synth 8-7129] Port a_signed in module c_addsub_v12_0_19_legacy__parameterized5 is either unconnected or has no load
-WARNING: [Synth 8-7129] Port b_signed in module c_addsub_v12_0_19_legacy__parameterized5 is either unconnected or has no load
-WARNING: [Synth 8-7129] Port clk in module c_addsub_v12_0_19_lut6_legacy__parameterized3 is either unconnected or has no load
-WARNING: [Synth 8-7129] Port c_in in module c_addsub_v12_0_19_lut6_legacy__parameterized3 is either unconnected or has no load
-WARNING: [Synth 8-7129] Port ce in module c_addsub_v12_0_19_lut6_legacy__parameterized3 is either unconnected or has no load
-WARNING: [Synth 8-7129] Port bypass in module c_addsub_v12_0_19_lut6_legacy__parameterized3 is either unconnected or has no load
-WARNING: [Synth 8-7129] Port aclr in module c_addsub_v12_0_19_lut6_legacy__parameterized3 is either unconnected or has no load
-WARNING: [Synth 8-7129] Port aset in module c_addsub_v12_0_19_lut6_legacy__parameterized3 is either unconnected or has no load
-WARNING: [Synth 8-7129] Port ainit in module c_addsub_v12_0_19_lut6_legacy__parameterized3 is either unconnected or has no load
-WARNING: [Synth 8-7129] Port sclr in module c_addsub_v12_0_19_lut6_legacy__parameterized3 is either unconnected or has no load
-WARNING: [Synth 8-7129] Port sset in module c_addsub_v12_0_19_lut6_legacy__parameterized3 is either unconnected or has no load
-WARNING: [Synth 8-7129] Port sinit in module c_addsub_v12_0_19_lut6_legacy__parameterized3 is either unconnected or has no load
-WARNING: [Synth 8-7129] Port c_in in module c_addsub_v12_0_19_legacy__parameterized3 is either unconnected or has no load
-WARNING: [Synth 8-7129] Port b_in in module c_addsub_v12_0_19_legacy__parameterized3 is either unconnected or has no load
-WARNING: [Synth 8-7129] Port a_signed in module c_addsub_v12_0_19_legacy__parameterized3 is either unconnected or has no load
-WARNING: [Synth 8-7129] Port b_signed in module c_addsub_v12_0_19_legacy__parameterized3 is either unconnected or has no load
-WARNING: [Synth 8-7129] Port C_IN in module c_addsub_v12_0_19_viv__parameterized3 is either unconnected or has no load
-WARNING: [Synth 8-7129] Port WE in module delay is either unconnected or has no load
-WARNING: [Synth 8-7129] Port CE in module delay is either unconnected or has no load
-WARNING: [Synth 8-7129] Port SCLR in module delay is either unconnected or has no load
-WARNING: [Synth 8-7129] Port CLK in module delay is either unconnected or has no load
-WARNING: [Synth 8-7129] Port data_x_in[19] in module cordic_out_config is either unconnected or has no load
-WARNING: [Synth 8-7129] Port data_x_in[18] in module cordic_out_config is either unconnected or has no load
-WARNING: [Synth 8-7129] Port data_x_in[17] in module cordic_out_config is either unconnected or has no load
-WARNING: [Synth 8-7129] Port data_x_in[16] in module cordic_out_config is either unconnected or has no load
-WARNING: [Synth 8-7129] Port data_x_in[15] in module cordic_out_config is either unconnected or has no load
-WARNING: [Synth 8-7129] Port data_x_in[14] in module cordic_out_config is either unconnected or has no load
-WARNING: [Synth 8-7129] Port data_x_in[13] in module cordic_out_config is either unconnected or has no load
-WARNING: [Synth 8-7129] Port data_x_in[12] in module cordic_out_config is either unconnected or has no load
-WARNING: [Synth 8-7129] Port data_x_in[11] in module cordic_out_config is either unconnected or has no load
-WARNING: [Synth 8-7129] Port data_x_in[10] in module cordic_out_config is either unconnected or has no load
-WARNING: [Synth 8-7129] Port data_x_in[9] in module cordic_out_config is either unconnected or has no load
-WARNING: [Synth 8-7129] Port data_x_in[8] in module cordic_out_config is either unconnected or has no load
-WARNING: [Synth 8-7129] Port data_x_in[7] in module cordic_out_config is either unconnected or has no load
-WARNING: [Synth 8-7129] Port data_x_in[6] in module cordic_out_config is either unconnected or has no load
-WARNING: [Synth 8-7129] Port data_x_in[5] in module cordic_out_config is either unconnected or has no load
-WARNING: [Synth 8-7129] Port data_x_in[4] in module cordic_out_config is either unconnected or has no load
-WARNING: [Synth 8-7129] Port data_x_in[3] in module cordic_out_config is either unconnected or has no load
-WARNING: [Synth 8-7129] Port data_x_in[2] in module cordic_out_config is either unconnected or has no load
-WARNING: [Synth 8-7129] Port data_x_in[1] in module cordic_out_config is either unconnected or has no load
-WARNING: [Synth 8-7129] Port data_x_in[0] in module cordic_out_config is either unconnected or has no load
-WARNING: [Synth 8-7129] Port data_y_in[19] in module cordic_out_config is either unconnected or has no load
-WARNING: [Synth 8-7129] Port data_y_in[18] in module cordic_out_config is either unconnected or has no load
-WARNING: [Synth 8-7129] Port data_y_in[17] in module cordic_out_config is either unconnected or has no load
-WARNING: [Synth 8-7129] Port data_y_in[16] in module cordic_out_config is either unconnected or has no load
-WARNING: [Synth 8-7129] Port data_y_in[15] in module cordic_out_config is either unconnected or has no load
-WARNING: [Synth 8-7129] Port data_y_in[14] in module cordic_out_config is either unconnected or has no load
-WARNING: [Synth 8-7129] Port data_y_in[13] in module cordic_out_config is either unconnected or has no load
-WARNING: [Synth 8-7129] Port data_y_in[12] in module cordic_out_config is either unconnected or has no load
-WARNING: [Synth 8-7129] Port data_y_in[11] in module cordic_out_config is either unconnected or has no load
-WARNING: [Synth 8-7129] Port data_y_in[10] in module cordic_out_config is either unconnected or has no load
-WARNING: [Synth 8-7129] Port data_y_in[9] in module cordic_out_config is either unconnected or has no load
-WARNING: [Synth 8-7129] Port data_y_in[8] in module cordic_out_config is either unconnected or has no load
-WARNING: [Synth 8-7129] Port data_y_in[7] in module cordic_out_config is either unconnected or has no load
-WARNING: [Synth 8-7129] Port data_y_in[6] in module cordic_out_config is either unconnected or has no load
-WARNING: [Synth 8-7129] Port data_y_in[5] in module cordic_out_config is either unconnected or has no load
-WARNING: [Synth 8-7129] Port data_y_in[4] in module cordic_out_config is either unconnected or has no load
-WARNING: [Synth 8-7129] Port data_y_in[3] in module cordic_out_config is either unconnected or has no load
-WARNING: [Synth 8-7129] Port data_y_in[2] in module cordic_out_config is either unconnected or has no load
-WARNING: [Synth 8-7129] Port data_y_in[1] in module cordic_out_config is either unconnected or has no load
-WARNING: [Synth 8-7129] Port data_y_in[0] in module cordic_out_config is either unconnected or has no load
-WARNING: [Synth 8-7129] Port aclr in module cordic_out_config is either unconnected or has no load
-WARNING: [Synth 8-7129] Port WE in module delay__parameterized4 is either unconnected or has no load
-WARNING: [Synth 8-7129] Port CE in module delay__parameterized4 is either unconnected or has no load
-WARNING: [Synth 8-7129] Port SCLR in module delay__parameterized4 is either unconnected or has no load
-WARNING: [Synth 8-7129] Port CLK in module delay__parameterized4 is either unconnected or has no load
-WARNING: [Synth 8-7129] Port aclr in module cordic_ctrl_slice_par is either unconnected or has no load
-WARNING: [Synth 8-7129] Port nd_in in module cordic_eng is either unconnected or has no load
-WARNING: [Synth 8-7129] Port WE in module delay__parameterized2 is either unconnected or has no load
-WARNING: [Synth 8-7129] Port CE in module delay__parameterized2 is either unconnected or has no load
-WARNING: [Synth 8-7129] Port SCLR in module delay__parameterized2 is either unconnected or has no load
-WARNING: [Synth 8-7129] Port CLK in module delay__parameterized2 is either unconnected or has no load
-WARNING: [Synth 8-7129] Port clk in module c_addsub_v12_0_19_lut6_legacy__parameterized1 is either unconnected or has no load
-WARNING: [Synth 8-7129] Port add in module c_addsub_v12_0_19_lut6_legacy__parameterized1 is either unconnected or has no load
-WARNING: [Synth 8-7129] Port c_in in module c_addsub_v12_0_19_lut6_legacy__parameterized1 is either unconnected or has no load
-WARNING: [Synth 8-7129] Port ce in module c_addsub_v12_0_19_lut6_legacy__parameterized1 is either unconnected or has no load
-WARNING: [Synth 8-7129] Port bypass in module c_addsub_v12_0_19_lut6_legacy__parameterized1 is either unconnected or has no load
-WARNING: [Synth 8-7129] Port aclr in module c_addsub_v12_0_19_lut6_legacy__parameterized1 is either unconnected or has no load
-WARNING: [Synth 8-7129] Port aset in module c_addsub_v12_0_19_lut6_legacy__parameterized1 is either unconnected or has no load
-WARNING: [Synth 8-7129] Port ainit in module c_addsub_v12_0_19_lut6_legacy__parameterized1 is either unconnected or has no load
-WARNING: [Synth 8-7129] Port sclr in module c_addsub_v12_0_19_lut6_legacy__parameterized1 is either unconnected or has no load
-WARNING: [Synth 8-7129] Port sset in module c_addsub_v12_0_19_lut6_legacy__parameterized1 is either unconnected or has no load
-WARNING: [Synth 8-7129] Port sinit in module c_addsub_v12_0_19_lut6_legacy__parameterized1 is either unconnected or has no load
-WARNING: [Synth 8-7129] Port c_in in module c_addsub_v12_0_19_legacy__parameterized1 is either unconnected or has no load
-WARNING: [Synth 8-7129] Port b_in in module c_addsub_v12_0_19_legacy__parameterized1 is either unconnected or has no load
-INFO: [Common 17-14] Message 'Synth 8-7129' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
----------------------------------------------------------------------------------
-Finished Synthesize : Time (s): cpu = 00:00:32 ; elapsed = 00:00:43 . Memory (MB): peak = 1293.047 ; gain = 986.438
----------------------------------------------------------------------------------
----------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:32 ; elapsed = 00:00:44 . Memory (MB): peak = 1293.047 ; gain = 986.438
----------------------------------------------------------------------------------
----------------------------------------------------------------------------------
-Start Loading Part and Timing Information
----------------------------------------------------------------------------------
-Loading part: xc7a100tcsg324-1
----------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:32 ; elapsed = 00:00:44 . Memory (MB): peak = 1293.047 ; gain = 986.438
----------------------------------------------------------------------------------
+reset_run synth_1
+INFO: [Project 1-1161] Replacing file C:/Users/skstu/Documents/GitHub/Trabajo-SED-FPGA/Trabajo-FPGA/Trabajo-FPGA.srcs/utils_1/imports/synth_1/AccelerometerCtl.dcp with file C:/Users/skstu/Documents/GitHub/Trabajo-SED-FPGA/Trabajo-FPGA/Trabajo-FPGA.runs/synth_1/Top1.dcp
+launch_runs impl_1 -to_step write_bitstream -jobs 8
+[Fri Dec 13 19:27:45 2024] Launched synth_1...
+Run output will be captured here: C:/Users/skstu/Documents/GitHub/Trabajo-SED-FPGA/Trabajo-FPGA/Trabajo-FPGA.runs/synth_1/runme.log
+[Fri Dec 13 19:27:45 2024] Launched impl_1...
+Run output will be captured here: C:/Users/skstu/Documents/GitHub/Trabajo-SED-FPGA/Trabajo-FPGA/Trabajo-FPGA.runs/impl_1/runme.log
+open_run impl_1
 INFO: [Device 21-403] Loading part xc7a100tcsg324-1
----------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:33 ; elapsed = 00:00:45 . Memory (MB): peak = 1293.047 ; gain = 986.438
----------------------------------------------------------------------------------
-No constraint files found.
----------------------------------------------------------------------------------
-Start RTL Component Statistics 
----------------------------------------------------------------------------------
----------------------------------------------------------------------------------
-Finished RTL Component Statistics 
----------------------------------------------------------------------------------
----------------------------------------------------------------------------------
-Start Part Resource Summary
----------------------------------------------------------------------------------
-Part Resources:
-DSPs: 240 (col length:80)
-BRAMs: 270 (col length: RAMB18 80 RAMB36 40)
----------------------------------------------------------------------------------
-Finished Part Resource Summary
----------------------------------------------------------------------------------
-No constraint files found.
----------------------------------------------------------------------------------
-Start Cross Boundary and Area Optimization
----------------------------------------------------------------------------------
-WARNING: [Synth 8-7080] Parallel synthesis criteria is not met
----------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:37 ; elapsed = 00:00:53 . Memory (MB): peak = 1293.047 ; gain = 986.438
----------------------------------------------------------------------------------
-No constraint files found.
----------------------------------------------------------------------------------
-Start Timing Optimization
----------------------------------------------------------------------------------
----------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:37 ; elapsed = 00:00:53 . Memory (MB): peak = 1293.047 ; gain = 986.438
----------------------------------------------------------------------------------
----------------------------------------------------------------------------------
-Start Technology Mapping
----------------------------------------------------------------------------------
----------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:38 ; elapsed = 00:00:53 . Memory (MB): peak = 1293.047 ; gain = 986.438
----------------------------------------------------------------------------------
----------------------------------------------------------------------------------
-Start IO Insertion
----------------------------------------------------------------------------------
----------------------------------------------------------------------------------
-Start Flattening Before IO Insertion
----------------------------------------------------------------------------------
----------------------------------------------------------------------------------
-Finished Flattening Before IO Insertion
----------------------------------------------------------------------------------
----------------------------------------------------------------------------------
-Start Final Netlist Cleanup
----------------------------------------------------------------------------------
----------------------------------------------------------------------------------
-Finished Final Netlist Cleanup
----------------------------------------------------------------------------------
----------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:42 ; elapsed = 00:01:00 . Memory (MB): peak = 1301.910 ; gain = 995.301
----------------------------------------------------------------------------------
----------------------------------------------------------------------------------
-Start Renaming Generated Instances
----------------------------------------------------------------------------------
----------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:42 ; elapsed = 00:01:00 . Memory (MB): peak = 1301.910 ; gain = 995.301
----------------------------------------------------------------------------------
----------------------------------------------------------------------------------
-Start Rebuilding User Hierarchy
----------------------------------------------------------------------------------
----------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:42 ; elapsed = 00:01:00 . Memory (MB): peak = 1301.910 ; gain = 995.301
----------------------------------------------------------------------------------
----------------------------------------------------------------------------------
-Start Renaming Generated Ports
----------------------------------------------------------------------------------
----------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:42 ; elapsed = 00:01:00 . Memory (MB): peak = 1301.910 ; gain = 995.301
----------------------------------------------------------------------------------
----------------------------------------------------------------------------------
-Start Handling Custom Attributes
----------------------------------------------------------------------------------
----------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:42 ; elapsed = 00:01:00 . Memory (MB): peak = 1301.910 ; gain = 995.301
----------------------------------------------------------------------------------
----------------------------------------------------------------------------------
-Start Renaming Generated Nets
----------------------------------------------------------------------------------
----------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:43 ; elapsed = 00:01:00 . Memory (MB): peak = 1301.910 ; gain = 995.301
----------------------------------------------------------------------------------
----------------------------------------------------------------------------------
-Start Writing Synthesis Report
----------------------------------------------------------------------------------
-
-Report BlackBoxes: 
-+-+--------------+----------+
-| |BlackBox name |Instances |
-+-+--------------+----------+
-+-+--------------+----------+
-
-Report Cell Usage: 
-+------+------+------+
-|      |Cell  |Count |
-+------+------+------+
-|1     |LUT1  |    80|
-|2     |LUT2  |   336|
-|3     |LUT3  |   412|
-|4     |LUT4  |    32|
-|5     |MUXCY |   857|
-|6     |XORCY |   826|
-+------+------+------+
----------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:43 ; elapsed = 00:01:00 . Memory (MB): peak = 1301.910 ; gain = 995.301
----------------------------------------------------------------------------------
-Synthesis finished with 0 errors, 0 critical warnings and 514 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:43 ; elapsed = 00:01:00 . Memory (MB): peak = 1301.910 ; gain = 995.301
-Synthesis Optimization Complete : Time (s): cpu = 00:00:43 ; elapsed = 00:01:00 . Memory (MB): peak = 1301.910 ; gain = 995.301
-INFO: [Project 1-571] Translating synthesized netlist
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.145 . Memory (MB): peak = 1317.914 ; gain = 0.000
-INFO: [Netlist 29-17] Analyzing 1683 Unisim elements for replacement
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.003 . Memory (MB): peak = 1345.402 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 10 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-479] Netlist was created with Vivado 2024.2
 INFO: [Project 1-570] Preparing netlist for logic optimization
-INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.002 . Memory (MB): peak = 1434.734 ; gain = 0.000
+Read ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.004 . Memory (MB): peak = 1437.930 ; gain = 0.000
+INFO: [Timing 38-478] Restoring timing data from binary archive.
+INFO: [Timing 38-479] Binary timing data restore complete.
+INFO: [Project 1-856] Restoring constraints from binary archive.
+INFO: [Project 1-853] Binary constraint restore complete.
+INFO: [Designutils 20-5722] Start Reading Physical Databases.
+Reading placement.
+Read Netlist Cache: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 2046.715 ; gain = 0.000
+Reading placer database...
+Read Device Cache: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.010 . Memory (MB): peak = 2046.715 ; gain = 0.000
+Read PlaceDB: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.016 . Memory (MB): peak = 2046.715 ; gain = 0.000
+Read PulsedLatchDB: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2046.715 ; gain = 0.000
+Reading routing.
+Read RouteStorage: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.012 . Memory (MB): peak = 2046.715 ; gain = 0.000
+Read Physdb Files: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.055 . Memory (MB): peak = 2046.715 ; gain = 0.000
+Restored from archive | CPU: 0.000000 secs | Memory: 0.000000 MB |
+Finished XDEF File Restore: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.055 . Memory (MB): peak = 2046.715 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2046.715 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
-  A total of 227 instances were transformed.
-  (MUXCY,XORCY) => CARRY4: 227 instances
+No Unisim elements were transformed.
 
-Synth Design complete | Checksum: 4ee6b1fc
-INFO: [Common 17-83] Releasing license: Synthesis
-18 Infos, 101 Warnings, 0 Critical Warnings and 0 Errors encountered.
-synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:46 ; elapsed = 00:01:05 . Memory (MB): peak = 1434.734 ; gain = 1134.207
-INFO: [Timing 38-35] Done setting XDC timing constraints.
-Write ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.009 . Memory (MB): peak = 1737.031 ; gain = 9.012
-INFO: [Common 17-1381] The checkpoint 'C:/Users/skstu/Documents/GitHub/Trabajo-SED-FPGA/Trabajo-FPGA/Trabajo-FPGA.runs/cordic_0_synth_1/cordic_0.dcp' has been generated.
-write_checkpoint: Time (s): cpu = 00:00:07 ; elapsed = 00:00:11 . Memory (MB): peak = 1737.031 ; gain = 302.297
-INFO: [Coretcl 2-1648] Added synthesis output to IP cache for IP cordic_0, cache-ID = d61d83a352aed01b
-INFO: [Coretcl 2-1174] Renamed 273 cell refs.
-Write ShapeDB Complete: Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.012 . Memory (MB): peak = 1739.164 ; gain = 2.133
-INFO: [Common 17-1381] The checkpoint 'C:/Users/skstu/Documents/GitHub/Trabajo-SED-FPGA/Trabajo-FPGA/Trabajo-FPGA.runs/cordic_0_synth_1/cordic_0.dcp' has been generated.
-INFO: [Vivado 12-24828] Executing command : report_utilization -file cordic_0_utilization_synth.rpt -pb cordic_0_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Wed Dec 11 18:33:35 2024...
-[Wed Dec 11 18:33:37 2024] cordic_0_synth_1 finished
-wait_on_runs: Time (s): cpu = 00:00:03 ; elapsed = 00:01:35 . Memory (MB): peak = 1171.371 ; gain = 0.000
-export_simulation -lib_map_path [list {modelsim=C:/Users/skstu/Documents/GitHub/Trabajo-SED-FPGA/Trabajo-FPGA/Trabajo-FPGA.cache/compile_simlib/modelsim} {questa=C:/Users/skstu/Documents/GitHub/Trabajo-SED-FPGA/Trabajo-FPGA/Trabajo-FPGA.cache/compile_simlib/questa} {riviera=C:/Users/skstu/Documents/GitHub/Trabajo-SED-FPGA/Trabajo-FPGA/Trabajo-FPGA.cache/compile_simlib/riviera} {activehdl=C:/Users/skstu/Documents/GitHub/Trabajo-SED-FPGA/Trabajo-FPGA/Trabajo-FPGA.cache/compile_simlib/activehdl}] -of_objects [get_files C:/Users/skstu/Documents/GitHub/Trabajo-SED-FPGA/Trabajo-FPGA/Trabajo-FPGA.srcs/sources_1/ip/cordic_0/cordic_0.xci] -directory C:/Users/skstu/Documents/GitHub/Trabajo-SED-FPGA/Trabajo-FPGA/Trabajo-FPGA.ip_user_files/sim_scripts -ip_user_files_dir C:/Users/skstu/Documents/GitHub/Trabajo-SED-FPGA/Trabajo-FPGA/Trabajo-FPGA.ip_user_files -ipstatic_source_dir C:/Users/skstu/Documents/GitHub/Trabajo-SED-FPGA/Trabajo-FPGA/Trabajo-FPGA.ip_user_files/ipstatic -use_ip_compiled_libs -force -quiet
-launch_simulation
-Command: launch_simulation 
-INFO: [Vivado 12-12493] Simulation top is 'tb_AngleCalculator'
-WARNING: [Vivado 12-13340] Unable to auto find GCC executables from simulator install path! (path not set)
-INFO: [Vivado 12-5698] Checking validity of IPs in the design for the 'XSim' simulator...
-INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/skstu/Documents/GitHub/Trabajo-SED-FPGA/Trabajo-FPGA/Trabajo-FPGA.sim/sim_1/behav/xsim'
-INFO: [Vivado 12-4795] Using compiled simulation libraries for IPs
-INFO: [SIM-utils-51] Simulation object is 'sim_1'
-INFO: [SIM-utils-72] Using boost library from 'C:/Xilinx/Vivado/2024.2/tps/boost_1_72_0'
-INFO: [USF-XSim-7] Finding pre-compiled libraries...
-INFO: [USF-XSim-11] File 'C:/Xilinx/Vivado/2024.2/data/xsim/xsim.ini' copied to run dir:'C:/Users/skstu/Documents/GitHub/Trabajo-SED-FPGA/Trabajo-FPGA/Trabajo-FPGA.sim/sim_1/behav/xsim'
-INFO: [SIM-utils-54] Inspecting design source files for 'tb_AngleCalculator' in fileset 'sim_1'...
-INFO: [USF-XSim-97] Finding global include files...
-INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
-INFO: [USF-XSim-2] XSim::Compile design
-INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/skstu/Documents/GitHub/Trabajo-SED-FPGA/Trabajo-FPGA/Trabajo-FPGA.sim/sim_1/behav/xsim'
-"xvhdl --incr --relax -prj tb_AngleCalculator_vhdl.prj"
-INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/skstu/Documents/GitHub/Trabajo-SED-FPGA/Trabajo-FPGA/Trabajo-FPGA.gen/sources_1/ip/cordic_0/sim/cordic_0.vhd" into library xil_defaultlib
-INFO: [VRFC 10-3107] analyzing entity 'cordic_0'
-INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/skstu/Documents/GitHub/Trabajo-SED-FPGA/Trabajo-FPGA/Trabajo-FPGA.srcs/sources_1/new/AngleCalculator.vhd" into library xil_defaultlib
-INFO: [VRFC 10-3107] analyzing entity 'AngleCalculator'
-INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/skstu/Documents/GitHub/Trabajo-SED-FPGA/Trabajo-FPGA/Trabajo-FPGA.srcs/sim_1/new/Tb_AngleCalculator.vhd" into library xil_defaultlib
-INFO: [VRFC 10-3107] analyzing entity 'tb_AngleCalculator'
-INFO: [USF-XSim-69] 'compile' step finished in '4' seconds
-INFO: [USF-XSim-3] XSim::Elaborate design
-INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/skstu/Documents/GitHub/Trabajo-SED-FPGA/Trabajo-FPGA/Trabajo-FPGA.sim/sim_1/behav/xsim'
-"xelab --incr --debug typical --relax --mt 2 -L xil_defaultlib -L xbip_utils_v3_0_14 -L c_reg_fd_v12_0_10 -L xbip_dsp48_wrapper_v3_0_6 -L xbip_pipe_v3_0_10 -L c_addsub_v12_0_19 -L mult_gen_v12_0_22 -L axi_utils_v2_0_10 -L cordic_v6_0_23 -L secureip -L xpm --snapshot tb_AngleCalculator_behav xil_defaultlib.tb_AngleCalculator -log elaborate.log"
-Vivado Simulator v2024.2.0
-Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
-Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
-Running: C:/Xilinx/Vivado/2024.2/bin/unwrapped/win64.o/xelab.exe --incr --debug typical --relax --mt 2 -L xil_defaultlib -L xbip_utils_v3_0_14 -L c_reg_fd_v12_0_10 -L xbip_dsp48_wrapper_v3_0_6 -L xbip_pipe_v3_0_10 -L c_addsub_v12_0_19 -L mult_gen_v12_0_22 -L axi_utils_v2_0_10 -L cordic_v6_0_23 -L secureip -L xpm --snapshot tb_AngleCalculator_behav xil_defaultlib.tb_AngleCalculator -log elaborate.log 
-Using 2 slave threads.
-Starting static elaboration
-Completed static elaboration
-Starting simulation data flow analysis
-Completed simulation data flow analysis
-Time Resolution for simulation is 1ps
-Compiling package std.standard
-Compiling package std.textio
-Compiling package ieee.std_logic_1164
-Compiling package ieee.numeric_std
-Compiling package cordic_v6_0_23.cordic_v6_0_23_viv_comp
-Compiling package xbip_utils_v3_0_14.xbip_utils_v3_0_14_pkg
-Compiling package xbip_pipe_v3_0_10.xbip_pipe_v3_0_10_viv_comp
-Compiling package axi_utils_v2_0_10.axi_utils_v2_0_10_pkg
-Compiling package ieee.math_real
-Compiling package axi_utils_v2_0_10.global_util_pkg
-Compiling package axi_utils_v2_0_10.axi_utils_comps
-Compiling package mult_gen_v12_0_22.mult_gen_v12_0_22_pkg
-Compiling package ieee.std_logic_arith
-Compiling package ieee.std_logic_signed
-Compiling package cordic_v6_0_23.cordic_pack
-Compiling package cordic_v6_0_23.cordic_hdl_comps
-Compiling package c_addsub_v12_0_19.c_addsub_v12_0_19_viv_comp
-Compiling package c_addsub_v12_0_19.c_addsub_v12_0_19_pkg
-Compiling package c_addsub_v12_0_19.c_addsub_v12_0_19_pkg_legacy
-Compiling package c_reg_fd_v12_0_10.c_reg_fd_v12_0_10_viv_comp
-Compiling package unisim.vcomponents
-Compiling architecture synth of entity xbip_pipe_v3_0_10.xbip_pipe_v3_0_10_viv [\xbip_pipe_v3_0_10_viv(c_has_ce=...]
-Compiling architecture muxcy_v of entity unisim.MUXCY [muxcy_default]
-Compiling architecture xorcy_v of entity unisim.XORCY [xorcy_default]
-Compiling architecture rtl of entity c_addsub_v12_0_19.c_addsub_v12_0_19_lut6_legacy [\c_addsub_v12_0_19_lut6_legacy(c...]
-Compiling architecture synth of entity c_addsub_v12_0_19.c_addsub_v12_0_19_fabric_legacy [\c_addsub_v12_0_19_fabric_legacy...]
-Compiling architecture synth of entity c_addsub_v12_0_19.c_addsub_v12_0_19_legacy [\c_addsub_v12_0_19_legacy(c_fami...]
-Compiling architecture synth of entity c_addsub_v12_0_19.c_addsub_v12_0_19_viv [\c_addsub_v12_0_19_viv(c_xdevice...]
-Compiling architecture synth of entity cordic_v6_0_23.addsub [\addsub(family="artix7",add_mode...]
-Compiling architecture rtl of entity c_addsub_v12_0_19.c_addsub_v12_0_19_lut6_legacy [\c_addsub_v12_0_19_lut6_legacy(c...]
-Compiling architecture synth of entity c_addsub_v12_0_19.c_addsub_v12_0_19_fabric_legacy [\c_addsub_v12_0_19_fabric_legacy...]
-Compiling architecture synth of entity c_addsub_v12_0_19.c_addsub_v12_0_19_legacy [\c_addsub_v12_0_19_legacy(c_fami...]
-Compiling architecture synth of entity c_addsub_v12_0_19.c_addsub_v12_0_19_viv [\c_addsub_v12_0_19_viv(c_xdevice...]
-Compiling architecture synth of entity cordic_v6_0_23.addsub [\addsub(family="artix7",add_mode...]
-Compiling architecture struct_all of entity cordic_v6_0_23.delay [\delay(delay_len=0,family="artix...]
-Compiling architecture rtl of entity c_addsub_v12_0_19.c_addsub_v12_0_19_lut6_legacy [\c_addsub_v12_0_19_lut6_legacy(c...]
-Compiling architecture synth of entity c_addsub_v12_0_19.c_addsub_v12_0_19_fabric_legacy [\c_addsub_v12_0_19_fabric_legacy...]
-Compiling architecture synth of entity c_addsub_v12_0_19.c_addsub_v12_0_19_legacy [\c_addsub_v12_0_19_legacy(c_fami...]
-Compiling architecture synth of entity c_addsub_v12_0_19.c_addsub_v12_0_19_viv [\c_addsub_v12_0_19_viv(c_xdevice...]
-Compiling architecture synth of entity cordic_v6_0_23.addsub [\addsub(family="artix7",add_mode...]
-Compiling architecture struct_all of entity cordic_v6_0_23.delay [\delay(delay_len=0,family="artix...]
-Compiling architecture struct_all of entity cordic_v6_0_23.delay_bit [\delay_bit(delay_len=0,family="a...]
-Compiling architecture synth of entity cordic_v6_0_23.cordic_inp_config [\cordic_inp_config(p_xdevicefami...]
-Compiling architecture synth of entity cordic_v6_0_23.cordic_dat_acc_slice_par [\cordic_dat_acc_slice_par(p_xdev...]
-Compiling architecture synth of entity cordic_v6_0_23.cordic_pha_acc_slice_par [\cordic_pha_acc_slice_par(p_xdev...]
-Compiling architecture struct_all of entity cordic_v6_0_23.delay [\delay(delay_len=0,family="artix...]
-Compiling architecture synth of entity cordic_v6_0_23.cordic_ctrl_slice_par [\cordic_ctrl_slice_par(p_xdevice...]
-Compiling architecture synth of entity cordic_v6_0_23.cordic_eng_slice_par [\cordic_eng_slice_par(p_xdevicef...]
-Compiling architecture synth of entity cordic_v6_0_23.cordic_dat_acc_slice_par [\cordic_dat_acc_slice_par(p_xdev...]
-Compiling architecture synth of entity cordic_v6_0_23.cordic_eng_slice_par [\cordic_eng_slice_par(p_xdevicef...]
-Compiling architecture synth of entity cordic_v6_0_23.cordic_dat_acc_slice_par [\cordic_dat_acc_slice_par(p_xdev...]
-Compiling architecture synth of entity cordic_v6_0_23.cordic_eng_slice_par [\cordic_eng_slice_par(p_xdevicef...]
-Compiling architecture synth of entity cordic_v6_0_23.cordic_dat_acc_slice_par [\cordic_dat_acc_slice_par(p_xdev...]
-Compiling architecture synth of entity cordic_v6_0_23.cordic_eng_slice_par [\cordic_eng_slice_par(p_xdevicef...]
-Compiling architecture synth of entity cordic_v6_0_23.cordic_dat_acc_slice_par [\cordic_dat_acc_slice_par(p_xdev...]
-Compiling architecture synth of entity cordic_v6_0_23.cordic_eng_slice_par [\cordic_eng_slice_par(p_xdevicef...]
-Compiling architecture synth of entity cordic_v6_0_23.cordic_dat_acc_slice_par [\cordic_dat_acc_slice_par(p_xdev...]
-Compiling architecture synth of entity cordic_v6_0_23.cordic_eng_slice_par [\cordic_eng_slice_par(p_xdevicef...]
-Compiling architecture synth of entity cordic_v6_0_23.cordic_dat_acc_slice_par [\cordic_dat_acc_slice_par(p_xdev...]
-Compiling architecture synth of entity cordic_v6_0_23.cordic_eng_slice_par [\cordic_eng_slice_par(p_xdevicef...]
-Compiling architecture synth of entity cordic_v6_0_23.cordic_dat_acc_slice_par [\cordic_dat_acc_slice_par(p_xdev...]
-Compiling architecture synth of entity cordic_v6_0_23.cordic_eng_slice_par [\cordic_eng_slice_par(p_xdevicef...]
-Compiling architecture synth of entity cordic_v6_0_23.cordic_dat_acc_slice_par [\cordic_dat_acc_slice_par(p_xdev...]
-Compiling architecture synth of entity cordic_v6_0_23.cordic_eng_slice_par [\cordic_eng_slice_par(p_xdevicef...]
-Compiling architecture synth of entity cordic_v6_0_23.cordic_dat_acc_slice_par [\cordic_dat_acc_slice_par(p_xdev...]
-Compiling architecture synth of entity cordic_v6_0_23.cordic_eng_slice_par [\cordic_eng_slice_par(p_xdevicef...]
-Compiling architecture synth of entity cordic_v6_0_23.cordic_dat_acc_slice_par [\cordic_dat_acc_slice_par(p_xdev...]
-Compiling architecture synth of entity cordic_v6_0_23.cordic_eng_slice_par [\cordic_eng_slice_par(p_xdevicef...]
-Compiling architecture synth of entity cordic_v6_0_23.cordic_dat_acc_slice_par [\cordic_dat_acc_slice_par(p_xdev...]
-Compiling architecture synth of entity cordic_v6_0_23.cordic_eng_slice_par [\cordic_eng_slice_par(p_xdevicef...]
-Compiling architecture synth of entity cordic_v6_0_23.cordic_dat_acc_slice_par [\cordic_dat_acc_slice_par(p_xdev...]
-Compiling architecture synth of entity cordic_v6_0_23.cordic_eng_slice_par [\cordic_eng_slice_par(p_xdevicef...]
-Compiling architecture synth of entity cordic_v6_0_23.cordic_dat_acc_slice_par [\cordic_dat_acc_slice_par(p_xdev...]
-Compiling architecture synth of entity cordic_v6_0_23.cordic_eng_slice_par [\cordic_eng_slice_par(p_xdevicef...]
-Compiling architecture synth of entity cordic_v6_0_23.cordic_eng [\cordic_eng(p_xdevicefamily="art...]
-Compiling architecture rtl of entity c_addsub_v12_0_19.c_addsub_v12_0_19_lut6_legacy [\c_addsub_v12_0_19_lut6_legacy(c...]
-Compiling architecture synth of entity c_addsub_v12_0_19.c_addsub_v12_0_19_fabric_legacy [\c_addsub_v12_0_19_fabric_legacy...]
-Compiling architecture synth of entity c_addsub_v12_0_19.c_addsub_v12_0_19_legacy [\c_addsub_v12_0_19_legacy(c_fami...]
-Compiling architecture synth of entity c_addsub_v12_0_19.c_addsub_v12_0_19_viv [\c_addsub_v12_0_19_viv(c_xdevice...]
-Compiling architecture synth of entity cordic_v6_0_23.addsub [\addsub(family="artix7",add_mode...]
-Compiling architecture synth of entity cordic_v6_0_23.cordic_round [\cordic_round(p_xdevicefamily="a...]
-Compiling architecture synth of entity cordic_v6_0_23.cordic_out_config [\cordic_out_config(p_xdevicefami...]
-Compiling architecture synth of entity cordic_v6_0_23.cordic_v6_0_23_synth [\cordic_v6_0_23_synth(c_architec...]
-Compiling architecture synth of entity cordic_v6_0_23.cordic_v6_0_23_viv [\cordic_v6_0_23_viv(c_architectu...]
-Compiling architecture xilinx of entity cordic_v6_0_23.cordic_v6_0_23 [\cordic_v6_0_23(c_architecture=2...]
-Compiling architecture cordic_0_arch of entity xil_defaultlib.cordic_0 [cordic_0_default]
-Compiling architecture behavioral of entity xil_defaultlib.AngleCalculator [anglecalculator_default]
-Compiling architecture behavioral of entity xil_defaultlib.tb_anglecalculator
-Built simulation snapshot tb_AngleCalculator_behav
-run_program: Time (s): cpu = 00:00:01 ; elapsed = 00:00:17 . Memory (MB): peak = 1199.637 ; gain = 0.000
-INFO: [USF-XSim-69] 'elaborate' step finished in '16' seconds
-INFO: [USF-XSim-4] XSim::Simulate design
-INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'C:/Users/skstu/Documents/GitHub/Trabajo-SED-FPGA/Trabajo-FPGA/Trabajo-FPGA.sim/sim_1/behav/xsim'
-INFO: [USF-XSim-98] *** Running xsim
-   with args "tb_AngleCalculator_behav -key {Behavioral:sim_1:Functional:tb_AngleCalculator} -tclbatch {tb_AngleCalculator.tcl} -log {simulate.log}"
-INFO: [USF-XSim-8] Loading simulator feature
-Time resolution is 1 ps
-source tb_AngleCalculator.tcl
-# set curr_wave [current_wave_config]
-# if { [string length $curr_wave] == 0 } {
-#   if { [llength [get_objects]] > 0} {
-#     add_wave /
-#     set_property needs_save false [current_wave_config]
-#   } else {
-#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
-#   }
-# }
-# run 1000ns
-xsim: Time (s): cpu = 00:00:01 ; elapsed = 00:00:05 . Memory (MB): peak = 1199.637 ; gain = 0.000
-INFO: [USF-XSim-96] XSim completed. Design snapshot 'tb_AngleCalculator_behav' loaded.
-INFO: [USF-XSim-97] XSim simulation ran for 1000ns
-launch_simulation: Time (s): cpu = 00:00:03 ; elapsed = 00:00:27 . Memory (MB): peak = 1199.637 ; gain = 0.000
-close_sim
-INFO: [Simtcl 6-16] Simulation closed
+open_run: Time (s): cpu = 00:00:17 ; elapsed = 00:00:24 . Memory (MB): peak = 2369.156 ; gain = 1207.246
 exit
-INFO: [Common 17-206] Exiting Vivado at Wed Dec 11 19:15:06 2024...
+INFO: [Common 17-206] Exiting Vivado at Fri Dec 13 19:38:05 2024...

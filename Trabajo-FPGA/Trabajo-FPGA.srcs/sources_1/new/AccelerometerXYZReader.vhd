@@ -30,13 +30,14 @@ architecture Behavioral of AccelerometerXYZReader is
     -- Máquina de estados para gestionar la secuencia de lectura
     type state_type is (IDLE, SEND_READ_CMD_X, SEND_ADDR_X, READ_LOW_BYTE_X, READ_HIGH_BYTE_X,
                         SEND_READ_CMD_Y, SEND_ADDR_Y, READ_LOW_BYTE_Y, READ_HIGH_BYTE_Y,
-                        SEND_READ_CMD_Z, SEND_ADDR_Z, READ_LOW_BYTE_Z, READ_HIGH_BYTE_Z, DONE);
+                        SEND_READ_CMD_Z, SEND_ADDR_Z, READ_LOW_BYTE_Z, READ_HIGH_BYTE_Z,
+                        SEND_READ_CMD_POWER_CTL, SEND_ADDR_POWER_CTL, SET_MEASUREMENT_MODE, DONE);
     signal current_state, next_state : state_type := IDLE;
 
     -- Registro para guardar los valores del eje X, Y y Z
-    signal accel_x_reg : std_logic_vector(11 downto 0) := (others => '0');
-    signal accel_y_reg : std_logic_vector(11 downto 0) := (others => '0');
-    signal accel_z_reg : std_logic_vector(11 downto 0) := (others => '0');
+    signal accel_x_reg : std_logic_vector(11 downto 0) ;
+    signal accel_y_reg : std_logic_vector(11 downto 0) ;
+    signal accel_z_reg : std_logic_vector(11 downto 0) ;
 
 begin
 
@@ -61,119 +62,147 @@ begin
         );
 
     -- Máquina de estados para gestionar la lectura de datos del eje X, Y y Z
-    process(SYSCLK, RESET)
-    begin
-        if RESET = '1' then
-            current_state <= IDLE;
-            accel_x_reg <= (others => '0');
-            accel_y_reg <= (others => '0');
-            accel_z_reg <= (others => '0');
-        elsif rising_edge(SYSCLK) then
-            current_state <= next_state;
-        end if;
-    end process;
 
     -- Lógica de transición de la máquina de estados
-    process(current_state, done_signal)
-    begin
-        -- Estado predeterminado es mantenerse en el estado actual
-        next_state <= current_state;
+    process(SYSCLK, RESET)
+begin
+    if RESET = '1' then
+        current_state <= IDLE;
+        accel_x_reg <= (others => '0');
+        accel_y_reg <= (others => '0');
+        accel_z_reg <= (others => '0');
+    elsif rising_edge(SYSCLK) then
+        current_state <= next_state;
+    end if;
+end process;
 
-        -- Desactivar la señal de inicio por defecto
-        start_signal <= '0';
+-- Lógica de transición de la máquina de estados
+process(current_state, done_signal)
+begin
+    -- Estado predeterminado
+    next_state <= current_state;
+    start_signal <= '0';
 
-        case current_state is
-            when IDLE =>
-                -- Reset de data_ready_internal
-                data_ready_internal <= '0';
-                -- Enviar comando de lectura para el eje X
-                data_to_send <= X"0B"; -- Comando de lectura
+    case current_state is
+        -- Estado inicial, espera a que esté listo para empezar a leer datos
+        when IDLE =>
+            data_ready_internal <= '0';
+            data_to_send <= X"0B";  -- Comando de lectura
+            start_signal <= '1';
+            next_state <= SEND_READ_CMD_POWER_CTL;  -- Configurar el POWER_CTL
+
+        -- Enviar el comando de escritura para configurar el POWER_CTL
+        when SEND_READ_CMD_POWER_CTL =>
+            if done_signal = '1' then
+                data_to_send <= X"2D";  -- Dirección del registro POWER_CTL
                 start_signal <= '1';
-                next_state <= SEND_READ_CMD_X;
-                
-            when SEND_READ_CMD_X =>
-                if done_signal = '1' then
-                    -- Enviar dirección del registro del eje X
-                    data_to_send <= X"0E"; -- Dirección del registro del eje X
-                    start_signal <= '1';
-                    next_state <= SEND_ADDR_X;
-                end if;
+                next_state <= SEND_ADDR_POWER_CTL;  -- Enviar dirección de POWER_CTL
+            end if;
 
-            when SEND_ADDR_X =>
-                if done_signal = '1' then
-                    -- Leer el primer byte (parte baja) del eje X
-                    start_signal <= '1';
-                    next_state <= READ_LOW_BYTE_X;
-                end if;
+        -- Enviar la dirección del registro POWER_CTL
+        when SEND_ADDR_POWER_CTL =>
+            if done_signal = '1' then
+                data_to_send <= X"08";  -- Activar el modo de medición
+                start_signal <= '1';
+                next_state <= SET_MEASUREMENT_MODE;
+            end if;
 
-           
-            when SEND_READ_CMD_Y =>
-                if done_signal = '1' then
-                    -- Enviar dirección del registro del eje Y
-                    data_to_send <= X"10"; -- Dirección del registro del eje Y
-                    start_signal <= '1';
-                    next_state <= SEND_ADDR_Y;
-                end if;
+        -- Activar el modo de medición
+        when SET_MEASUREMENT_MODE =>
+            if done_signal = '1' then
+                next_state <= SEND_READ_CMD_X;  -- Proceder a leer el eje X
+            end if;
 
-            when SEND_ADDR_Y =>
-                if done_signal = '1' then
-                    -- Leer el primer byte (parte baja) del eje Y
-                    start_signal <= '1';
-                    next_state <= READ_LOW_BYTE_Y;
-                end if;
+        -- Leer el eje X
+        when SEND_READ_CMD_X =>
+            if done_signal = '1' then
+                data_to_send <= X"0E";  -- Dirección del registro del eje X
+                start_signal <= '1';
+                next_state <= SEND_ADDR_X;
+            end if;
 
-            when READ_LOW_BYTE_Y =>
-                if done_signal = '1' then
-                    accel_y_reg(7 downto 0) <= data_received;  -- Guarda la parte baja del valor de Y
-                    start_signal <= '1';  -- Iniciar la próxima lectura para la parte alta
-                    next_state <= READ_HIGH_BYTE_Y;
-                end if;
+        when SEND_ADDR_X =>
+            if done_signal = '1' then
+                start_signal <= '1';
+                next_state <= READ_LOW_BYTE_X;
+            end if;
 
-            when READ_HIGH_BYTE_Y =>
-                if done_signal = '1' then
-                    accel_y_reg(11 downto 8) <= data_received(3 downto 0);  -- Guarda la parte alta del valor de Y
-                    -- Iniciar el proceso para leer el eje Z
-                    data_to_send <= X"0B"; -- Comando de lectura
-                    start_signal <= '1';
-                    next_state <= SEND_READ_CMD_Z;
-                end if;
+        when READ_LOW_BYTE_X =>
+            if done_signal = '1' then
+                accel_x_reg(7 downto 0) <= data_received;  -- Parte baja del valor de X
+                start_signal <= '1';  -- Preparar la lectura del byte alto
+                next_state <= READ_HIGH_BYTE_X;
+            end if;
 
-            when SEND_READ_CMD_Z =>
-                if done_signal = '1' then
-                    -- Enviar dirección del registro del eje Z
-                    data_to_send <= X"12"; -- Dirección del registro del eje Z
-                    start_signal <= '1';
-                    next_state <= SEND_ADDR_Z;
-                end if;
+        when READ_HIGH_BYTE_X =>
+            if done_signal = '1' then
+                accel_x_reg(11 downto 8) <= data_received(3 downto 0);  -- Parte alta del valor de X
+                next_state <= SEND_READ_CMD_Y;  -- Iniciar la lectura del eje Y
+            end if;
 
-            when SEND_ADDR_Z =>
-                if done_signal = '1' then
-                    -- Leer el primer byte (parte baja) del eje Z
-                    start_signal <= '1';
-                    next_state <= READ_LOW_BYTE_Z;
-                end if;
+        -- Leer el eje Y
+        when SEND_READ_CMD_Y =>
+            if done_signal = '1' then
+                data_to_send <= X"10";  -- Dirección del registro del eje Y
+                start_signal <= '1';
+                next_state <= SEND_ADDR_Y;
+            end if;
 
-            when READ_LOW_BYTE_Z =>
-                if done_signal = '1' then
-                    accel_z_reg(7 downto 0) <= data_received;  -- Guarda la parte baja del valor de Z
-                    start_signal <= '1';  -- Iniciar la próxima lectura para la parte alta
-                    next_state <= READ_HIGH_BYTE_Z;
-                end if;
+        when SEND_ADDR_Y =>
+            if done_signal = '1' then
+                start_signal <= '1';
+                next_state <= READ_LOW_BYTE_Y;
+            end if;
 
-            when READ_HIGH_BYTE_Z =>
-                if done_signal = '1' then
-                    accel_z_reg(11 downto 8) <= data_received(3 downto 0);  -- Guarda la parte alta del valor de Z
-                    next_state <= DONE;
-                end if;
+        when READ_LOW_BYTE_Y =>
+            if done_signal = '1' then
+                accel_y_reg(7 downto 0) <= data_received;  -- Parte baja del valor de Y
+                start_signal <= '1';
+                next_state <= READ_HIGH_BYTE_Y;
+            end if;
 
-            when DONE =>
-                -- Finaliza la lectura, vuelve a IDLE para empezar de nuevo
-                next_state <= IDLE;
-                data_ready_internal <= '1';
-            when others =>
-                next_state <= IDLE;
-        end case;
-    end process;
+        when READ_HIGH_BYTE_Y =>
+            if done_signal = '1' then
+                accel_y_reg(11 downto 8) <= data_received(3 downto 0);  -- Parte alta del valor de Y
+                next_state <= SEND_READ_CMD_Z;  -- Iniciar la lectura del eje Z
+            end if;
+
+        -- Leer el eje Z
+        when SEND_READ_CMD_Z =>
+            if done_signal = '1' then
+                data_to_send <= X"12";  -- Dirección del registro del eje Z
+                start_signal <= '1';
+                next_state <= SEND_ADDR_Z;
+            end if;
+
+        when SEND_ADDR_Z =>
+            if done_signal = '1' then
+                start_signal <= '1';
+                next_state <= READ_LOW_BYTE_Z;
+            end if;
+
+        when READ_LOW_BYTE_Z =>
+            if done_signal = '1' then
+                accel_z_reg(7 downto 0) <= data_received;  -- Parte baja del valor de Z
+                start_signal <= '1';
+                next_state <= READ_HIGH_BYTE_Z;
+            end if;
+
+        when READ_HIGH_BYTE_Z =>
+            if done_signal = '1' then
+                accel_z_reg(11 downto 8) <= data_received(3 downto 0);  -- Parte alta del valor de Z
+                next_state <= DONE;  -- Finaliza la lectura
+            end if;
+
+        -- Finaliza la lectura
+        when DONE =>
+            data_ready_internal <= '1';  -- Indica que los datos están listos
+            next_state <= IDLE;  -- Vuelve al estado IDLE para esperar la siguiente lectura
+
+        when others =>
+            next_state <= IDLE;
+    end case;
+end process;
 
     -- Asignar los valores de los registros de aceleración del eje X, Y y Z a las salidas
     ACCEL_X <= accel_x_reg;
