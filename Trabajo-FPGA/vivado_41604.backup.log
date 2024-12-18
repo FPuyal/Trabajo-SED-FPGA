@@ -1,0 +1,39 @@
+#-----------------------------------------------------------
+# Vivado v2024.2 (64-bit)
+# SW Build 5239630 on Fri Nov 08 22:35:27 MST 2024
+# IP Build 5239520 on Sun Nov 10 16:12:51 MST 2024
+# SharedData Build 5239561 on Fri Nov 08 14:39:27 MST 2024
+# Start of session at: Wed Dec 18 12:05:38 2024
+# Process ID         : 41604
+# Current directory  : C:/Users/skstu/Documents/GitHub/Trabajo-SED-FPGA/Trabajo-FPGA
+# Command line       : vivado.exe -gui_launcher_event rodinguilauncherevent42504 C:\Users\skstu\Documents\GitHub\Trabajo-SED-FPGA\Trabajo-FPGA\Trabajo-FPGA.xpr
+# Log file           : C:/Users/skstu/Documents/GitHub/Trabajo-SED-FPGA/Trabajo-FPGA/vivado.log
+# Journal file       : C:/Users/skstu/Documents/GitHub/Trabajo-SED-FPGA/Trabajo-FPGA\vivado.jou
+# Running On         : Saraa
+# Platform           : Windows Server 2016 or Windows 10
+# Operating System   : 22631
+# Processor Detail   : AMD Ryzen 7 7735HS with Radeon Graphics        
+# CPU Frequency      : 3194 MHz
+# CPU Physical cores : 8
+# CPU Logical cores  : 16
+# Host memory        : 16438 MB
+# Swap memory        : 11274 MB
+# Total Virtual      : 27712 MB
+# Available Virtual  : 12492 MB
+#-----------------------------------------------------------
+start_gui
+open_project C:/Users/skstu/Documents/GitHub/Trabajo-SED-FPGA/Trabajo-FPGA/Trabajo-FPGA.xpr
+INFO: [Project 1-313] Project file moved from 'C:/Users/carlo/Desktop/Trabajo-SED-FPGA/Trabajo-FPGA' since last save.
+Scanning sources...
+Finished scanning sources
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2024.2/data/ip'.
+update_compile_order -fileset sources_1
+add_files -norecurse {C:/Users/skstu/Documents/GitHub/Trabajo-SED-FPGA/Trabajo-FPGA/Trabajo-FPGA.srcs/sources_1/new/Converter.vhd C:/Users/skstu/Documents/GitHub/Trabajo-SED-FPGA/Trabajo-FPGA/Trabajo-FPGA.srcs/sources_1/new/decoder.vhd}
+update_compile_order -fileset sources_1
+set_property SOURCE_SET sources_1 [get_filesets sim_1]
+add_files -fileset sim_1 -norecurse C:/Users/skstu/Documents/GitHub/Trabajo-SED-FPGA/Trabajo-FPGA/Trabajo-FPGA.srcs/sim_1/new/Converter_tb.vhd
+update_compile_order -fileset sim_1
+exit
+INFO: [Common 17-206] Exiting Vivado at Wed Dec 18 12:07:47 2024...

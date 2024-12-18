@@ -1,7 +1,0 @@
-# compile vhdl design source files
-vhdl xil_defaultlib  \
-"../../../../Trabajo-FPGA.srcs/sources_1/new/Converter.vhd" \
-"../../../../Trabajo-FPGA.srcs/sim_1/new/Converter_tb.vhd" \
-
-# Do not sort compile order
-nosort

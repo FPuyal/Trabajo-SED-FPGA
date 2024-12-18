@@ -1,0 +1,4 @@
+Running: xsim.dir/tb_split_real_number_bin_behav/xsimk.exe -simmode gui -wdb tb_split_real_number_bin_behav.wdb -simrunnum 0 -socket 51177
+Design successfully loaded
+Design Loading Memory Usage: 27592 KB (Peak: 27592 KB)
+Design Loading CPU Usage: 546 ms
