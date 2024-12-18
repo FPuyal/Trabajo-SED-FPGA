@@ -43,3 +43,17 @@ source tb_split_real_number_bin.tcl
 close_sim
 launch_simulation
 source tb_split_real_number_bin.tcl
+# Disabling source management mode.  This is to allow the top design properties to be set without GUI intervention.
+set_property source_mgmt_mode None [current_project]
+set_property top decoder [get_filesets sim_1]
+set_property top_lib xil_defaultlib [get_filesets sim_1]
+# Re-enabling previously disabled source management mode.
+set_property source_mgmt_mode All [current_project]
+update_compile_order -fileset sim_1
+launch_simulation
+undo
+launch_simulation
+close_sim
+launch_simulation
+source decoder.tcl
+close_sim

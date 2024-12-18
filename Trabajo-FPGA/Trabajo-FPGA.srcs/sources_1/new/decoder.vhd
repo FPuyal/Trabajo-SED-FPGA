@@ -1,39 +1,28 @@
-library IEEE;
-use IEEE.STD_LOGIC_1164.ALL;
-use IEEE.STD_LOGIC_ARITH.ALL;
-use IEEE.STD_LOGIC_UNSIGNED.ALL;
+LIBRARY ieee;
+USE ieee.std_logic_1164.ALL;
+USE ieee.std_logic_arith.ALL;
+USE ieee.std_logic_unsigned.ALL;
+ENTITY decoder IS
+PORT (
+    bin_in : IN std_logic_vector(3 DOWNTO 0);
+    seg_out : OUT std_logic_vector(6 DOWNTO 0)
+);
+END ENTITY decoder;
 
--- Entidad que convierte un número de 4 bits en la representación para 7 segmentos
-entity decoder is
-    Port (
-        bin_in : in  STD_LOGIC_VECTOR (3 downto 0); -- Entrada binaria de 4 bits
-        seg_out : out STD_LOGIC_VECTOR (6 downto 0) -- Salida para los 7 segmentos (a, b, c, d, e, f, g)
-    );
-end decoder;
-
-architecture Behavioral of decoder is
-begin
-    process(bin_in)
-    begin
-        case bin_in is
-            when "0000" => seg_out <= "1000000"; -- 0
-            when "0001" => seg_out <= "1111001"; -- 1
-            when "0010" => seg_out <= "0100100"; -- 2
-            when "0011" => seg_out <= "0110000"; -- 3
-            when "0100" => seg_out <= "0011001"; -- 4
-            when "0101" => seg_out <= "0010010"; -- 5
-            when "0110" => seg_out <= "0000010"; -- 6
-            when "0111" => seg_out <= "1111000"; -- 7
-            when "1000" => seg_out <= "0000000"; -- 8
-            when "1001" => seg_out <= "0010000"; -- 9
-            when "1010" => seg_out <= "0001001"; -- X
-            when "1011" => seg_out <= "0010001"; -- Y
-            when "1100" => seg_out <= "1111111"; -- C
-            when "1101" => seg_out <= "1111111"; -- d
-            when "1110" => seg_out <= "1111111"; -- E
-            when "1111" => seg_out <= "1111111"; -- F
-            when others => seg_out <= "1111111"; -- Apagar
-        end case;
-    end process;
-
-end Behavioral;
+ARCHITECTURE dataflow OF decoder IS
+BEGIN
+WITH bin_in SELECT
+    seg_out <= "0000001" WHEN "0000",
+    "1001111" WHEN "0001",
+    "0010010" WHEN "0010",
+    "0000110" WHEN "0011", --3
+    "1001100" WHEN "0100",
+    "0100100" WHEN "0101",
+    "0100000" WHEN "0110",
+    "0001111" WHEN "0111",
+    "0000000" WHEN "1000",
+    "0000100" WHEN "1001", --9
+    "0001001" WHEN "1010", --X
+    "0010001" WHEN "1011", --Y
+    "1111110" WHEN others;
+END ARCHITECTURE dataflow;

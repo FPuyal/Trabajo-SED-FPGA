@@ -1,7 +1,0 @@
-# compile vhdl design source files
-vhdl xil_defaultlib  \
-"../../../../Trabajo-FPGA.srcs/sources_1/new/split_real_number_bin.vhd" \
-"../../../../Trabajo-FPGA.srcs/sim_1/new/tb_split_real_number_bin.vhd" \
-
-# Do not sort compile order
-nosort
