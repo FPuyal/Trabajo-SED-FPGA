@@ -1,2 +1,2 @@
-INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/skstu/Documents/GitHub/Trabajo-SED-FPGA/Trabajo-FPGA/Trabajo-FPGA.srcs/sources_1/new/AngleCalculator.vhd" into library xil_defaultlib
-INFO: [VRFC 10-3107] analyzing entity 'AngleCalculator'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/skstu/Documents/GitHub/Trabajo-SED-FPGA/Trabajo-FPGA/Trabajo-FPGA.srcs/sim_1/new/Converter_tb.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'Converter_tb'
