@@ -3,25 +3,29 @@
 # SW Build 5239630 on Fri Nov 08 22:35:27 MST 2024
 # IP Build 5239520 on Sun Nov 10 16:12:51 MST 2024
 # SharedData Build 5239561 on Fri Nov 08 14:39:27 MST 2024
-# Start of session at: Tue Dec 17 18:30:35 2024
-# Process ID         : 13200
-# Current directory  : C:/Users/carlo/Desktop/Trabajo-SED-FPGA/Trabajo-FPGA
-# Command line       : vivado.exe -gui_launcher_event rodinguilauncherevent13428 C:\Users\carlo\Desktop\Trabajo-SED-FPGA\Trabajo-FPGA\Trabajo-FPGA.xpr
-# Log file           : C:/Users/carlo/Desktop/Trabajo-SED-FPGA/Trabajo-FPGA/vivado.log
-# Journal file       : C:/Users/carlo/Desktop/Trabajo-SED-FPGA/Trabajo-FPGA\vivado.jou
-# Running On         : DESKTOP-TUDSMRQ
+# Start of session at: Wed Dec 18 12:05:38 2024
+# Process ID         : 41604
+# Current directory  : C:/Users/skstu/Documents/GitHub/Trabajo-SED-FPGA/Trabajo-FPGA
+# Command line       : vivado.exe -gui_launcher_event rodinguilauncherevent42504 C:\Users\skstu\Documents\GitHub\Trabajo-SED-FPGA\Trabajo-FPGA\Trabajo-FPGA.xpr
+# Log file           : C:/Users/skstu/Documents/GitHub/Trabajo-SED-FPGA/Trabajo-FPGA/vivado.log
+# Journal file       : C:/Users/skstu/Documents/GitHub/Trabajo-SED-FPGA/Trabajo-FPGA\vivado.jou
+# Running On         : Saraa
 # Platform           : Windows Server 2016 or Windows 10
 # Operating System   : 22631
-# Processor Detail   : AMD Ryzen 7 5700U with Radeon Graphics         
-# CPU Frequency      : 1797 MHz
+# Processor Detail   : AMD Ryzen 7 7735HS with Radeon Graphics        
+# CPU Frequency      : 3194 MHz
 # CPU Physical cores : 8
 # CPU Logical cores  : 16
-# Host memory        : 7883 MB
-# Swap memory        : 7516 MB
-# Total Virtual      : 15399 MB
-# Available Virtual  : 4944 MB
+# Host memory        : 16438 MB
+# Swap memory        : 11274 MB
+# Total Virtual      : 27712 MB
+# Available Virtual  : 12492 MB
 #-----------------------------------------------------------
-start_guioopen_project C:/Users/carlo/Desktop/Trabajo-SED-FPGA/Trabajo-FPGA/Trabajo-FPGA.xpruupdate_compile_order -fileset sources_1
-close [ open C:/Users/carlo/Desktop/Trabajo-SED-FPGA/Trabajo-FPGA/Trabajo-FPGA.srcs/sources_1/new/Fix16_13_to_Radians.vhd w ]
-add_files C:/Users/carlo/Desktop/Trabajo-SED-FPGA/Trabajo-FPGA/Trabajo-FPGA.srcs/sources_1/new/Fix16_13_to_Radians.vhd
+start_gui
+open_project C:/Users/skstu/Documents/GitHub/Trabajo-SED-FPGA/Trabajo-FPGA/Trabajo-FPGA.xpr
 update_compile_order -fileset sources_1
+add_files -norecurse {C:/Users/skstu/Documents/GitHub/Trabajo-SED-FPGA/Trabajo-FPGA/Trabajo-FPGA.srcs/sources_1/new/Converter.vhd C:/Users/skstu/Documents/GitHub/Trabajo-SED-FPGA/Trabajo-FPGA/Trabajo-FPGA.srcs/sources_1/new/decoder.vhd}
+update_compile_order -fileset sources_1
+set_property SOURCE_SET sources_1 [get_filesets sim_1]
+add_files -fileset sim_1 -norecurse C:/Users/skstu/Documents/GitHub/Trabajo-SED-FPGA/Trabajo-FPGA/Trabajo-FPGA.srcs/sim_1/new/Converter_tb.vhd
+update_compile_order -fileset sim_1
