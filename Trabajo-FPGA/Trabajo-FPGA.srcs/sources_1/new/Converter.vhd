@@ -1,30 +1,26 @@
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 use IEEE.NUMERIC_STD.ALL;
-use IEEE.MATH_REAL.ALL; -- Librería para operaciones matemáticas
 
 entity Converter is
     Port (
         FIX16_13_IN : in  signed(15 downto 0); -- Entrada en formato fix16_13
-        GRADOS_REAL : out real                 -- Salida como número real
+        GRADOS_INT  : out integer;             -- Salida escalada (con décimas)
+        signo       : out std_logic            -- Salida del signo
     );
 end Converter;
 
 architecture Behavioral of Converter is
     constant FRACTIONAL_BITS : integer := 13; -- Número de bits fraccionales
-    constant RAD_TO_DEG : real := 57.2958;
+    constant RAD_TO_DEG_SCALED : integer := 573; -- 57.2958 escalado por 10 para incluir décimas
 begin
     process(FIX16_13_IN)
-        variable frac_real : real;
-        variable int_real : real;
-        variable sol_real : real;
+        variable scaled_value : integer;
     begin
-        -- Extraer y convertir la parte fraccional a un número real
-        frac_real := real(to_integer(unsigned(FIX16_13_IN(12 downto 0)))) / 2.0**FRACTIONAL_BITS;
-        int_real := real(to_integer(unsigned(FIX16_13_IN(14 downto 13))));
-        sol_real := (frac_real + int_real)*RAD_TO_DEG;
-        
-        -- Asignar el resultado a la salida
-        GRADOS_REAL <= sol_real;
+        -- Convertir el valor fix16_13 a entero escalado con décimas
+        scaled_value := (to_integer(FIX16_13_IN) * RAD_TO_DEG_SCALED) / (2**FRACTIONAL_BITS);
+        signo <= FIX16_13_IN(15); -- Extraer el signo
+        GRADOS_INT <= scaled_value; -- Resultado escalado con décimas
     end process;
 end Behavioral;
+

@@ -1,0 +1,62 @@
+#-----------------------------------------------------------
+# Vivado v2024.2 (64-bit)
+# SW Build 5239630 on Fri Nov 08 22:35:27 MST 2024
+# IP Build 5239520 on Sun Nov 10 16:12:51 MST 2024
+# SharedData Build 5239561 on Fri Nov 08 14:39:27 MST 2024
+# Start of session at: Thu Dec 19 10:24:59 2024
+# Process ID         : 28076
+# Current directory  : C:/Users/skstu/Documents/GitHub/Trabajo-SED-FPGA/Trabajo-FPGA
+# Command line       : vivado.exe -gui_launcher_event rodinguilauncherevent22008 C:\Users\skstu\Documents\GitHub\Trabajo-SED-FPGA\Trabajo-FPGA\Trabajo-FPGA.xpr
+# Log file           : C:/Users/skstu/Documents/GitHub/Trabajo-SED-FPGA/Trabajo-FPGA/vivado.log
+# Journal file       : C:/Users/skstu/Documents/GitHub/Trabajo-SED-FPGA/Trabajo-FPGA\vivado.jou
+# Running On         : Saraa
+# Platform           : Windows Server 2016 or Windows 10
+# Operating System   : 22631
+# Processor Detail   : AMD Ryzen 7 7735HS with Radeon Graphics        
+# CPU Frequency      : 3194 MHz
+# CPU Physical cores : 8
+# CPU Logical cores  : 16
+# Host memory        : 16438 MB
+# Swap memory        : 11274 MB
+# Total Virtual      : 27712 MB
+# Available Virtual  : 16762 MB
+#-----------------------------------------------------------
+start_gui
+open_project C:/Users/skstu/Documents/GitHub/Trabajo-SED-FPGA/Trabajo-FPGA/Trabajo-FPGA.xpr
+update_compile_order -fileset sources_1
+close [ open C:/Users/skstu/Documents/GitHub/Trabajo-SED-FPGA/Trabajo-FPGA/Trabajo-FPGA.srcs/sources_1/new/seven_segment_dynamic.vhd w ]
+add_files C:/Users/skstu/Documents/GitHub/Trabajo-SED-FPGA/Trabajo-FPGA/Trabajo-FPGA.srcs/sources_1/new/seven_segment_dynamic.vhd
+update_compile_order -fileset sources_1
+close [ open C:/Users/skstu/Documents/GitHub/Trabajo-SED-FPGA/Trabajo-FPGA/Trabajo-FPGA.srcs/sources_1/new/ExpandAccel.vhd w ]
+add_files C:/Users/skstu/Documents/GitHub/Trabajo-SED-FPGA/Trabajo-FPGA/Trabajo-FPGA.srcs/sources_1/new/ExpandAccel.vhd
+update_compile_order -fileset sources_1
+open_project C:/Users/skstu/Desktop/UPM/SED/P3/SED_P1/SED_P1.xpr
+update_compile_order -fileset sources_1
+close_project
+open_project C:/Users/skstu/Desktop/UPM/SED/P3/SED_P3/SED_P3.xpr
+update_compile_order -fileset sources_1
+current_project Trabajo-FPGA
+close [ open C:/Users/skstu/Documents/GitHub/Trabajo-SED-FPGA/Trabajo-FPGA/Trabajo-FPGA.srcs/sources_1/new/FSM.vhd w ]
+add_files C:/Users/skstu/Documents/GitHub/Trabajo-SED-FPGA/Trabajo-FPGA/Trabajo-FPGA.srcs/sources_1/new/FSM.vhd
+update_compile_order -fileset sources_1
+current_project SED_P3
+close_project
+update_compile_order -fileset sources_1
+set_property source_mgmt_mode DisplayOnly [current_project]
+# Disabling source management mode.  This is to allow the top design properties to be set without GUI intervention.
+set_property source_mgmt_mode None [current_project]
+set_property top Top [current_fileset]
+# Re-enabling previously disabled source management mode.
+set_property source_mgmt_mode DisplayOnly [current_project]
+reset_run synth_1
+launch_runs impl_1 -jobs 8
+wait_on_run impl_1
+reset_run synth_1
+launch_runs impl_1 -jobs 8
+wait_on_run impl_1
+reset_run synth_1
+launch_runs impl_1 -jobs 8
+wait_on_run impl_1
+reset_run synth_1
+launch_runs impl_1 -jobs 8
+wait_on_run impl_1
