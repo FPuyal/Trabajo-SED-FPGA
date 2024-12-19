@@ -8,7 +8,7 @@
   **** SW Build 5239630 on Fri Nov 08 22:35:27 MST 2024
   **** IP Build 5239520 on Sun Nov 10 16:12:51 MST 2024
   **** SharedData Build 5239561 on Fri Nov 08 14:39:27 MST 2024
-  **** Start of session at: Thu Dec 19 13:33:25 2024
+  **** Start of session at: Thu Dec 19 20:00:10 2024
     ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
     ** Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
 
@@ -25,16 +25,16 @@ INFO: [Designutils 20-5440] No compile time benefit to using incremental synthes
 INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
 INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
 INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
-INFO: [Synth 8-7075] Helper process launched with PID 44480
+INFO: [Synth 8-7075] Helper process launched with PID 36848
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 975.855 ; gain = 469.258
+Starting RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 975.902 ; gain = 469.805
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-638] synthesizing module 'Top' [C:/Users/skstu/Documents/GitHub/Trabajo-SED-FPGA/Trabajo-FPGA/Trabajo-FPGA.srcs/sources_1/new/top1.vhd:21]
 	Parameter SYSCLK_FREQUENCY_HZ bound to: 108000000 - type: integer 
 	Parameter SCLK_FREQUENCY_HZ bound to: 1000000 - type: integer 
 	Parameter NUM_READS_AVG bound to: 16 - type: integer 
 	Parameter UPDATE_FREQUENCY_HZ bound to: 100 - type: integer 
-INFO: [Synth 8-3491] module 'AccelerometerCtl' declared at 'C:/Users/skstu/Documents/GitHub/Trabajo-SED-FPGA/Trabajo-FPGA/Trabajo-FPGA.srcs/sources_1/imports/new/AccelerometerCtl.vhd:19' bound to instance 'Accelerometer' of component 'AccelerometerCtl' [C:/Users/skstu/Documents/GitHub/Trabajo-SED-FPGA/Trabajo-FPGA/Trabajo-FPGA.srcs/sources_1/new/top1.vhd:136]
+INFO: [Synth 8-3491] module 'AccelerometerCtl' declared at 'C:/Users/skstu/Documents/GitHub/Trabajo-SED-FPGA/Trabajo-FPGA/Trabajo-FPGA.srcs/sources_1/imports/new/AccelerometerCtl.vhd:19' bound to instance 'Accelerometer' of component 'AccelerometerCtl' [C:/Users/skstu/Documents/GitHub/Trabajo-SED-FPGA/Trabajo-FPGA/Trabajo-FPGA.srcs/sources_1/new/top1.vhd:182]
 INFO: [Synth 8-638] synthesizing module 'AccelerometerCtl' [C:/Users/skstu/Documents/GitHub/Trabajo-SED-FPGA/Trabajo-FPGA/Trabajo-FPGA.srcs/sources_1/imports/new/AccelerometerCtl.vhd:46]
 	Parameter SYSCLK_FREQUENCY_HZ bound to: 108000000 - type: integer 
 	Parameter SCLK_FREQUENCY_HZ bound to: 1000000 - type: integer 
@@ -59,52 +59,60 @@ INFO: [Synth 8-638] synthesizing module 'SPI_If' [C:/Users/skstu/Documents/GitHu
 INFO: [Synth 8-256] done synthesizing module 'SPI_If' (0#1) [C:/Users/skstu/Documents/GitHub/Trabajo-SED-FPGA/Trabajo-FPGA/Trabajo-FPGA.srcs/sources_1/imports/new/SPI_If.vhd:66]
 INFO: [Synth 8-256] done synthesizing module 'ADXL362Ctrl' (0#1) [C:/Users/skstu/Documents/GitHub/Trabajo-SED-FPGA/Trabajo-FPGA/Trabajo-FPGA.srcs/sources_1/imports/new/ADXL362Ctrl.vhd:117]
 INFO: [Synth 8-256] done synthesizing module 'AccelerometerCtl' (0#1) [C:/Users/skstu/Documents/GitHub/Trabajo-SED-FPGA/Trabajo-FPGA/Trabajo-FPGA.srcs/sources_1/imports/new/AccelerometerCtl.vhd:46]
-INFO: [Synth 8-3491] module 'ExpandAccel' declared at 'C:/Users/skstu/Documents/GitHub/Trabajo-SED-FPGA/Trabajo-FPGA/Trabajo-FPGA.srcs/sources_1/new/ExpandAccel.vhd:4' bound to instance 'expander' of component 'ExpandAccel' [C:/Users/skstu/Documents/GitHub/Trabajo-SED-FPGA/Trabajo-FPGA/Trabajo-FPGA.srcs/sources_1/new/top1.vhd:157]
+INFO: [Synth 8-3491] module 'ExpandAccel' declared at 'C:/Users/skstu/Documents/GitHub/Trabajo-SED-FPGA/Trabajo-FPGA/Trabajo-FPGA.srcs/sources_1/new/ExpandAccel.vhd:4' bound to instance 'expander' of component 'ExpandAccel' [C:/Users/skstu/Documents/GitHub/Trabajo-SED-FPGA/Trabajo-FPGA/Trabajo-FPGA.srcs/sources_1/new/top1.vhd:203]
 INFO: [Synth 8-638] synthesizing module 'ExpandAccel' [C:/Users/skstu/Documents/GitHub/Trabajo-SED-FPGA/Trabajo-FPGA/Trabajo-FPGA.srcs/sources_1/new/ExpandAccel.vhd:15]
 INFO: [Synth 8-256] done synthesizing module 'ExpandAccel' (0#1) [C:/Users/skstu/Documents/GitHub/Trabajo-SED-FPGA/Trabajo-FPGA/Trabajo-FPGA.srcs/sources_1/new/ExpandAccel.vhd:15]
-INFO: [Synth 8-3491] module 'AngleCalculator' declared at 'C:/Users/skstu/Documents/GitHub/Trabajo-SED-FPGA/Trabajo-FPGA/Trabajo-FPGA.srcs/sources_1/new/AngleCalculator.vhd:25' bound to instance 'calc_angle_x' of component 'AngleCalculator' [C:/Users/skstu/Documents/GitHub/Trabajo-SED-FPGA/Trabajo-FPGA/Trabajo-FPGA.srcs/sources_1/new/top1.vhd:168]
+INFO: [Synth 8-3491] module 'AngleCalculator' declared at 'C:/Users/skstu/Documents/GitHub/Trabajo-SED-FPGA/Trabajo-FPGA/Trabajo-FPGA.srcs/sources_1/new/AngleCalculator.vhd:25' bound to instance 'calc_angle_x' of component 'AngleCalculator' [C:/Users/skstu/Documents/GitHub/Trabajo-SED-FPGA/Trabajo-FPGA/Trabajo-FPGA.srcs/sources_1/new/top1.vhd:214]
 INFO: [Synth 8-638] synthesizing module 'AngleCalculator' [C:/Users/skstu/Documents/GitHub/Trabajo-SED-FPGA/Trabajo-FPGA/Trabajo-FPGA.srcs/sources_1/new/AngleCalculator.vhd:33]
-INFO: [Synth 8-3491] module 'cordic_0' declared at 'C:/Users/skstu/Documents/GitHub/Trabajo-SED-FPGA/Trabajo-FPGA/Trabajo-FPGA.runs/synth_1/.Xil/Vivado-44816-Saraa/realtime/cordic_0_stub.vhdl:6' bound to instance 'cordic_inst' of component 'cordic_0' [C:/Users/skstu/Documents/GitHub/Trabajo-SED-FPGA/Trabajo-FPGA/Trabajo-FPGA.srcs/sources_1/new/AngleCalculator.vhd:54]
-INFO: [Synth 8-638] synthesizing module 'cordic_0' [C:/Users/skstu/Documents/GitHub/Trabajo-SED-FPGA/Trabajo-FPGA/Trabajo-FPGA.runs/synth_1/.Xil/Vivado-44816-Saraa/realtime/cordic_0_stub.vhdl:22]
+INFO: [Synth 8-3491] module 'cordic_0' declared at 'C:/Users/skstu/Documents/GitHub/Trabajo-SED-FPGA/Trabajo-FPGA/Trabajo-FPGA.runs/synth_1/.Xil/Vivado-36692-Saraa/realtime/cordic_0_stub.vhdl:6' bound to instance 'cordic_inst' of component 'cordic_0' [C:/Users/skstu/Documents/GitHub/Trabajo-SED-FPGA/Trabajo-FPGA/Trabajo-FPGA.srcs/sources_1/new/AngleCalculator.vhd:54]
+INFO: [Synth 8-638] synthesizing module 'cordic_0' [C:/Users/skstu/Documents/GitHub/Trabajo-SED-FPGA/Trabajo-FPGA/Trabajo-FPGA.runs/synth_1/.Xil/Vivado-36692-Saraa/realtime/cordic_0_stub.vhdl:22]
 INFO: [Synth 8-256] done synthesizing module 'AngleCalculator' (0#1) [C:/Users/skstu/Documents/GitHub/Trabajo-SED-FPGA/Trabajo-FPGA/Trabajo-FPGA.srcs/sources_1/new/AngleCalculator.vhd:33]
-INFO: [Synth 8-3491] module 'AngleCalculator' declared at 'C:/Users/skstu/Documents/GitHub/Trabajo-SED-FPGA/Trabajo-FPGA/Trabajo-FPGA.srcs/sources_1/new/AngleCalculator.vhd:25' bound to instance 'calc_angle_y' of component 'AngleCalculator' [C:/Users/skstu/Documents/GitHub/Trabajo-SED-FPGA/Trabajo-FPGA/Trabajo-FPGA.srcs/sources_1/new/top1.vhd:176]
-INFO: [Synth 8-3491] module 'Converter' declared at 'C:/Users/skstu/Documents/GitHub/Trabajo-SED-FPGA/Trabajo-FPGA/Trabajo-FPGA.srcs/sources_1/new/Converter.vhd:5' bound to instance 'converter_x' of component 'Converter' [C:/Users/skstu/Documents/GitHub/Trabajo-SED-FPGA/Trabajo-FPGA/Trabajo-FPGA.srcs/sources_1/new/top1.vhd:184]
+INFO: [Synth 8-3491] module 'AngleCalculator' declared at 'C:/Users/skstu/Documents/GitHub/Trabajo-SED-FPGA/Trabajo-FPGA/Trabajo-FPGA.srcs/sources_1/new/AngleCalculator.vhd:25' bound to instance 'calc_angle_y' of component 'AngleCalculator' [C:/Users/skstu/Documents/GitHub/Trabajo-SED-FPGA/Trabajo-FPGA/Trabajo-FPGA.srcs/sources_1/new/top1.vhd:222]
+INFO: [Synth 8-3491] module 'Converter' declared at 'C:/Users/skstu/Documents/GitHub/Trabajo-SED-FPGA/Trabajo-FPGA/Trabajo-FPGA.srcs/sources_1/new/Converter.vhd:5' bound to instance 'converter_x' of component 'Converter' [C:/Users/skstu/Documents/GitHub/Trabajo-SED-FPGA/Trabajo-FPGA/Trabajo-FPGA.srcs/sources_1/new/top1.vhd:230]
 INFO: [Synth 8-638] synthesizing module 'Converter' [C:/Users/skstu/Documents/GitHub/Trabajo-SED-FPGA/Trabajo-FPGA/Trabajo-FPGA.srcs/sources_1/new/Converter.vhd:13]
 INFO: [Synth 8-256] done synthesizing module 'Converter' (0#1) [C:/Users/skstu/Documents/GitHub/Trabajo-SED-FPGA/Trabajo-FPGA/Trabajo-FPGA.srcs/sources_1/new/Converter.vhd:13]
-INFO: [Synth 8-3491] module 'Converter' declared at 'C:/Users/skstu/Documents/GitHub/Trabajo-SED-FPGA/Trabajo-FPGA/Trabajo-FPGA.srcs/sources_1/new/Converter.vhd:5' bound to instance 'converter_y' of component 'Converter' [C:/Users/skstu/Documents/GitHub/Trabajo-SED-FPGA/Trabajo-FPGA/Trabajo-FPGA.srcs/sources_1/new/top1.vhd:192]
-INFO: [Synth 8-3491] module 'split_integer_number_bin' declared at 'C:/Users/skstu/Documents/GitHub/Trabajo-SED-FPGA/Trabajo-FPGA/Trabajo-FPGA.srcs/sources_1/new/split_real_number_bin.vhd:5' bound to instance 'split_x' of component 'split_integer_number_bin' [C:/Users/skstu/Documents/GitHub/Trabajo-SED-FPGA/Trabajo-FPGA/Trabajo-FPGA.srcs/sources_1/new/top1.vhd:202]
+INFO: [Synth 8-3491] module 'Converter' declared at 'C:/Users/skstu/Documents/GitHub/Trabajo-SED-FPGA/Trabajo-FPGA/Trabajo-FPGA.srcs/sources_1/new/Converter.vhd:5' bound to instance 'converter_y' of component 'Converter' [C:/Users/skstu/Documents/GitHub/Trabajo-SED-FPGA/Trabajo-FPGA/Trabajo-FPGA.srcs/sources_1/new/top1.vhd:238]
+INFO: [Synth 8-3491] module 'split_integer_number_bin' declared at 'C:/Users/skstu/Documents/GitHub/Trabajo-SED-FPGA/Trabajo-FPGA/Trabajo-FPGA.srcs/sources_1/new/split_real_number_bin.vhd:5' bound to instance 'split_x' of component 'split_integer_number_bin' [C:/Users/skstu/Documents/GitHub/Trabajo-SED-FPGA/Trabajo-FPGA/Trabajo-FPGA.srcs/sources_1/new/top1.vhd:248]
 INFO: [Synth 8-638] synthesizing module 'split_integer_number_bin' [C:/Users/skstu/Documents/GitHub/Trabajo-SED-FPGA/Trabajo-FPGA/Trabajo-FPGA.srcs/sources_1/new/split_real_number_bin.vhd:17]
-WARNING: [Synth 8-614] signal 'signo_in' is read in the process but is not in the sensitivity list [C:/Users/skstu/Documents/GitHub/Trabajo-SED-FPGA/Trabajo-FPGA/Trabajo-FPGA.srcs/sources_1/new/split_real_number_bin.vhd:19]
+WARNING: [Synth 8-614] signal 'signo_in' is read in the process but is not in the sensitivity list [C:/Users/skstu/Documents/GitHub/Trabajo-SED-FPGA/Trabajo-FPGA/Trabajo-FPGA.srcs/sources_1/new/split_real_number_bin.vhd:20]
 INFO: [Synth 8-256] done synthesizing module 'split_integer_number_bin' (0#1) [C:/Users/skstu/Documents/GitHub/Trabajo-SED-FPGA/Trabajo-FPGA/Trabajo-FPGA.srcs/sources_1/new/split_real_number_bin.vhd:17]
-INFO: [Synth 8-3491] module 'split_integer_number_bin' declared at 'C:/Users/skstu/Documents/GitHub/Trabajo-SED-FPGA/Trabajo-FPGA/Trabajo-FPGA.srcs/sources_1/new/split_real_number_bin.vhd:5' bound to instance 'split_y' of component 'split_integer_number_bin' [C:/Users/skstu/Documents/GitHub/Trabajo-SED-FPGA/Trabajo-FPGA/Trabajo-FPGA.srcs/sources_1/new/top1.vhd:214]
-INFO: [Synth 8-3491] module 'FSM' declared at 'C:/Users/skstu/Documents/GitHub/Trabajo-SED-FPGA/Trabajo-FPGA/Trabajo-FPGA.srcs/sources_1/new/FSM.vhd:4' bound to instance 'fsm_inst' of component 'FSM' [C:/Users/skstu/Documents/GitHub/Trabajo-SED-FPGA/Trabajo-FPGA/Trabajo-FPGA.srcs/sources_1/new/top1.vhd:227]
+INFO: [Synth 8-3491] module 'split_integer_number_bin' declared at 'C:/Users/skstu/Documents/GitHub/Trabajo-SED-FPGA/Trabajo-FPGA/Trabajo-FPGA.srcs/sources_1/new/split_real_number_bin.vhd:5' bound to instance 'split_y' of component 'split_integer_number_bin' [C:/Users/skstu/Documents/GitHub/Trabajo-SED-FPGA/Trabajo-FPGA/Trabajo-FPGA.srcs/sources_1/new/top1.vhd:260]
+INFO: [Synth 8-3491] module 'FSM' declared at 'C:/Users/skstu/Documents/GitHub/Trabajo-SED-FPGA/Trabajo-FPGA/Trabajo-FPGA.srcs/sources_1/new/FSM.vhd:4' bound to instance 'fsm_inst' of component 'FSM' [C:/Users/skstu/Documents/GitHub/Trabajo-SED-FPGA/Trabajo-FPGA/Trabajo-FPGA.srcs/sources_1/new/top1.vhd:273]
 INFO: [Synth 8-638] synthesizing module 'FSM' [C:/Users/skstu/Documents/GitHub/Trabajo-SED-FPGA/Trabajo-FPGA/Trabajo-FPGA.srcs/sources_1/new/FSM.vhd:12]
 INFO: [Synth 8-226] default block is never used [C:/Users/skstu/Documents/GitHub/Trabajo-SED-FPGA/Trabajo-FPGA/Trabajo-FPGA.srcs/sources_1/new/FSM.vhd:31]
 INFO: [Synth 8-226] default block is never used [C:/Users/skstu/Documents/GitHub/Trabajo-SED-FPGA/Trabajo-FPGA/Trabajo-FPGA.srcs/sources_1/new/FSM.vhd:48]
 INFO: [Synth 8-256] done synthesizing module 'FSM' (0#1) [C:/Users/skstu/Documents/GitHub/Trabajo-SED-FPGA/Trabajo-FPGA/Trabajo-FPGA.srcs/sources_1/new/FSM.vhd:12]
-INFO: [Synth 8-3491] module 'seven_segment_dynamic' declared at 'C:/Users/skstu/Documents/GitHub/Trabajo-SED-FPGA/Trabajo-FPGA/Trabajo-FPGA.srcs/sources_1/new/seven_segment_dynamic.vhd:5' bound to instance 'display' of component 'seven_segment_dynamic' [C:/Users/skstu/Documents/GitHub/Trabajo-SED-FPGA/Trabajo-FPGA/Trabajo-FPGA.srcs/sources_1/new/top1.vhd:262]
-INFO: [Synth 8-638] synthesizing module 'seven_segment_dynamic' [C:/Users/skstu/Documents/GitHub/Trabajo-SED-FPGA/Trabajo-FPGA/Trabajo-FPGA.srcs/sources_1/new/seven_segment_dynamic.vhd:18]
-INFO: [Synth 8-3491] module 'decoder' declared at 'C:/Users/skstu/Documents/GitHub/Trabajo-SED-FPGA/Trabajo-FPGA/Trabajo-FPGA.srcs/sources_1/new/decoder.vhd:5' bound to instance 'decoder_centena_inst' of component 'decoder' [C:/Users/skstu/Documents/GitHub/Trabajo-SED-FPGA/Trabajo-FPGA/Trabajo-FPGA.srcs/sources_1/new/seven_segment_dynamic.vhd:40]
+INFO: [Synth 8-3491] module 'FrequencyDivider' declared at 'C:/Users/skstu/Documents/GitHub/Trabajo-SED-FPGA/Trabajo-FPGA/Trabajo-FPGA.srcs/sources_1/new/FrequencyDivider.vhd:5' bound to instance 'FrecDiv' of component 'FrequencyDivider' [C:/Users/skstu/Documents/GitHub/Trabajo-SED-FPGA/Trabajo-FPGA/Trabajo-FPGA.srcs/sources_1/new/top1.vhd:311]
+INFO: [Synth 8-638] synthesizing module 'FrequencyDivider' [C:/Users/skstu/Documents/GitHub/Trabajo-SED-FPGA/Trabajo-FPGA/Trabajo-FPGA.srcs/sources_1/new/FrequencyDivider.vhd:13]
+INFO: [Synth 8-256] done synthesizing module 'FrequencyDivider' (0#1) [C:/Users/skstu/Documents/GitHub/Trabajo-SED-FPGA/Trabajo-FPGA/Trabajo-FPGA.srcs/sources_1/new/FrequencyDivider.vhd:13]
+INFO: [Synth 8-3491] module 'RingCounter' declared at 'C:/Users/skstu/Documents/GitHub/Trabajo-SED-FPGA/Trabajo-FPGA/Trabajo-FPGA.srcs/sources_1/new/RingCounter.vhd:5' bound to instance 'RingCount' of component 'RingCounter' [C:/Users/skstu/Documents/GitHub/Trabajo-SED-FPGA/Trabajo-FPGA/Trabajo-FPGA.srcs/sources_1/new/top1.vhd:318]
+INFO: [Synth 8-638] synthesizing module 'RingCounter' [C:/Users/skstu/Documents/GitHub/Trabajo-SED-FPGA/Trabajo-FPGA/Trabajo-FPGA.srcs/sources_1/new/RingCounter.vhd:13]
+INFO: [Synth 8-256] done synthesizing module 'RingCounter' (0#1) [C:/Users/skstu/Documents/GitHub/Trabajo-SED-FPGA/Trabajo-FPGA/Trabajo-FPGA.srcs/sources_1/new/RingCounter.vhd:13]
+INFO: [Synth 8-3491] module 'mux_display' declared at 'C:/Users/skstu/Documents/GitHub/Trabajo-SED-FPGA/Trabajo-FPGA/Trabajo-FPGA.srcs/sources_1/new/mux_display.vhd:5' bound to instance 'MuxInst' of component 'mux_display' [C:/Users/skstu/Documents/GitHub/Trabajo-SED-FPGA/Trabajo-FPGA/Trabajo-FPGA.srcs/sources_1/new/top1.vhd:325]
+INFO: [Synth 8-638] synthesizing module 'mux_display' [C:/Users/skstu/Documents/GitHub/Trabajo-SED-FPGA/Trabajo-FPGA/Trabajo-FPGA.srcs/sources_1/new/mux_display.vhd:13]
+INFO: [Synth 8-226] default block is never used [C:/Users/skstu/Documents/GitHub/Trabajo-SED-FPGA/Trabajo-FPGA/Trabajo-FPGA.srcs/sources_1/new/mux_display.vhd:17]
+INFO: [Synth 8-256] done synthesizing module 'mux_display' (0#1) [C:/Users/skstu/Documents/GitHub/Trabajo-SED-FPGA/Trabajo-FPGA/Trabajo-FPGA.srcs/sources_1/new/mux_display.vhd:13]
+INFO: [Synth 8-3491] module 'SelectorDisplay' declared at 'C:/Users/skstu/Documents/GitHub/Trabajo-SED-FPGA/Trabajo-FPGA/Trabajo-FPGA.srcs/sources_1/new/SelectorDisplay.vhd:4' bound to instance 'Disp' of component 'SelectorDisplay' [C:/Users/skstu/Documents/GitHub/Trabajo-SED-FPGA/Trabajo-FPGA/Trabajo-FPGA.srcs/sources_1/new/top1.vhd:332]
+INFO: [Synth 8-638] synthesizing module 'SelectorDisplay' [C:/Users/skstu/Documents/GitHub/Trabajo-SED-FPGA/Trabajo-FPGA/Trabajo-FPGA.srcs/sources_1/new/SelectorDisplay.vhd:11]
+INFO: [Synth 8-226] default block is never used [C:/Users/skstu/Documents/GitHub/Trabajo-SED-FPGA/Trabajo-FPGA/Trabajo-FPGA.srcs/sources_1/new/SelectorDisplay.vhd:15]
+INFO: [Synth 8-256] done synthesizing module 'SelectorDisplay' (0#1) [C:/Users/skstu/Documents/GitHub/Trabajo-SED-FPGA/Trabajo-FPGA/Trabajo-FPGA.srcs/sources_1/new/SelectorDisplay.vhd:11]
+INFO: [Synth 8-3491] module 'decoder' declared at 'C:/Users/skstu/Documents/GitHub/Trabajo-SED-FPGA/Trabajo-FPGA/Trabajo-FPGA.srcs/sources_1/new/decoder.vhd:5' bound to instance 'Dec' of component 'decoder' [C:/Users/skstu/Documents/GitHub/Trabajo-SED-FPGA/Trabajo-FPGA/Trabajo-FPGA.srcs/sources_1/new/top1.vhd:338]
 INFO: [Synth 8-638] synthesizing module 'decoder' [C:/Users/skstu/Documents/GitHub/Trabajo-SED-FPGA/Trabajo-FPGA/Trabajo-FPGA.srcs/sources_1/new/decoder.vhd:12]
 INFO: [Synth 8-256] done synthesizing module 'decoder' (0#1) [C:/Users/skstu/Documents/GitHub/Trabajo-SED-FPGA/Trabajo-FPGA/Trabajo-FPGA.srcs/sources_1/new/decoder.vhd:12]
-INFO: [Synth 8-3491] module 'decoder' declared at 'C:/Users/skstu/Documents/GitHub/Trabajo-SED-FPGA/Trabajo-FPGA/Trabajo-FPGA.srcs/sources_1/new/decoder.vhd:5' bound to instance 'decoder_decena_inst' of component 'decoder' [C:/Users/skstu/Documents/GitHub/Trabajo-SED-FPGA/Trabajo-FPGA/Trabajo-FPGA.srcs/sources_1/new/seven_segment_dynamic.vhd:46]
-INFO: [Synth 8-3491] module 'decoder' declared at 'C:/Users/skstu/Documents/GitHub/Trabajo-SED-FPGA/Trabajo-FPGA/Trabajo-FPGA.srcs/sources_1/new/decoder.vhd:5' bound to instance 'decoder_unidad_inst' of component 'decoder' [C:/Users/skstu/Documents/GitHub/Trabajo-SED-FPGA/Trabajo-FPGA/Trabajo-FPGA.srcs/sources_1/new/seven_segment_dynamic.vhd:52]
-INFO: [Synth 8-3491] module 'decoder' declared at 'C:/Users/skstu/Documents/GitHub/Trabajo-SED-FPGA/Trabajo-FPGA/Trabajo-FPGA.srcs/sources_1/new/decoder.vhd:5' bound to instance 'decoder_decima_inst' of component 'decoder' [C:/Users/skstu/Documents/GitHub/Trabajo-SED-FPGA/Trabajo-FPGA/Trabajo-FPGA.srcs/sources_1/new/seven_segment_dynamic.vhd:58]
-INFO: [Synth 8-256] done synthesizing module 'seven_segment_dynamic' (0#1) [C:/Users/skstu/Documents/GitHub/Trabajo-SED-FPGA/Trabajo-FPGA/Trabajo-FPGA.srcs/sources_1/new/seven_segment_dynamic.vhd:18]
 INFO: [Synth 8-256] done synthesizing module 'Top' (0#1) [C:/Users/skstu/Documents/GitHub/Trabajo-SED-FPGA/Trabajo-FPGA/Trabajo-FPGA.srcs/sources_1/new/top1.vhd:21]
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 1087.957 ; gain = 581.359
+Finished RTL Elaboration : Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 1087.977 ; gain = 581.879
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 1087.957 ; gain = 581.359
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 1087.977 ; gain = 581.879
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 1087.957 ; gain = 581.359
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 1087.977 ; gain = 581.879
 ---------------------------------------------------------------------------------
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.014 . Memory (MB): peak = 1087.957 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.014 . Memory (MB): peak = 1087.977 ; gain = 0.000
 INFO: [Project 1-570] Preparing netlist for logic optimization
 
 Processing XDC Constraints
@@ -119,22 +127,22 @@ INFO: [Project 1-236] Implementation specific constraints were found while readi
 Resolution: To avoid this warning, move constraints listed in [.Xil/Top_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1179.562 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1178.391 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.005 . Memory (MB): peak = 1179.562 ; gain = 0.000
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.004 . Memory (MB): peak = 1178.391 ; gain = 0.000
 INFO: [Designutils 20-5440] No compile time benefit to using incremental synthesis; A full resynthesis will be run
 INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:11 ; elapsed = 00:00:12 . Memory (MB): peak = 1179.562 ; gain = 672.965
+Finished Constraint Validation : Time (s): cpu = 00:00:12 ; elapsed = 00:00:13 . Memory (MB): peak = 1178.391 ; gain = 672.293
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7a100tcsg324-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:11 ; elapsed = 00:00:12 . Memory (MB): peak = 1179.562 ; gain = 672.965
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:12 ; elapsed = 00:00:13 . Memory (MB): peak = 1178.391 ; gain = 672.293
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
@@ -143,7 +151,7 @@ WARNING: set_property IS_IP_OOC_CELL could not find object (constraint file  c:/
 Applied set_property KEEP_HIERARCHY = SOFT for calc_angle_x/cordic_inst. (constraint file  auto generated constraint).
 WARNING: set_property KEEP_HIERARCHY could not find object (constraint file  auto generated constraint, line ).
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:11 ; elapsed = 00:00:12 . Memory (MB): peak = 1179.562 ; gain = 672.965
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:12 ; elapsed = 00:00:13 . Memory (MB): peak = 1178.391 ; gain = 672.293
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-802] inferred FSM for state register 'StC_reg' in module 'SPI_If'
 INFO: [Synth 8-802] inferred FSM for state register 'StC_Spi_SendRec_reg' in module 'ADXL362Ctrl'
@@ -194,8 +202,9 @@ stadxlwaitsampleratetick |                             0100 |                   
          stadxlread_done |                             1000 |                     000001011111
 ---------------------------------------------------------------------------------------------------
 INFO: [Synth 8-3354] encoded FSM with state register 'StC_Adxl_Ctrl_reg' using encoding 'sequential' in module 'ADXL362Ctrl'
+WARNING: [Synth 8-327] inferring latch for variable 'estado_reg' [C:/Users/skstu/Documents/GitHub/Trabajo-SED-FPGA/Trabajo-FPGA/Trabajo-FPGA.srcs/sources_1/new/top1.vhd:292]
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:12 ; elapsed = 00:00:13 . Memory (MB): peak = 1179.562 ; gain = 672.965
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:13 ; elapsed = 00:00:13 . Memory (MB): peak = 1178.391 ; gain = 672.293
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start RTL Component Statistics 
@@ -204,14 +213,14 @@ Detailed RTL Component Info :
 +---Adders : 
 	   2 Input   32 Bit       Adders := 8     
 	   2 Input   31 Bit       Adders := 10    
-	   2 Input   20 Bit       Adders := 1     
+	   2 Input   17 Bit       Adders := 1     
 	   2 Input   11 Bit       Adders := 2     
 	   2 Input    6 Bit       Adders := 1     
 	   2 Input    4 Bit       Adders := 9     
 	   2 Input    3 Bit       Adders := 3     
 	   2 Input    2 Bit       Adders := 2     
 +---Registers : 
-	               20 Bit    Registers := 1     
+	               17 Bit    Registers := 1     
 	               12 Bit    Registers := 4     
 	               11 Bit    Registers := 2     
 	                8 Bit    Registers := 15    
@@ -219,7 +228,7 @@ Detailed RTL Component Info :
 	                4 Bit    Registers := 1     
 	                3 Bit    Registers := 3     
 	                2 Bit    Registers := 2     
-	                1 Bit    Registers := 7     
+	                1 Bit    Registers := 8     
 +---Muxes : 
 	   2 Input   32 Bit        Muxes := 8     
 	   2 Input   31 Bit        Muxes := 10    
@@ -228,12 +237,11 @@ Detailed RTL Component Info :
 	   4 Input    8 Bit        Muxes := 1     
 	   2 Input    8 Bit        Muxes := 2     
 	   5 Input    8 Bit        Muxes := 2     
-	   6 Input    8 Bit        Muxes := 1     
+	   8 Input    8 Bit        Muxes := 1     
 	   7 Input    7 Bit        Muxes := 1     
 	   4 Input    7 Bit        Muxes := 1     
-	   2 Input    7 Bit        Muxes := 1     
 	   4 Input    6 Bit        Muxes := 1     
-	   2 Input    4 Bit        Muxes := 19    
+	   2 Input    4 Bit        Muxes := 21    
 	   9 Input    4 Bit        Muxes := 1     
 	   2 Input    3 Bit        Muxes := 9     
 	   7 Input    3 Bit        Muxes := 1     
@@ -246,7 +254,6 @@ Detailed RTL Component Info :
 	   7 Input    1 Bit        Muxes := 1     
 	   5 Input    1 Bit        Muxes := 1     
 	   9 Input    1 Bit        Muxes := 1     
-	   6 Input    1 Bit        Muxes := 1     
 ---------------------------------------------------------------------------------
 Finished RTL Component Statistics 
 ---------------------------------------------------------------------------------
@@ -267,11 +274,12 @@ DSP Report: Generating DSP converter_x/GRADOS_INT3, operation Mode is: A*(B:0x23
 DSP Report: operator converter_x/GRADOS_INT3 is absorbed into DSP converter_x/GRADOS_INT3.
 DSP Report: Generating DSP converter_y/GRADOS_INT3, operation Mode is: A*(B:0x23d).
 DSP Report: operator converter_y/GRADOS_INT3 is absorbed into DSP converter_y/GRADOS_INT3.
-WARNING: [Synth 8-3917] design Top has port AN[2] driven by constant 1
-WARNING: [Synth 8-3917] design Top has port AN[1] driven by constant 1
-WARNING: [Synth 8-3917] design Top has port AN[0] driven by constant 1
+WARNING: [Synth 8-3332] Sequential element (estado_reg[3]) is unused and will be removed from module Top.
+WARNING: [Synth 8-3332] Sequential element (estado_reg[2]) is unused and will be removed from module Top.
+WARNING: [Synth 8-3332] Sequential element (estado_reg[1]) is unused and will be removed from module Top.
+WARNING: [Synth 8-3332] Sequential element (estado_reg[0]) is unused and will be removed from module Top.
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:37 ; elapsed = 00:00:39 . Memory (MB): peak = 1435.016 ; gain = 928.418
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:38 ; elapsed = 00:00:39 . Memory (MB): peak = 1428.574 ; gain = 922.477
 ---------------------------------------------------------------------------------
  Sort Area is  converter_x/GRADOS_INT3_0 : 0 0 : 479 479 : Used 1 time 0
  Sort Area is  converter_y/GRADOS_INT3_2 : 0 0 : 479 479 : Used 1 time 0
@@ -295,19 +303,19 @@ Finished ROM, RAM, DSP, Shift Register and Retiming Reporting
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:44 ; elapsed = 00:00:45 . Memory (MB): peak = 1435.016 ; gain = 928.418
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:44 ; elapsed = 00:00:45 . Memory (MB): peak = 1428.574 ; gain = 922.477
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:44 ; elapsed = 00:00:46 . Memory (MB): peak = 1435.016 ; gain = 928.418
+Finished Timing Optimization : Time (s): cpu = 00:00:45 ; elapsed = 00:00:46 . Memory (MB): peak = 1433.285 ; gain = 927.188
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:46 ; elapsed = 00:00:47 . Memory (MB): peak = 1500.445 ; gain = 993.848
+Finished Technology Mapping : Time (s): cpu = 00:00:46 ; elapsed = 00:00:47 . Memory (MB): peak = 1524.164 ; gain = 1018.066
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start IO Insertion
@@ -325,37 +333,37 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:49 ; elapsed = 00:00:51 . Memory (MB): peak = 1594.871 ; gain = 1088.273
+Finished IO Insertion : Time (s): cpu = 00:00:50 ; elapsed = 00:00:51 . Memory (MB): peak = 1615.707 ; gain = 1109.609
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:49 ; elapsed = 00:00:51 . Memory (MB): peak = 1594.871 ; gain = 1088.273
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:50 ; elapsed = 00:00:51 . Memory (MB): peak = 1615.707 ; gain = 1109.609
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:49 ; elapsed = 00:00:51 . Memory (MB): peak = 1594.871 ; gain = 1088.273
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:50 ; elapsed = 00:00:51 . Memory (MB): peak = 1615.707 ; gain = 1109.609
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:49 ; elapsed = 00:00:51 . Memory (MB): peak = 1594.871 ; gain = 1088.273
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:50 ; elapsed = 00:00:51 . Memory (MB): peak = 1615.707 ; gain = 1109.609
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:49 ; elapsed = 00:00:51 . Memory (MB): peak = 1594.871 ; gain = 1088.273
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:50 ; elapsed = 00:00:51 . Memory (MB): peak = 1615.707 ; gain = 1109.609
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:50 ; elapsed = 00:00:51 . Memory (MB): peak = 1594.871 ; gain = 1088.273
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:50 ; elapsed = 00:00:51 . Memory (MB): peak = 1615.707 ; gain = 1109.609
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP, Shift Register and Retiming Reporting
@@ -398,44 +406,45 @@ Report Cell Usage:
 |1     |cordic_0_bbox   |     1|
 |2     |cordic_0_bbox_0 |     1|
 |3     |BUFG            |     1|
-|4     |CARRY4          |   901|
+|4     |CARRY4          |   900|
 |5     |DSP48E1         |     2|
-|6     |LUT1            |    87|
-|7     |LUT2            |   474|
-|8     |LUT3            |  1210|
-|9     |LUT4            |   753|
-|10    |LUT5            |   876|
-|11    |LUT6            |  2400|
-|12    |MUXF7           |    16|
-|13    |SRL16E          |     6|
-|14    |FDCE            |     1|
-|15    |FDRE            |   283|
-|16    |FDSE            |     5|
-|17    |IBUF            |     4|
-|18    |OBUF            |    19|
+|6     |LUT1            |    80|
+|7     |LUT2            |   488|
+|8     |LUT3            |  1216|
+|9     |LUT4            |   754|
+|10    |LUT5            |   882|
+|11    |LUT6            |  2382|
+|12    |MUXF7           |    14|
+|13    |MUXF8           |     6|
+|14    |SRL16E          |     6|
+|15    |FDCE            |    22|
+|16    |FDRE            |   260|
+|17    |FDSE            |     5|
+|18    |IBUF            |     4|
+|19    |OBUF            |    18|
 +------+----------------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:50 ; elapsed = 00:00:51 . Memory (MB): peak = 1594.871 ; gain = 1088.273
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:50 ; elapsed = 00:00:51 . Memory (MB): peak = 1615.707 ; gain = 1109.609
 ---------------------------------------------------------------------------------
-Synthesis finished with 0 errors, 0 critical warnings and 4 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:43 ; elapsed = 00:00:49 . Memory (MB): peak = 1594.871 ; gain = 996.668
-Synthesis Optimization Complete : Time (s): cpu = 00:00:50 ; elapsed = 00:00:51 . Memory (MB): peak = 1594.871 ; gain = 1088.273
+Synthesis finished with 0 errors, 0 critical warnings and 6 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:43 ; elapsed = 00:00:50 . Memory (MB): peak = 1615.707 ; gain = 1019.195
+Synthesis Optimization Complete : Time (s): cpu = 00:00:50 ; elapsed = 00:00:51 . Memory (MB): peak = 1615.707 ; gain = 1109.609
 INFO: [Project 1-571] Translating synthesized netlist
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.072 . Memory (MB): peak = 1606.004 ; gain = 0.000
-INFO: [Netlist 29-17] Analyzing 919 Unisim elements for replacement
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.071 . Memory (MB): peak = 1624.848 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 922 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1610.215 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.002 . Memory (MB): peak = 1628.531 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Synth Design complete | Checksum: fbc11c33
+Synth Design complete | Checksum: 9f914b1
 INFO: [Common 17-83] Releasing license: Synthesis
-71 Infos, 5 Warnings, 0 Critical Warnings and 0 Errors encountered.
+79 Infos, 7 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:54 ; elapsed = 00:00:57 . Memory (MB): peak = 1610.215 ; gain = 1311.090
-Write ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.013 . Memory (MB): peak = 1610.215 ; gain = 0.000
+synth_design: Time (s): cpu = 00:00:55 ; elapsed = 00:00:57 . Memory (MB): peak = 1628.531 ; gain = 1328.770
+Write ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.013 . Memory (MB): peak = 1628.531 ; gain = 0.000
 INFO: [Common 17-1381] The checkpoint 'C:/Users/skstu/Documents/GitHub/Trabajo-SED-FPGA/Trabajo-FPGA/Trabajo-FPGA.runs/synth_1/Top.dcp' has been generated.
 INFO: [Vivado 12-24828] Executing command : report_utilization -file Top_utilization_synth.rpt -pb Top_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Thu Dec 19 13:34:24 2024...
+INFO: [Common 17-206] Exiting Vivado at Thu Dec 19 20:01:09 2024...

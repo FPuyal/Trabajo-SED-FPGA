@@ -86,6 +86,10 @@ read_vhdl -library xil_defaultlib {
   C:/Users/skstu/Documents/GitHub/Trabajo-SED-FPGA/Trabajo-FPGA/Trabajo-FPGA.srcs/sources_1/new/seven_segment_dynamic.vhd
   C:/Users/skstu/Documents/GitHub/Trabajo-SED-FPGA/Trabajo-FPGA/Trabajo-FPGA.srcs/sources_1/new/split_real_number_bin.vhd
   C:/Users/skstu/Documents/GitHub/Trabajo-SED-FPGA/Trabajo-FPGA/Trabajo-FPGA.srcs/sources_1/new/top1.vhd
+  C:/Users/skstu/Documents/GitHub/Trabajo-SED-FPGA/Trabajo-FPGA/Trabajo-FPGA.srcs/sources_1/new/mux_display.vhd
+  C:/Users/skstu/Documents/GitHub/Trabajo-SED-FPGA/Trabajo-FPGA/Trabajo-FPGA.srcs/sources_1/new/FrequencyDivider.vhd
+  C:/Users/skstu/Documents/GitHub/Trabajo-SED-FPGA/Trabajo-FPGA/Trabajo-FPGA.srcs/sources_1/new/RingCounter.vhd
+  C:/Users/skstu/Documents/GitHub/Trabajo-SED-FPGA/Trabajo-FPGA/Trabajo-FPGA.srcs/sources_1/new/SelectorDisplay.vhd
 }
 read_ip -quiet C:/Users/skstu/Documents/GitHub/Trabajo-SED-FPGA/Trabajo-FPGA/Trabajo-FPGA.srcs/sources_1/ip/cordic_0/cordic_0.xci
 

@@ -22,7 +22,8 @@ WITH bin_in SELECT
     "0001111" WHEN "0111",
     "0000000" WHEN "1000",
     "0000100" WHEN "1001", --9
-    "0001001" WHEN "1010", --X
-    "0010001" WHEN "1011", --Y
-    "1111110" WHEN others;
+    "1001000" WHEN "1010", --X
+    "1000100" WHEN "1011", --Y
+    "1111110" WHEN "1111", -- Signo negativo
+    "1111111" WHEN others;
 END ARCHITECTURE dataflow;

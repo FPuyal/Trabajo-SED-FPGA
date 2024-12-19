@@ -1,7 +1,7 @@
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 use IEEE.NUMERIC_STD.ALL;
-use IEEE.MATH_REAL.ALL; -- Librería para operaciones matemáticas
+--use IEEE.MATH_REAL.ALL; -- Librería para operaciones matemáticas
 
 entity Top is
     port(
@@ -13,7 +13,7 @@ entity Top is
         MOSI     : out STD_LOGIC;               -- SPI Master-Out-Slave-In
         SS       : out STD_LOGIC;               -- SPI Slave Select
         AN       : out STD_LOGIC_VECTOR(7 downto 0); -- Ánodos del display
-        SEGMENTS : out STD_LOGIC_VECTOR(7 downto 0)  -- Segmentos del display
+        SEGMENTS : out STD_LOGIC_VECTOR(6 downto 0)  -- Segmentos del display
         
     );
 end Top;
@@ -76,7 +76,7 @@ architecture Behavioral of Top is
             unidades  : out std_logic_vector(3 downto 0);
             decimas   : out std_logic_vector(3 downto 0);
             signo_in  : in  std_logic;
-            signo_out : out std_logic
+            signo_out : out std_logic_vector(3 downto 0)
         );
     end component;
     
@@ -89,23 +89,63 @@ architecture Behavioral of Top is
         );
     end component;
     
-    component seven_segment_dynamic
-        Port (
-            clk       : in  STD_LOGIC;
-            sign      : in  STD_LOGIC;
-            centenas  : in  STD_LOGIC_VECTOR(3 downto 0);
-            decenas   : in  STD_LOGIC_VECTOR(3 downto 0);
-            unidades  : in  STD_LOGIC_VECTOR(3 downto 0);
-            decimas   : in  STD_LOGIC_VECTOR(3 downto 0);
-            an        : out STD_LOGIC_VECTOR(7 downto 0);
-            segments  : out STD_LOGIC_VECTOR(7 downto 0)
-        );
+    component FrequencyDivider is
+    Port (
+        clk_in  : in  STD_LOGIC;  -- Reloj rápido de entrada (por ejemplo, 100 MHz)
+        reset   : in  STD_LOGIC;  -- Reset
+        clk_out : out STD_LOGIC   -- Reloj lento de salida (por ejemplo, 1 kHz)
+    );
+   end component;
+   
+   component RingCounter is
+    Port (
+        clk       : in  STD_LOGIC;               -- Reloj lento
+        reset     : in  STD_LOGIC;               -- Señal de reinicio activa baja
+        counter   : out STD_LOGIC_VECTOR(2 downto 0) -- Salida del contador (3 bits)
+    );
     end component;
+    
+    component mux_display is
+    Port (
+        seleccion : in  STD_LOGIC_VECTOR(2 downto 0); -- Selección del contador (3 bits para 8 opciones)
+        entrada   : in  STD_LOGIC_VECTOR(31 downto 0); -- 8 entradas de 4 bits concatenadas
+        salida    : out STD_LOGIC_VECTOR(3 downto 0)   -- Salida del dato seleccionado
+    );
+    end component;
+    
+    COMPONENT SelectorDisplay is
+    Port (
+        display_select : in  STD_LOGIC_VECTOR(2 downto 0); -- Selección del display (3 bits)
+        anodes         : out STD_LOGIC_VECTOR(7 downto 0) -- Control de ánodos (8 bits)
+    );
+    end COMPONENT;
+    
+    component decoder IS
+    PORT (
+        bin_in : IN std_logic_vector(3 DOWNTO 0);
+        seg_out : OUT std_logic_vector(6 DOWNTO 0)
+    );
+    END component;
+   -- component seven_segment_dynamic
+     --   Port (
+    --        clk       : in  STD_LOGIC;
+      --      sign      : in  STD_LOGIC;
+     --       STATE_in   : in STD_LOGIC_VECTOR (3 downto 0);
+     --       centenas  : in  STD_LOGIC_VECTOR(3 downto 0);
+     --       decenas   : in  STD_LOGIC_VECTOR(3 downto 0);
+     --       unidades  : in  STD_LOGIC_VECTOR(3 downto 0);
+      --      decimas   : in  STD_LOGIC_VECTOR(3 downto 0);
+      --      an        : out STD_LOGIC_VECTOR(7 downto 0);
+      --      segments  : out STD_LOGIC_VECTOR(7 downto 0)
+      --  );
+    --end component;
     
     
 
     -- Señales internas
     signal RESET_N        : STD_LOGIC;                          -- Señal de reinicio invertida
+    signal clk_display : std_logic;    --- reloj lento para el display 1kHz
+    signal counter : std_logic_vector(2 downto 0);
     signal ACCEL_X, ACCEL_Y, ACCEL_Z : STD_LOGIC_VECTOR(11 downto 0); -- Lecturas del acelerómetro
     signal accel_x_exp, accel_y_exp, accel_z_exp : STD_LOGIC_VECTOR(15 downto 0);
     signal ANGULO_X, ANGULO_Y : STD_LOGIC_VECTOR(15 downto 0);
@@ -113,19 +153,25 @@ architecture Behavioral of Top is
     signal SIGNO_X, SIGNO_Y : STD_LOGIC;
    -- Señales para los dígitos y signo del eje X
     signal CENTENAS_X, DECENAS_X, UNIDADES_X, DECIMAS_X : STD_LOGIC_VECTOR(3 downto 0);
-    signal SIGNO_X_DISPLAY : STD_LOGIC;
+    signal SIGNO_X_DISPLAY : STD_LOGIC_vector(3 downto 0);
     
     -- Señales para los dígitos y signo del eje Y
     signal CENTENAS_Y, DECENAS_Y, UNIDADES_Y, DECIMAS_Y : STD_LOGIC_VECTOR(3 downto 0);
-    signal SIGNO_Y_DISPLAY : STD_LOGIC;
+    signal SIGNO_Y_DISPLAY : STD_LOGIC_vector(3 downto 0);
     
     -- Señales seleccionadas para el display dinámico
     signal CENTENAS, DECENAS, UNIDADES, DECIMAS : STD_LOGIC_VECTOR(3 downto 0);
-    signal SIGNO_DISPLAY : STD_LOGIC;
+    signal SIGNO_DISPLAY : STD_LOGIC_vector(3 downto 0);
     
     -- Señal de estado de la FSM
     signal STATE : STD_LOGIC_VECTOR(1 downto 0);
     
+    --Señal para decirle al display si mostrar x o y
+    signal estado: std_logic_vector(3 downto 0);
+    
+    -- Salida del Mux
+    signal Mux_in: std_logic_vector(31 downto 0);
+    signal Mux_out: std_logic_vector(3 downto 0);
     
     
 begin
@@ -243,33 +289,72 @@ begin
                 UNIDADES <= UNIDADES_X;
                 DECIMAS  <= DECIMAS_X;
                 SIGNO_DISPLAY <= SIGNO_X_DISPLAY;
+                estado <= "1010";
             when "01" =>  -- Estado: Mostrar ángulo del eje Y
                 CENTENAS <= CENTENAS_Y;
                 DECENAS  <= DECENAS_Y;
                 UNIDADES <= UNIDADES_Y;
                 DECIMAS  <= DECIMAS_Y;
                 SIGNO_DISPLAY <= SIGNO_Y_DISPLAY;
+                estado <= "1011";
             when others =>  -- Estado por defecto
                 CENTENAS <= (others => '0');
                 DECENAS  <= (others => '0');
                 UNIDADES <= (others => '0');
                 DECIMAS  <= (others => '0');
-                SIGNO_DISPLAY <= '0';
+                SIGNO_DISPLAY <= "0000";
         end case;
     end process;
+    
+     Mux_in   <= DECIMAS & UNIDADES & DECENAS & CENTENAS & SIGNO_DISPLAY & "00000000" & estado;
+     
+    FrecDiv: FrequencyDivider
+        port map(
+        clk_in  => SYSCLK, -- Reloj rápido de entrada (por ejemplo, 100 MHz)
+        reset   => reset,  -- Reset
+        clk_out  => clk_display
+        );
+        
+    RingCount: RingCounter 
+    Port map(
+        clk  =>  clk_display,   
+        reset =>    reset,
+        counter => counter
+    );
+    
+    MuxInst:  mux_display 
+    Port map(
+        seleccion => counter,
+        entrada   => Mux_in,
+        salida    => Mux_out
+    );
+
+    Disp: SelectorDisplay 
+    Port map (
+        display_select => counter,
+        anodes        => an
+    );
+    
+        Dec:  decoder 
+    PORT map (
+        bin_in => Mux_out,
+        seg_out => segments
+    );
+   
 
     -- Instancia del display dinámico
-    display: seven_segment_dynamic
-        port map (
-            clk       => SYSCLK,
-            sign      => SIGNO_DISPLAY,
-            centenas  => CENTENAS,
-            decenas   => DECENAS,
-            unidades  => UNIDADES,
-            decimas   => DECIMAS,
-            an        => AN,
-            segments  => SEGMENTS
-        );
+    --display: seven_segment_dynamic
+     --   port map (
+    --        clk       => SYSCLK,
+       --     sign      => SIGNO_DISPLAY,
+     --       centenas  => CENTENAS,
+     --       decenas   => DECENAS,
+     --       unidades  => UNIDADES,
+     --       decimas   => DECIMAS,
+      --      an        => AN,
+      --      segments  => SEGMENTS,
+     --       state_in => estado
+    --    );
         
 end Behavioral;
         
