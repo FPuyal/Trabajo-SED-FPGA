@@ -57,7 +57,11 @@ if {$::dispatch::connected} {
 
 OPTRACE "synth_1" START { ROLLUP_AUTO }
 set_param chipscope.maxJobs 4
+set_param synth.incrementalSynthesisCache C:/Users/skstu/Documents/GitHub/Trabajo-SED-FPGA/Trabajo-FPGA/.Xil/Vivado-21664-Saraa/incrSyn
+set_param checkpoint.writeSynthRtdsInDcp 1
 set_param xicom.use_bs_reader 1
+set_msg_config -id {Synth 8-256} -limit 10000
+set_msg_config -id {Synth 8-638} -limit 10000
 OPTRACE "Creating in-memory project" START { }
 create_project -in_memory -part xc7a100tcsg324-1
 
@@ -90,6 +94,7 @@ read_vhdl -library xil_defaultlib {
   C:/Users/skstu/Documents/GitHub/Trabajo-SED-FPGA/Trabajo-FPGA/Trabajo-FPGA.srcs/sources_1/new/FrequencyDivider.vhd
   C:/Users/skstu/Documents/GitHub/Trabajo-SED-FPGA/Trabajo-FPGA/Trabajo-FPGA.srcs/sources_1/new/RingCounter.vhd
   C:/Users/skstu/Documents/GitHub/Trabajo-SED-FPGA/Trabajo-FPGA/Trabajo-FPGA.srcs/sources_1/new/SelectorDisplay.vhd
+  C:/Users/skstu/Documents/GitHub/Trabajo-SED-FPGA/Trabajo-FPGA/Trabajo-FPGA.srcs/sources_1/new/raw_to_fix16_14.vhd
 }
 read_ip -quiet C:/Users/skstu/Documents/GitHub/Trabajo-SED-FPGA/Trabajo-FPGA/Trabajo-FPGA.srcs/sources_1/ip/cordic_0/cordic_0.xci
 

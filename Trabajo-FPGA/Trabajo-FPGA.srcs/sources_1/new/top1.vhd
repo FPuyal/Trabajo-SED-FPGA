@@ -41,15 +41,11 @@ architecture Behavioral of Top is
         );
     end component;
 
-    component ExpandAccel
-        Port (
-            accel_x_in  : in  STD_LOGIC_VECTOR(11 downto 0);
-            accel_y_in  : in  STD_LOGIC_VECTOR(11 downto 0);
-            accel_z_in  : in  STD_LOGIC_VECTOR(11 downto 0);
-            accel_x_out : out STD_LOGIC_VECTOR(15 downto 0);
-            accel_y_out : out STD_LOGIC_VECTOR(15 downto 0);
-            accel_z_out : out STD_LOGIC_VECTOR(15 downto 0)
-        );
+    component raw_to_fix16_14 is
+    port (
+        valor_raw     : in  std_logic_vector(11 downto 0); -- Entrada de 12 bits en complemento a 2
+        valor_fix16_14: out std_logic_vector(15 downto 0) -- Salida en formato fix16_14
+    );
     end component;
     
     component AngleCalculator
@@ -149,7 +145,7 @@ architecture Behavioral of Top is
     signal ACCEL_X, ACCEL_Y, ACCEL_Z : STD_LOGIC_VECTOR(11 downto 0); -- Lecturas del acelerómetro
     signal accel_x_exp, accel_y_exp, accel_z_exp : STD_LOGIC_VECTOR(15 downto 0);
     signal ANGULO_X, ANGULO_Y : STD_LOGIC_VECTOR(15 downto 0);
-    signal ANGULO_X_DEG, ANGULO_Y_DEG : integer;
+    signal ANGULO_X_DEG, ANGULO_Y_DEG, ANGULO_X_DEG_desplazado, ANGULO_Y_DEG_desplazado: integer;
     signal SIGNO_X, SIGNO_Y : STD_LOGIC;
    -- Señales para los dígitos y signo del eje X
     signal CENTENAS_X, DECENAS_X, UNIDADES_X, DECIMAS_X : STD_LOGIC_VECTOR(3 downto 0);
@@ -199,22 +195,32 @@ begin
             ACCEL_TMP_OUT => open
         );
 
-    -- Instancia de ExpandAccel
-    expander: ExpandAccel
-        port map (
-            accel_x_in  => ACCEL_X,
-            accel_y_in  => ACCEL_Y,
-            accel_z_in  => ACCEL_Z,
-            accel_x_out => accel_x_exp,
-            accel_y_out => accel_y_exp,
-            accel_z_out => accel_z_exp
-        );
+ 
+     expander_x: raw_to_fix16_14 
+    port map (
+        valor_raw  => ACCEL_X,
+        valor_fix16_14  =>  accel_x_exp
+    );
+    
+     expander_y: raw_to_fix16_14 
+    port map (
+        valor_raw  => ACCEL_y,
+        valor_fix16_14  =>  accel_y_exp
+    );
+
+     expander_z: raw_to_fix16_14 
+    port map (
+        valor_raw  => ACCEL_z,
+        valor_fix16_14  =>  accel_z_exp
+    );
+   
+
 
       -- Calculador de ángulo para el eje X
     calc_angle_x: AngleCalculator
         port map (
-            X      => accel_x_exp,
-            Y      => accel_z_exp,
+            X      => accel_z_exp,
+            Y      => accel_x_exp,
             ANGULO => ANGULO_X
         );
 
@@ -241,13 +247,20 @@ begin
             GRADOS_INT  => ANGULO_Y_DEG,    -- Salida como entero escalado
             signo       => SIGNO_Y          -- Signo del ángulo
         );
+ 
+  process(SIGNO_X, ANGULO_X_DEG)
+begin
+    if SIGNO_X = '0' then
+        ANGULO_X_DEG_desplazado <= 1800 - ANGULO_X_DEG;
+    else
+        ANGULO_X_DEG_desplazado <= 1800 + ANGULO_X_DEG;
+    end if;
+end process;
 
-        
-    
          -- División en dígitos para el eje X
     split_x: split_integer_number_bin
         port map (
-            int_in   => ANGULO_X_DEG,   -- Ángulo del eje X en grados reales
+            int_in   => ANGULO_X_DEG_desplazado,   -- Ángulo del eje X en grados reales
             centenas  => CENTENAS_X,    -- Centenas del eje X
             decenas   => DECENAS_X,     -- Decenas del eje X
             unidades  => UNIDADES_X,    -- Unidades del eje X
