@@ -25,5 +25,6 @@ WITH bin_in SELECT
     "1001000" WHEN "1010", --X
     "1000100" WHEN "1011", --Y
     "1111110" WHEN "1111", -- Signo negativo
+    "1111111" WHEN "1110", -- Signo positivo
     "1111111" WHEN others;
 END ARCHITECTURE dataflow;

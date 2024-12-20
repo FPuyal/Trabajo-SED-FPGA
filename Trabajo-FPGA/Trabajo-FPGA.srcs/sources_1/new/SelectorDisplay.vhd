@@ -14,8 +14,8 @@ begin
     begin
         case display_select is
             when "000" => anodes <= "01111111"; -- Activar A7
-            when "001" => anodes <= "10111111"; -- Activar A6
-            when "010" => anodes <= "11011111"; -- Activar A5
+            when "001" => anodes <= "11111111"; -- Activar A6
+            when "010" => anodes <= "11111111"; -- Activar A5
             when "011" => anodes <= "11101111"; -- Activar A4
             when "100" => anodes <= "11110111"; -- Activar A3
             when "101" => anodes <= "11111011"; -- Activar A2

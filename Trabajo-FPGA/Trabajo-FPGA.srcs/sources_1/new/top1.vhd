@@ -56,6 +56,22 @@ architecture Behavioral of Top is
         );
     end component;
     
+    Component EDGEDTCTR
+PORT (
+ CLK : in std_logic;
+ SYNC_IN : in std_logic;
+ EDGE : out std_logic 
+);
+END Component;
+
+Component SYNCHRNZR 
+ Port (
+ CLK : in std_logic;
+ ASYNC_IN : in std_logic;
+ SYNC_OUT : out std_logic
+ );
+END COMPONENT;
+    
     component Converter
         Port (
             FIX16_13_IN : in  signed(15 downto 0);
@@ -169,6 +185,9 @@ architecture Behavioral of Top is
     signal Mux_in: std_logic_vector(31 downto 0);
     signal Mux_out: std_logic_vector(3 downto 0);
     
+    -- antirrebotes
+    signal syn_edg, edg_fsm: std_logic;
+    
     
 begin
     -- Invertir la señal de reinicio
@@ -227,8 +246,8 @@ begin
     -- Calculador de ángulo para el eje Y
     calc_angle_y: AngleCalculator
         port map (
-            X      => accel_y_exp,
-            Y      => accel_z_exp,
+            X      => accel_z_exp,
+            Y      => accel_y_exp,
             ANGULO => ANGULO_Y
         );
             
@@ -247,6 +266,8 @@ begin
             GRADOS_INT  => ANGULO_Y_DEG,    -- Salida como entero escalado
             signo       => SIGNO_Y          -- Signo del ángulo
         );
+        
+        
  
   process(SIGNO_X, ANGULO_X_DEG)
 begin
@@ -291,6 +312,21 @@ end process;
         STATE_OUT   => STATE     -- Salida del estado actual
     );
     
+    INS_SYNCHRNZR: SYNCHRNZR PORT MAP( 
+    CLK => SYSCLK,
+    ASYNC_IN => BTN, 
+    SYNC_OUT => syn_edg   
+    );
+    
+    INS_EDGEDTCTR: EDGEDTCTR PORT MAP(
+    CLK =>SYSCLK,
+    SYNC_IN =>syn_edg,
+    EDGE =>edg_fsm
+   
+);
+
+
+
       -- Proceso para seleccionar datos según el estado de la FSM
     process(STATE, CENTENAS_X, DECENAS_X, UNIDADES_X, DECIMAS_X, SIGNO_X_DISPLAY,
             CENTENAS_Y, DECENAS_Y, UNIDADES_Y, DECIMAS_Y, SIGNO_Y_DISPLAY)
