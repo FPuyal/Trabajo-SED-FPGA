@@ -13,7 +13,8 @@ entity Top is
         MOSI     : out STD_LOGIC;               -- SPI Master-Out-Slave-In
         SS       : out STD_LOGIC;               -- SPI Slave Select
         AN       : out STD_LOGIC_VECTOR(7 downto 0); -- Ánodos del display
-        SEGMENTS : out STD_LOGIC_VECTOR(6 downto 0)  -- Segmentos del display
+        SEGMENTS : out STD_LOGIC_VECTOR(6 downto 0);  -- Segmentos del display
+        punto: out std_logic -- punto decimal
         
     );
 end Top;
@@ -56,21 +57,52 @@ architecture Behavioral of Top is
         );
     end component;
     
-    Component EDGEDTCTR
-PORT (
- CLK : in std_logic;
- SYNC_IN : in std_logic;
- EDGE : out std_logic 
-);
-END Component;
-
-Component SYNCHRNZR 
- Port (
- CLK : in std_logic;
- ASYNC_IN : in std_logic;
- SYNC_OUT : out std_logic
- );
-END COMPONENT;
+        Component EDGEDTCTR
+    PORT (
+     CLK : in std_logic;
+     SYNC_IN : in std_logic;
+     EDGE : out std_logic 
+    );
+    END Component;
+    
+    Component SYNCHRNZR 
+     Port (
+     CLK : in std_logic;
+     ASYNC_IN : in std_logic;
+     SYNC_OUT : out std_logic
+     );
+    END COMPONENT;
+    
+     component FSM
+        Port (
+            RESET       : in  STD_LOGIC;
+            CLK         : in  STD_LOGIC;
+            PUSHBUTTON  : in  STD_LOGIC;
+            STATE   : out STD_LOGIC_VECTOR (1 downto 0)
+        );
+    end component;
+    
+     component mux_state 
+       Port (
+       centenas_x : in std_logic_vector(3 downto 0);
+       decenas_x: in std_logic_vector(3 downto 0);
+       unidades_x :in std_logic_vector(3 downto 0);
+       decimas_x: in std_logic_vector(3 downto 0);
+       signo_x_display: in std_logic_vector(3 downto 0);
+       centenas_y : in std_logic_vector(3 downto 0);
+       decenas_y: in std_logic_vector(3 downto 0);
+       unidades_y :in std_logic_vector(3 downto 0);
+       decimas_y: in std_logic_vector(3 downto 0);
+       signo_y_display: in std_logic_vector(3 downto 0);
+       state: in std_logic_vector(1 downto 0);
+       centenas : out std_logic_vector(3 downto 0);
+       decenas: out std_logic_vector(3 downto 0);
+       unidades :out std_logic_vector(3 downto 0);
+       decimas: out std_logic_vector(3 downto 0);
+       signo: out std_logic_vector(3 downto 0);
+       estado: out std_logic_vector(3 downto 0)
+         );
+    end component;
     
     component Converter
         Port (
@@ -89,15 +121,6 @@ END COMPONENT;
             decimas   : out std_logic_vector(3 downto 0);
             signo_in  : in  std_logic;
             signo_out : out std_logic_vector(3 downto 0)
-        );
-    end component;
-    
-   component FSM
-        Port (
-            RESET       : in  STD_LOGIC;
-            CLK         : in  STD_LOGIC;
-            PUSHBUTTON  : in  STD_LOGIC;
-            STATE_OUT   : out STD_LOGIC_VECTOR (1 downto 0)
         );
     end component;
     
@@ -121,7 +144,9 @@ END COMPONENT;
     Port (
         seleccion : in  STD_LOGIC_VECTOR(2 downto 0); -- Selección del contador (3 bits para 8 opciones)
         entrada   : in  STD_LOGIC_VECTOR(31 downto 0); -- 8 entradas de 4 bits concatenadas
-        salida    : out STD_LOGIC_VECTOR(3 downto 0)   -- Salida del dato seleccionado
+        salida    : out STD_LOGIC_VECTOR(3 downto 0);   -- Salida del dato seleccionado
+        punto : out std_logic
+
     );
     end component;
     
@@ -138,22 +163,8 @@ END COMPONENT;
         seg_out : OUT std_logic_vector(6 DOWNTO 0)
     );
     END component;
-   -- component seven_segment_dynamic
-     --   Port (
-    --        clk       : in  STD_LOGIC;
-      --      sign      : in  STD_LOGIC;
-     --       STATE_in   : in STD_LOGIC_VECTOR (3 downto 0);
-     --       centenas  : in  STD_LOGIC_VECTOR(3 downto 0);
-     --       decenas   : in  STD_LOGIC_VECTOR(3 downto 0);
-     --       unidades  : in  STD_LOGIC_VECTOR(3 downto 0);
-      --      decimas   : in  STD_LOGIC_VECTOR(3 downto 0);
-      --      an        : out STD_LOGIC_VECTOR(7 downto 0);
-      --      segments  : out STD_LOGIC_VECTOR(7 downto 0)
-      --  );
-    --end component;
-    
-    
-
+  
+   
     -- Señales internas
     signal RESET_N        : STD_LOGIC;                          -- Señal de reinicio invertida
     signal clk_display : std_logic;    --- reloj lento para el display 1kHz
@@ -175,8 +186,6 @@ END COMPONENT;
     signal CENTENAS, DECENAS, UNIDADES, DECIMAS : STD_LOGIC_VECTOR(3 downto 0);
     signal SIGNO_DISPLAY : STD_LOGIC_vector(3 downto 0);
     
-    -- Señal de estado de la FSM
-    signal STATE : STD_LOGIC_VECTOR(1 downto 0);
     
     --Señal para decirle al display si mostrar x o y
     signal estado: std_logic_vector(3 downto 0);
@@ -187,6 +196,8 @@ END COMPONENT;
     
     -- antirrebotes
     signal syn_edg, edg_fsm: std_logic;
+     -- Señal de estado de la FSM
+    signal STATE : STD_LOGIC_VECTOR(1 downto 0);
     
     
 begin
@@ -303,15 +314,7 @@ end process;
         );
     
     
-    -- FSM para controlar el estado
-    fsm_inst: FSM
-    port map (
-        RESET       => RESET_N,  -- Señal de reinicio
-        CLK         => SYSCLK,   -- Reloj del sistema
-        PUSHBUTTON  => BTN,      -- Botón para cambiar de estado
-        STATE_OUT   => STATE     -- Salida del estado actual
-    );
-    
+  
     INS_SYNCHRNZR: SYNCHRNZR PORT MAP( 
     CLK => SYSCLK,
     ASYNC_IN => BTN, 
@@ -321,40 +324,38 @@ end process;
     INS_EDGEDTCTR: EDGEDTCTR PORT MAP(
     CLK =>SYSCLK,
     SYNC_IN =>syn_edg,
-    EDGE =>edg_fsm
-   
-);
-
-
-
-      -- Proceso para seleccionar datos según el estado de la FSM
-    process(STATE, CENTENAS_X, DECENAS_X, UNIDADES_X, DECIMAS_X, SIGNO_X_DISPLAY,
-            CENTENAS_Y, DECENAS_Y, UNIDADES_Y, DECIMAS_Y, SIGNO_Y_DISPLAY)
-    begin
-        case STATE is
-            when "00" =>  -- Estado: Mostrar ángulo del eje X
-                CENTENAS <= CENTENAS_X;
-                DECENAS  <= DECENAS_X;
-                UNIDADES <= UNIDADES_X;
-                DECIMAS  <= DECIMAS_X;
-                SIGNO_DISPLAY <= SIGNO_X_DISPLAY;
-                estado <= "1010";
-            when "01" =>  -- Estado: Mostrar ángulo del eje Y
-                CENTENAS <= CENTENAS_Y;
-                DECENAS  <= DECENAS_Y;
-                UNIDADES <= UNIDADES_Y;
-                DECIMAS  <= DECIMAS_Y;
-                SIGNO_DISPLAY <= SIGNO_Y_DISPLAY;
-                estado <= "1011";
-            when others =>  -- Estado por defecto
-                CENTENAS <= (others => '0');
-                DECENAS  <= (others => '0');
-                UNIDADES <= (others => '0');
-                DECIMAS  <= (others => '0');
-                SIGNO_DISPLAY <= "0000";
-        end case;
-    end process;
+    EDGE => edg_fsm
+    );
     
+     -- FSM para controlar el estado
+    fsm_inst: FSM
+    port map (
+        RESET       => RESET,  -- Señal de reinicio
+        CLK         => SYSCLK,   -- Reloj del sistema
+        PUSHBUTTON  => edg_fsm ,      -- Botón para cambiar de estado
+        STATE   => state     -- Salida del estado actual
+    );
+    
+    muxstate: mux_state
+    port map( 
+       centenas_x   => centenas_x,
+       decenas_x    => decenas_x,
+       unidades_x   => unidades_x,
+       decimas_x    => decimas_x,
+       signo_x_display  => signo_x_display,
+       centenas_y   => centenas_y,
+       decenas_y  => decenas_y,
+       unidades_y  => unidades_y,
+       decimas_y   => decimas_y,
+       signo_y_display => signo_y_display,
+       state  => state,
+       centenas   => centenas,
+       decenas   => decenas,
+       unidades   => unidades,
+       decimas  => decimas,
+       signo  => SIGNO_DISPLAY,
+       estado  => estado      
+    );
      Mux_in   <= DECIMAS & UNIDADES & DECENAS & CENTENAS & SIGNO_DISPLAY & "00000000" & estado;
      
     FrecDiv: FrequencyDivider
@@ -375,7 +376,8 @@ end process;
     Port map(
         seleccion => counter,
         entrada   => Mux_in,
-        salida    => Mux_out
+        salida    => Mux_out,
+        punto => punto
     );
 
     Disp: SelectorDisplay 
