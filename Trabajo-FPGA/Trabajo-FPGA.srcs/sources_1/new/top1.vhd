@@ -280,14 +280,20 @@ begin
         
         
  
-  process(SIGNO_X, ANGULO_X_DEG)
+  process(SIGNO_X, ANGULO_X_DEG, SIGNO_Y, ANGULO_Y_DEG, SIGNO_Y)
 begin
     if SIGNO_X = '0' then
         ANGULO_X_DEG_desplazado <= 1800 - ANGULO_X_DEG;
     else
         ANGULO_X_DEG_desplazado <= 1800 + ANGULO_X_DEG;
     end if;
+    if SIGNO_Y = '0' then
+        ANGULO_Y_DEG_desplazado <= 1800 - ANGULO_Y_DEG;
+    else
+        ANGULO_Y_DEG_desplazado <= 1800 + ANGULO_Y_DEG;
+    end if;
 end process;
+
 
          -- División en dígitos para el eje X
     split_x: split_integer_number_bin
@@ -304,7 +310,7 @@ end process;
     -- División en dígitos para el eje Y
     split_y: split_integer_number_bin
         port map (
-            int_in   => ANGULO_Y_DEG,   -- Ángulo del eje Y en grados reales
+            int_in   => ANGULO_Y_DEG_desplazado,   -- Ángulo del eje Y en grados reales
             centenas  => CENTENAS_Y,    -- Centenas del eje Y
             decenas   => DECENAS_Y,     -- Decenas del eje Y
             unidades  => UNIDADES_Y,    -- Unidades del eje Y

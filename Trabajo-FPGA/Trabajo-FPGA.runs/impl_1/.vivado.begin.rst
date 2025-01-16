@@ -1,35 +1,25 @@
 <?xml version="1.0"?>
 <ProcessHandle Version="1" Minor="0">
-    <Process Command="vivado.bat" Owner="carlo" Host="DESKTOP-TUDSMRQ" Pid="16256" HostCore="16" HostMemory="07883182080">
+    <Process Command="vivado.bat" Owner="skstu" Host="SARAA" Pid="14296" HostCore="16" HostMemory="016438312960">
     </Process>
 </ProcessHandle>
 <?xml version="1.0"?>
 <ProcessHandle Version="1" Minor="0">
-    <Process Command="vivado.bat" Owner="carlo" Host="DESKTOP-TUDSMRQ" Pid="6236" HostCore="16" HostMemory="07883182080">
+    <Process Command="vivado.bat" Owner="skstu" Host="SARAA" Pid="9296" HostCore="16" HostMemory="016438312960">
     </Process>
 </ProcessHandle>
 <?xml version="1.0"?>
 <ProcessHandle Version="1" Minor="0">
-    <Process Command="vivado.bat" Owner="carlo" Host="DESKTOP-TUDSMRQ" Pid="14672" HostCore="16" HostMemory="07883182080">
+    <Process Command="vivado.bat" Owner="skstu" Host="SARAA" Pid="20536" HostCore="16" HostMemory="016438312960">
     </Process>
 </ProcessHandle>
 <?xml version="1.0"?>
 <ProcessHandle Version="1" Minor="0">
-    <Process Command="vivado.bat" Owner="carlo" Host="DESKTOP-TUDSMRQ" Pid="10848" HostCore="16" HostMemory="07883182080">
+    <Process Command="vivado.bat" Owner="skstu" Host="SARAA" Pid="6176" HostCore="16" HostMemory="016438312960">
     </Process>
 </ProcessHandle>
 <?xml version="1.0"?>
 <ProcessHandle Version="1" Minor="0">
-    <Process Command="vivado.bat" Owner="carlo" Host="DESKTOP-TUDSMRQ" Pid="8124" HostCore="16" HostMemory="07883182080">
-    </Process>
-</ProcessHandle>
-<?xml version="1.0"?>
-<ProcessHandle Version="1" Minor="0">
-    <Process Command="vivado.bat" Owner="carlo" Host="DESKTOP-TUDSMRQ" Pid="11344" HostCore="16" HostMemory="07883182080">
-    </Process>
-</ProcessHandle>
-<?xml version="1.0"?>
-<ProcessHandle Version="1" Minor="0">
-    <Process Command="vivado.bat" Owner="carlo" Host="DESKTOP-TUDSMRQ" Pid="7020" HostCore="16" HostMemory="07883182080">
+    <Process Command="vivado.bat" Owner="skstu" Host="SARAA" Pid="8344" HostCore="16" HostMemory="016438312960">
     </Process>
 </ProcessHandle>

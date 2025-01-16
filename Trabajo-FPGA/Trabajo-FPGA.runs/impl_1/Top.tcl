@@ -1,5 +1,5 @@
 namespace eval ::optrace {
-  variable script "C:/Users/carlo/Desktop/Trabajo-SED-FPGA/Trabajo-FPGA/Trabajo-FPGA.runs/impl_1/Top.tcl"
+  variable script "C:/Users/skstu/Documents/GitHub/Trabajo-SED-FPGA/Trabajo-FPGA/Trabajo-FPGA.runs/impl_1/Top.tcl"
   variable category "vivado_impl"
 }
 
@@ -113,16 +113,16 @@ OPTRACE "create in-memory project" START { }
   set_param project.singleFileAddWarning.threshold 0
 OPTRACE "create in-memory project" END { }
 OPTRACE "set parameters" START { }
-  set_property webtalk.parent_dir C:/Users/carlo/Desktop/Trabajo-SED-FPGA/Trabajo-FPGA/Trabajo-FPGA.cache/wt [current_project]
-  set_property parent.project_path C:/Users/carlo/Desktop/Trabajo-SED-FPGA/Trabajo-FPGA/Trabajo-FPGA.xpr [current_project]
-  set_property ip_output_repo C:/Users/carlo/Desktop/Trabajo-SED-FPGA/Trabajo-FPGA/Trabajo-FPGA.cache/ip [current_project]
+  set_property webtalk.parent_dir C:/Users/skstu/Documents/GitHub/Trabajo-SED-FPGA/Trabajo-FPGA/Trabajo-FPGA.cache/wt [current_project]
+  set_property parent.project_path C:/Users/skstu/Documents/GitHub/Trabajo-SED-FPGA/Trabajo-FPGA/Trabajo-FPGA.xpr [current_project]
+  set_property ip_output_repo C:/Users/skstu/Documents/GitHub/Trabajo-SED-FPGA/Trabajo-FPGA/Trabajo-FPGA.cache/ip [current_project]
   set_property ip_cache_permissions {read write} [current_project]
 OPTRACE "set parameters" END { }
 OPTRACE "add files" START { }
-  add_files -quiet C:/Users/carlo/Desktop/Trabajo-SED-FPGA/Trabajo-FPGA/Trabajo-FPGA.runs/synth_1/Top.dcp
-  read_ip -quiet C:/Users/carlo/Desktop/Trabajo-SED-FPGA/Trabajo-FPGA/Trabajo-FPGA.srcs/sources_1/ip/cordic_0/cordic_0.xci
+  add_files -quiet C:/Users/skstu/Documents/GitHub/Trabajo-SED-FPGA/Trabajo-FPGA/Trabajo-FPGA.runs/synth_1/Top.dcp
+  read_ip -quiet C:/Users/skstu/Documents/GitHub/Trabajo-SED-FPGA/Trabajo-FPGA/Trabajo-FPGA.srcs/sources_1/ip/cordic_0/cordic_0.xci
 OPTRACE "read constraints: implementation" START { }
-  read_xdc C:/Users/carlo/Desktop/Trabajo-SED-FPGA/Trabajo-FPGA/Trabajo-FPGA.srcs/constrs_1/imports/Trabajo-SED-FPGA/Nexys-4-DDR-Master.xdc
+  read_xdc C:/Users/skstu/Documents/GitHub/Trabajo-SED-FPGA/Trabajo-FPGA/Trabajo-FPGA.srcs/constrs_1/imports/Trabajo-SED-FPGA/Nexys-4-DDR-Master.xdc
 OPTRACE "read constraints: implementation" END { }
 OPTRACE "read constraints: implementation_pre" START { }
 OPTRACE "read constraints: implementation_pre" END { }
